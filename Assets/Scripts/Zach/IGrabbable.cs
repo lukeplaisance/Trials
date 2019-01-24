@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IGrabbable
 {
-    void GetGrabbed(Vector3 position);
+    void GetGrabbed(Transform trans);
+    void GetDropped();
 }

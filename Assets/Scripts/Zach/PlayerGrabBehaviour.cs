@@ -12,7 +12,12 @@ public class PlayerGrabBehaviour : MonoBehaviour, IGrabber
 
     public void Grab(IGrabbable grabbable)
     {
-        grabbable.GetGrabbed(grabbedObjectPos.position);
+        grabbable.GetGrabbed(grabbedObjectPos);
+    }
+
+    public void Drop(IGrabbable grabbable)
+    {
+        grabbable.GetDropped();
     }
 
     // Use this for initialization
@@ -26,9 +31,13 @@ public class PlayerGrabBehaviour : MonoBehaviour, IGrabber
 	void Update ()
     {
 		if(Input.GetButtonDown("Fire1"))
-        {
-            Grab(grabit);
             ObjectGrabbed = !ObjectGrabbed;
-        }
+
+        if (ObjectGrabbed)
+            Grab(grabit);
+        else
+            Drop(grabit);
 	}
+
+    
 }

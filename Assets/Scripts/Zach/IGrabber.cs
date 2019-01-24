@@ -5,4 +5,5 @@ using UnityEngine;
 public interface IGrabber
 {
     void Grab(IGrabbable grabbable);
+    void Drop(IGrabbable grabbable);
 }

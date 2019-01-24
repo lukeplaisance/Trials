@@ -6,11 +6,17 @@ public class BlockBehaviour : MonoBehaviour, IGrabbable
 {
     bool Grabbed = false;
     Vector3 grabPos;
-    public void GetGrabbed(Vector3 position)
+
+    public void GetDropped()
     {
-        Grabbed = !Grabbed;
-        grabPos = position;
-        this.transform.position = position;
+        Grabbed = false;
+    }
+
+    public void GetGrabbed(Transform trans)
+    {
+        Grabbed = true;
+        grabPos = trans.position;
+        this.transform.position = trans.position;
     }
 
     void Start ()
