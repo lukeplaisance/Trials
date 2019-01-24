@@ -34,14 +34,5 @@ namespace Luke
 
             controller.Move(moveDirection * Time.deltaTime * speed);
         }
-
-        public void Move(Vector3 direction)
-        {
-           
-            if (direction != Vector3.zero)
-            {
-                transform.position += direction * Time.deltaTime * speed;
-            }
-        }
     }
 }
