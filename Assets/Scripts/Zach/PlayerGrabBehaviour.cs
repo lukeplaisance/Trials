@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerGrabBehaviour : MonoBehaviour, IGrabber
 {
     public Transform grabbedObjectPos;
+    private BlockBehaviour grabit;
+    List<BlockBehaviour> allGrabbables = new List<BlockBehaviour>();
     bool ObjectGrabbed = false;
-    public GameObject block;
     IGrabber graber;
-    IGrabbable grabit;
 
     public void Grab(IGrabbable grabbable)
     {
@@ -24,20 +24,37 @@ public class PlayerGrabBehaviour : MonoBehaviour, IGrabber
     void Start ()
     {
         graber = GetComponent<IGrabber>();
-        grabit = block.GetComponent<IGrabbable>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-		if(Input.GetButtonDown("Fire1"))
-            ObjectGrabbed = !ObjectGrabbed;
-
-        if (ObjectGrabbed)
-            Grab(grabit);
-        else
+        RaycastHit hit;
+        if (Input.GetButtonDown("Fire1") && ObjectGrabbed)
+        {
             Drop(grabit);
-	}
+            grabit = null;
+            ObjectGrabbed = false;
+        }
+        else if (Physics.Raycast(transform.position, transform.forward, out hit,5))
+        {
+            if(hit.collider.gameObject.tag == "Grabbable" && Input.GetButtonDown("Fire1"))
+            {
+                if (!ObjectGrabbed)
+                {
+                    grabit = hit.collider.gameObject.GetComponent<BlockBehaviour>();
+                    Grab(grabit);
+                    ObjectGrabbed = true;
+                }
+                    
+            }
+            
+        }
+        
+    }
 
-    
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position, transform.forward * 5);
+    }
 }
