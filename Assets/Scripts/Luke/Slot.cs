@@ -10,24 +10,24 @@ public class Slot : MonoBehaviour
 
     public void Rotate_Slot()
     {
+        var a = GetComponent<Animator>();
+        a.SetBool("IsRot", true);
         StartCoroutine("Rotate");
-
         current_value++;
         if(current_value > 4)
         {
             current_value = 1;
-        }
+        }        
     }
 
     IEnumerator Rotate()
     {
-        int c = 0;
-        while(c != 50)
+        while(true)
         {
-            transform.Rotate(new Vector3(0, 90, 0) * Time.deltaTime);
-            yield return new WaitForSeconds(0.01f);
-            c++;
+            yield return new WaitForSeconds(1.0f);
+            var a = GetComponent<Animator>();
+            a.SetBool("IsRot", false);
+            break;
         }
-        yield return null;
     }
 }
