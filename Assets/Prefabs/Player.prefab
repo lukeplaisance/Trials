@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 143444868939598692}
   - component: {fileID: 114181075163125262}
   - component: {fileID: 114310810214162794}
+  - component: {fileID: 114713383133176536}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1861,7 +1862,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1036956394470436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.58, y: -1.7643762e-18, z: -0.24}
+  m_LocalPosition: {x: -0.58, y: 0, z: -0.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4425600083561428}
@@ -2247,7 +2248,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabbedObjectPos: {fileID: 4113896457983826}
-  block: {fileID: 0}
 --- !u!114 &114310810214162794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2262,6 +2262,18 @@ MonoBehaviour:
   speed: 5
   jumpSpeed: 4
   gravity: 9.81
+--- !u!114 &114713383133176536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1036956394470436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d7e089283347c4385bef6a26828dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!137 &137634279009136960
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
