@@ -6,9 +6,7 @@ public class PlayerGrabBehaviour : MonoBehaviour, IGrabber
 {
     public Transform grabbedObjectPos;
     private BlockBehaviour grabit;
-    List<BlockBehaviour> allGrabbables = new List<BlockBehaviour>();
     bool ObjectGrabbed = false;
-    IGrabber graber;
 
     public void Grab(IGrabbable grabbable)
     {
@@ -21,10 +19,6 @@ public class PlayerGrabBehaviour : MonoBehaviour, IGrabber
     }
 
     // Use this for initialization
-    void Start ()
-    {
-        graber = GetComponent<IGrabber>();
-	}
 	
 	// Update is called once per frame
 	void Update ()
@@ -55,6 +49,6 @@ public class PlayerGrabBehaviour : MonoBehaviour, IGrabber
 
     void OnDrawGizmos()
     {
-        Gizmos.DrawLine(transform.position, transform.forward * 5);
+        Gizmos.DrawRay(transform.position, transform.forward * 5);
     }
 }

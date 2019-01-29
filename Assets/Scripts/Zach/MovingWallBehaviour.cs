@@ -7,24 +7,34 @@ public class MovingWallBehaviour : MonoBehaviour
     public Vector3 Direction;
     public float Speed;
     public bool IsMoving = false;
-
-	// Use this for initialization
-	void Start ()
-    {
-		
-	}
 	
-	// Update is called once per frame
 	void Update ()
     {
         if(IsMoving)
             transform.position += Direction * Speed * Time.deltaTime;
-        RaycastHit hit;
-        if(Physics.Raycast(transform.position, transform.forward, out hit))
+        
+	}
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.tag == "Player")
         {
-            if(hit.collider.gameObject.tag == "Terrain")
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.forward * 4, out hit))
             {
+                if (hit.collider.gameObject.tag == "Terrain")
+                {
+                    Debug.Log("Player is dead.");
+                }
             }
         }
-	}
+        if (other.tag == "Terrain")
+        {
+            Direction = -Direction;
+        }
+    }
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawRay(transform.position, transform.forward*4);
+    }
 }
