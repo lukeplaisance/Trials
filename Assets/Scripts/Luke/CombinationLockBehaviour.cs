@@ -8,8 +8,9 @@ public class CombinationLockBehaviour : MonoBehaviour
     public List<Slot> Slots;
     [SerializeField]
     private bool isLocked = true;
-
     Color Default;
+
+    public GameObject door;
 
     private void Start()
     {
@@ -26,6 +27,7 @@ public class CombinationLockBehaviour : MonoBehaviour
 	void Update ()
     {
         CheckValues();
+        OpenDoor(Vector3.up);
 	}
 
     public void CheckValues()
@@ -41,5 +43,15 @@ public class CombinationLockBehaviour : MonoBehaviour
                 isLocked = true;
             }
         }        
+    }
+
+    //method to test opening a door when the lock is unlocked
+    public void OpenDoor(Vector3 direction)
+    {
+        float speed = 2;
+        if(isLocked == false)
+        {
+            door.transform.position += direction * speed * Time.deltaTime;
+        }
     }
 }
