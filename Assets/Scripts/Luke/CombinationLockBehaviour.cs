@@ -8,6 +8,7 @@ public class CombinationLockBehaviour : MonoBehaviour
     public Slot slot1;
     public Slot slot2;
     public Slot slot3;
+    [SerializeField]
     private bool isLocked = true;
 	
 	// Update is called once per frame
@@ -25,11 +26,5 @@ public class CombinationLockBehaviour : MonoBehaviour
                     if (slot3.current_value == answer[2])
                         isLocked = false;
         }
-    }
-
-    [ContextMenu("Rot")]
-    void Test()
-    {
-        slot1.Rotate_Slot();
     }
 }
