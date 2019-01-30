@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class CombinationLockBehaviour : MonoBehaviour
 {
-    private List<int> answer = new List<int> { 2, 3, 1,};
-    public Slot slot1;
-    public Slot slot2;
-    public Slot slot3;
+    private List<int> answer = new List<int> { 3, 2, 4,};
+    public List<Slot> Slots;
     [SerializeField]
     private bool isLocked = true;
+
+    Color Default;
+
+    private void Start()
+    {
+        for(var i = 0; i < Slots.Count; i++)
+        {
+            Slots[i].rend = Slots[i].GetComponent<MeshRenderer>();
+            Default = Slots[i].GetComponent<MeshRenderer>().material.color;
+        }
+    }
+
+   
 	
 	// Update is called once per frame
 	void Update ()
@@ -19,12 +30,16 @@ public class CombinationLockBehaviour : MonoBehaviour
 
     public void CheckValues()
     {
-       foreach(var value in answer)
+        isLocked = false;
+        for(int i = 0; i < Slots.Count; i++)
         {
-            if (slot1.current_value == answer[0])
-                if (slot2.current_value == answer[1])
-                    if (slot3.current_value == answer[2])
-                        isLocked = false;
-        }
+            if (Slots[i].current_value == answer[i])
+                Slots[i].rend.material.color = Color.green;
+            else
+            {
+                Slots[i].rend.material.color = Default;
+                isLocked = true;
+            }
+        }        
     }
 }

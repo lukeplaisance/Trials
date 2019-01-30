@@ -6,7 +6,8 @@ using UnityEngine;
 public class Slot : MonoBehaviour
 {
     public int current_value = 1;
-    public Transform transform;
+    [HideInInspector]
+    public MeshRenderer rend;
 
     public void Rotate_Slot()
     {

@@ -419,9 +419,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d59bb63a792eb3468ec8f63f4c119ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot1: {fileID: 1533546885}
-  slot2: {fileID: 1721374361}
-  slot3: {fileID: 251139572}
+  Slots:
+  - {fileID: 1533546885}
+  - {fileID: 1721374361}
+  - {fileID: 251139572}
+  isLocked: 1
 --- !u!1001 &2041666964
 Prefab:
   m_ObjectHideFlags: 0
