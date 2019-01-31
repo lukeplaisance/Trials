@@ -24,7 +24,7 @@ public class PlayerGrabBehaviour : MonoBehaviour, IGrabber
 	void Update ()
     {
         RaycastHit hit;
-        if (Input.GetButtonDown("Fire1") && ObjectGrabbed)
+        if (Input.GetButtonDown("Fire2") && ObjectGrabbed)
         {
             Drop(grabit);
             grabit = null;
@@ -32,7 +32,7 @@ public class PlayerGrabBehaviour : MonoBehaviour, IGrabber
         }
         else if (Physics.Raycast(transform.position, transform.forward, out hit,5))
         {
-            if(hit.collider.gameObject.tag == "Grabbable" && Input.GetButtonDown("Fire1"))
+            if(hit.collider.gameObject.tag == "Grabbable" && Input.GetButtonDown("Fire2"))
             {
                 if (!ObjectGrabbed)
                 {
