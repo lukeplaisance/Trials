@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovingWallBehaviour : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class MovingWallBehaviour : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag == "Terrain")
                 {
+                    SceneManager.LoadScene("GameOver");
                     Debug.Log("Player is dead.");
                 }
             }
