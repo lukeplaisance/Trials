@@ -52,6 +52,8 @@ public class CombinationLockBehaviour : MonoBehaviour
         if(isLocked == false)
         {
             door.transform.position += direction * speed * Time.deltaTime;
+            if (door.transform.position.y == 5)
+                speed = 0;
         }
     }
 }

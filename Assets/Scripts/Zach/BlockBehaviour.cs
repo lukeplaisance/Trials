@@ -5,18 +5,21 @@ using UnityEngine;
 public class BlockBehaviour : MonoBehaviour, IGrabbable
 {
     bool Grabbed = false;
-    Vector3 grabPos;
+    Transform grabTrans;
 
     public void GetDropped()
     {
         Grabbed = false;
+        var box = GetComponent<BoxCollider>();
+        box.enabled = true;
     }
 
     public void GetGrabbed(Transform trans)
     {
         Grabbed = true;
-        grabPos = trans.position;
-        this.transform.position = trans.position;
+        var box = GetComponent<BoxCollider>();
+        box.enabled = false;
+        grabTrans = trans;        
     }
 
     void Start ()
@@ -28,7 +31,7 @@ public class BlockBehaviour : MonoBehaviour, IGrabbable
     {
 		if(Grabbed)
         {
-            transform.position = grabPos;
+            transform.position = grabTrans.position;
         }
 	}
 }
