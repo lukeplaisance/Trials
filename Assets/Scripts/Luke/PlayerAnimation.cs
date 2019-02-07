@@ -19,10 +19,17 @@ public class PlayerAnimation : MonoBehaviour
     {
         v = Input.GetAxis("Vertical");
         h = Input.GetAxis("Horizontal");
-	}
+        var move = new Vector3(h, 0, v);
+        var speed = move.magnitude;
+        var Strafe = h;
+        animator.SetBool("IsStrafe", Strafe > 0.1 || Strafe < -0.1);
+        animator.SetBool("IsMoving", speed > 0.1 || speed < -0.1);
+        
+    }
 
     private void FixedUpdate()
     {
-        animator.SetFloat("Run", v);
+        animator.SetFloat("speed", v);
+        animator.SetFloat("Strafe", h);
     }
 }
