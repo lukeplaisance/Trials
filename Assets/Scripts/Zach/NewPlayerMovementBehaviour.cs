@@ -11,6 +11,7 @@ public class NewPlayerMovementBehaviour : MonoBehaviour
     private CharacterController controller;
     public Vector3 camRight;
     public Vector3 camForward;
+    public bool IsFrozen = false;
 
     void Start ()
     {
@@ -20,23 +21,30 @@ public class NewPlayerMovementBehaviour : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (controller.isGrounded)
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
-            camRight = Camera.main.transform.right;
-            camForward = Camera.main.transform.forward;
-            camForward *= PlayerInput.InputVector.z;
-            camRight *= PlayerInput.InputVector.x;
-
-            moveVector = (camForward + camRight);
-            var right = new Vector3(camForward.z, 0, -camForward.x);
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                controller.Move(new Vector3(0,jumpPower,0));
-            }
+            Application.Quit();
         }
-        //transform.Rotate(Vector3.up, Input.GetAxis("Mouse X") * 180 * Time.deltaTime);
-        //moveVector.y = moveVector.y - (gravity * Time.deltaTime);
-        transform.forward = new Vector3(Camera.main.transform.forward.x, transform.forward.y, Camera.main.transform.forward.z);
-        controller.SimpleMove(moveVector * speed);
+        if (!IsFrozen)
+        {
+            if (controller.isGrounded)
+            {
+                camRight = Camera.main.transform.right;
+                camForward = Camera.main.transform.forward;
+                camForward *= PlayerInput.InputVector.z;
+                camRight *= PlayerInput.InputVector.x;
+
+                moveVector = (camForward + camRight);
+                var right = new Vector3(camForward.z, 0, -camForward.x);
+                //if (Input.GetKeyDown(KeyCode.Space))
+                //{
+                //    controller.Move(new Vector3(0, jumpPower, 0));
+                //}
+            }
+            //transform.Rotate(Vector3.up, Input.GetAxis("Mouse X") * 180 * Time.deltaTime);
+            //moveVector.y = moveVector.y - (gravity * Time.deltaTime);
+            transform.forward = new Vector3(Camera.main.transform.forward.x, transform.forward.y, Camera.main.transform.forward.z);
+            controller.SimpleMove(moveVector * speed);
+        }
     }
 }
