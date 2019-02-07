@@ -22644,7 +22644,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: -0.20627008, y: 0.059602268, z: 0.012588762, w: 0.9765971}
+  m_LocalRotation: {x: -0.20627089, y: 0.05960226, z: 0.01258881, w: 0.9765969}
   m_LocalPosition: {x: -51.250908, y: 2.713169, z: 30.734415}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -72378,35 +72378,35 @@ Prefab:
       objectReference: {fileID: 614594072}
     - target: {fileID: 4739429267264862, guid: 401d56298ddace9458c4626cf640354b, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.22392957
+      value: -0.22392975
       objectReference: {fileID: 0}
     - target: {fileID: 4739429267264862, guid: 401d56298ddace9458c4626cf640354b, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.059362274
+      value: 0.05936227
       objectReference: {fileID: 0}
     - target: {fileID: 4739429267264862, guid: 401d56298ddace9458c4626cf640354b, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.013674186
+      value: 0.013674308
       objectReference: {fileID: 0}
     - target: {fileID: 4739429267264862, guid: 401d56298ddace9458c4626cf640354b, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.9726997
+      value: 0.97269964
       objectReference: {fileID: 0}
     - target: {fileID: 4379545095856862, guid: 401d56298ddace9458c4626cf640354b, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.20627092
+      value: -0.20627108
       objectReference: {fileID: 0}
     - target: {fileID: 4379545095856862, guid: 401d56298ddace9458c4626cf640354b, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.059603576
+      value: 0.059603572
       objectReference: {fileID: 0}
     - target: {fileID: 4379545095856862, guid: 401d56298ddace9458c4626cf640354b, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.012584435
+      value: 0.012584383
       objectReference: {fileID: 0}
     - target: {fileID: 4379545095856862, guid: 401d56298ddace9458c4626cf640354b, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.9765969
+      value: 0.97659683
       objectReference: {fileID: 0}
     - target: {fileID: 4260176273278412, guid: 401d56298ddace9458c4626cf640354b, type: 2}
       propertyPath: m_LocalRotation.x
@@ -78843,33 +78843,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 95954635845284078, guid: ffde968276c9c1948847d39508a34afa,
-        type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: b2b0b1cefb0dbad47ae1c5a16135b3b1, type: 2}
-    - target: {fileID: 95954635845284078, guid: ffde968276c9c1948847d39508a34afa,
-        type: 2}
-      propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed by
-        Humanoid clips.\n\tTransform 'AnimaticMale_Neck_TopSHJnt'\n\tTransform 'AnimaticMale_Neck_02SHJnt'\n\tTransform
-        'AnimaticMale_Neck_01SHJnt'\n\tTransform 'AnimaticMale_ROOTSHJnt'\n\tTransform
-        'AnimaticMale_r_Leg_AnkleSHJnt'\n\tTransform 'AnimaticMale_r_Arm_ShoulderSHJnt'\n\tTransform
-        'AnimaticMale_l_Leg_HipSHJnt'\n\tTransform 'AnimaticMale_l_Leg_AnkleSHJnt'\n\tTransform
-        'AnimaticMale_l_Leg_KneeSHJnt'\n\tTransform 'AnimaticMale_r_Leg_KneeSHJnt'\n\tand
-        more ...\n\tFrom animation clip 'Walk'"
-      objectReference: {fileID: 0}
     - target: {fileID: 114391960900974050, guid: ffde968276c9c1948847d39508a34afa,
         type: 2}
       propertyPath: cam
       value: 
       objectReference: {fileID: 534669904}
-    - target: {fileID: 143170056483868176, guid: ffde968276c9c1948847d39508a34afa,
-        type: 2}
-      propertyPath: m_Center.y
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffde968276c9c1948847d39508a34afa, type: 2}
   m_IsPrefabAsset: 0
