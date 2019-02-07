@@ -161,11 +161,20 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: "Invalid copied Avatar Rig Configuration:\n\tNo human bone found.
-      Ensure both rig type match\n"
+    rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'AnimaticMale_Spine_01SHJnt' has translation
+      animation that will be discarded.\n\t'AnimaticMale_Spine_02SHJnt' has translation
+      animation that will be discarded.\n\t'AnimaticMale_Spine_03SHJnt' has translation
+      animation that will be discarded.\n\t'AnimaticMale_Spine_04SHJnt' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'AnimaticMale_Spine_TopSHJnt'
+      has translation animation that will be discarded.\n\t'AnimaticMale_Spine_TopSHJnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'AnimaticMale_Neck_01SHJnt'
+      has translation animation that will be discarded.\n\t'AnimaticMale_Neck_02SHJnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -190,7 +199,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
