@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Luke;
 
 public class LOCKCAMERABEHAVIOUR : MonoBehaviour
 {
     public GameObject lockCam;
     public GameObject otherCam;
+    public CombinationLockBehaviour combo_lock;
 	// Use this for initialization
 	void Start ()
     {
@@ -15,7 +17,11 @@ public class LOCKCAMERABEHAVIOUR : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		
+		if(combo_lock.isLocked == false)
+        {
+            lockCam.active = false;
+            otherCam.active = true;
+        }
 	}
 
     private void OnTriggerEnter(Collider other)
