@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewNoteObject",menuName = "Zach/Note")]
+[CreateAssetMenu(menuName = "Trials/Note")]
 //Try try again
 public class NoteScriptable : ScriptableObject
 {
