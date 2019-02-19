@@ -7,11 +7,12 @@ public class LOCKCAMERABEHAVIOUR : MonoBehaviour
 {
     public GameObject lockCam;
     public GameObject otherCam;
+    public NewPlayerMovementBehaviour player;
     public CombinationLockBehaviour combo_lock;
 	// Use this for initialization
 	void Start ()
     {
-		
+        Cursor.visible = false;
 	}
 	
 	// Update is called once per frame
@@ -21,6 +22,8 @@ public class LOCKCAMERABEHAVIOUR : MonoBehaviour
         {
             lockCam.active = false;
             otherCam.active = true;
+            player.IsFrozen = false;
+            Cursor.visible = false;
         }
 	}
 
@@ -30,6 +33,8 @@ public class LOCKCAMERABEHAVIOUR : MonoBehaviour
         {
             lockCam.active = true;
             otherCam.active = false;
+            Cursor.visible = true;
+            player.IsFrozen = true;
             Cursor.visible = true;
         }
     }
