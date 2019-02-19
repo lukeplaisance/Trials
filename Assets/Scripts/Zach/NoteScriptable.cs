@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Zach
+[CreateAssetMenu(menuName = "Trials/Note")]
+//Try try again
+public class NoteScriptable : ScriptableObject
 {
-    [CreateAssetMenu(fileName = "NewNoteObject", menuName = "Zach/Note")]
-    public class NoteScriptable : ScriptableObject
-    {
-        public bool IsEnabled;
-        public string Name;
-        public string Data;
-    }
+    public bool IsEnabled;
+    public string Name;
+    public string Data;
 }
