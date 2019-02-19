@@ -9,17 +9,17 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1548265250510644}
+  m_RootGameObject: {fileID: 1495886655927624}
   m_IsPrefabAsset: 1
---- !u!1 &1548265250510644
+--- !u!1 &1495886655927624
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4951379250449964}
-  - component: {fileID: 65942860602489568}
+  - component: {fileID: 4166372794325734}
+  - component: {fileID: 65646450969916262}
   m_Layer: 0
   m_Name: StairCollider
   m_TagString: Untagged
@@ -27,25 +27,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4951379250449964
+--- !u!4 &4166372794325734
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1548265250510644}
-  m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
-  m_LocalPosition: {x: -100.38, y: -8.66, z: 218.44}
+  m_GameObject: {fileID: 1495886655927624}
+  m_LocalRotation: {x: 0.46174863, y: 0, z: 0, w: 0.8870109}
+  m_LocalPosition: {x: -129.98, y: -11.66, z: 218.95}
   m_LocalScale: {x: 3.9292765, y: 1.4053644, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
---- !u!65 &65942860602489568
+  m_LocalEulerAnglesHint: {x: 55, y: 0, z: 0}
+--- !u!65 &65646450969916262
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1548265250510644}
+  m_GameObject: {fileID: 1495886655927624}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
