@@ -2,36 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlockBehaviour : MonoBehaviour, IGrabbable
+namespace Zach
 {
-    bool Grabbed = false;
-    Transform grabTrans;
+    public class BlockBehaviour : MonoBehaviour, IGrabbable
+    {
+        private bool _grabbed = false;
+        Transform _grabTrans;
 
-    public void GetDropped()
-    {
-        Grabbed = false;
-        var box = GetComponent<BoxCollider>();
-        box.enabled = true;
-    }
-
-    public void GetGrabbed(Transform trans)
-    {
-        Grabbed = true;
-        var box = GetComponent<BoxCollider>();
-        box.enabled = false;
-        grabTrans = trans;        
-    }
-
-    void Start ()
-    {
-		
-	}
-	
-	void Update ()
-    {
-		if(Grabbed)
+        public void GetDropped()
         {
-            transform.position = grabTrans.position;
+            _grabbed = false;
+            var box = GetComponent<BoxCollider>();
+            box.enabled = true;
         }
-	}
+
+        public void GetGrabbed(Transform trans)
+        {
+            _grabbed = true;
+            var box = GetComponent<BoxCollider>();
+            box.enabled = false;
+            _grabTrans = trans;
+        }
+
+        private void Start()
+        {
+
+        }
+
+        private void Update()
+        {
+            if (_grabbed)
+            {
+                transform.position = _grabTrans.position;
+            }
+        }
+    }
 }
