@@ -1,55 +1,68 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Zach
 {
     public class NewPlayerMovementBehaviour : MonoBehaviour
     {
-        private Vector3 moveVector;
+        private Vector3 _moveVector;
         public float speed = 5;
         public float jumpPower = 4;
         public float gravity = 9.81f;
-        private CharacterController controller;
+        private CharacterController _controller;
         public Vector3 camRight;
         public Vector3 camForward;
-        public bool IsFrozen = false;
+        public bool isFrozen = false;
 
-        void Start()
+        private void Start()
         {
-            controller = GetComponent<CharacterController>();
+            _controller = GetComponent<CharacterController>();
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 Application.Quit();
             }
 
-            if (!IsFrozen)
+            if (!isFrozen)
             {
-                if (controller.isGrounded)
+                if (_controller.isGrounded)
                 {
-                    camRight = Camera.main.transform.right;
-                    camForward = Camera.main.transform.forward;
+                    if (Camera.main != null)
+                    {
+                        var transform3 = Camera.main.transform;
+                        camRight = transform3.right;
+                        camForward = transform3.forward;
+                    }
+
                     camForward *= PlayerInput.InputVector.z;
                     camRight *= PlayerInput.InputVector.x;
 
-                    moveVector = (camForward + camRight);
+                    _moveVector = (camForward + camRight);
                     var right = new Vector3(camForward.z, 0, -camForward.x);
-                    //if (Input.GetKeyDown(KeyCode.Space))
-                    //{
-                    //    controller.Move(new Vector3(0, jumpPower, 0));
-                    //}
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        _controller.Move(new Vector3(0, jumpPower, 0));
+                    }
                 }
 
-                //transform.Rotate(Vector3.up, Input.GetAxis("Mouse X") * 180 * Time.deltaTime);
-                //moveVector.y = moveVector.y - (gravity * Time.deltaTime);
-                transform.forward = new Vector3(Camera.main.transform.forward.x, transform.forward.y,
-                    Camera.main.transform.forward.z);
-                controller.SimpleMove(moveVector * speed);
+                transform.Rotate(Vector3.up, Input.GetAxis("Mouse X") * 180 * Time.deltaTime);
+                _moveVector.y = _moveVector.y - (gravity * Time.deltaTime);
+                var transform1 = transform;
+                if (Camera.main != null)
+                {
+                    var transform2 = Camera.main.transform;
+                    var forward = transform2.forward;
+                    transform1.forward = new Vector3(forward.x, transform1.forward.y,
+                        forward.z);
+                }
+
+                _controller.SimpleMove(_moveVector * speed);
             }
         }
     }

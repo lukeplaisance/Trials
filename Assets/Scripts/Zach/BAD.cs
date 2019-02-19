@@ -24,10 +24,10 @@ namespace Zach
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Player")
+            if (other.CompareTag("Player"))
             {
-                wall1._isMoving = true;
-                wall2._isMoving = true;
+                wall1.isMoving = true;
+                wall2.isMoving = true;
             }
         }
     }

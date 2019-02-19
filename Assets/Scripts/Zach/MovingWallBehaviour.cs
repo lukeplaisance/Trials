@@ -6,8 +6,9 @@ namespace Zach
 {
     public class MovingWallBehaviour : MonoBehaviour
     {
+        public bool isMoving;
+
         [SerializeField] private Vector3 direction;
-        [SerializeField] private bool isMoving;
         [SerializeField] private Vector3 raycastOffset;
         [SerializeField] private float speed;
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Luke;
+using UnityEngine.Serialization;
 
 namespace Zach
 {
@@ -11,34 +12,34 @@ namespace Zach
         public GameObject otherCam;
         public NewPlayerMovementBehaviour player;
 
-        public CombinationLockBehaviour combo_lock;
+        public CombinationLockBehaviour comboLock;
 
         // Use this for initialization
-        void Start()
+        private void Start()
         {
             Cursor.visible = false;
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
-            if (combo_lock.isLocked == false)
+            if (comboLock.isLocked == false)
             {
-                lockCam.active = false;
-                otherCam.active = true;
-                player.IsFrozen = false;
+                lockCam.SetActive(false);
+                otherCam.SetActive(true);
+                player.isFrozen = false;
                 Cursor.visible = false;
             }
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Player")
+            if (other.CompareTag("Player"))
             {
-                lockCam.active = true;
-                otherCam.active = false;
+                lockCam.SetActive(true);
+                otherCam.SetActive(false);
                 Cursor.visible = true;
-                player.IsFrozen = true;
+                player.isFrozen = true;
                 Cursor.visible = true;
             }
         }
