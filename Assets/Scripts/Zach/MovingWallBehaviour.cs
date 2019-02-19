@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MovingWallBehaviour : MonoBehaviour
 {
     public Vector3 Direction;
+    public Vector3 RaycastOffset;
     public float Speed;
     public bool IsMoving = false;
 	
@@ -16,12 +17,12 @@ public class MovingWallBehaviour : MonoBehaviour
         
 	}
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward * 4, out hit))
+            if (Physics.Raycast(transform.position + RaycastOffset, Direction * 4, out hit))
             {
                 if (hit.collider.gameObject.tag == "Terrain")
                 {
@@ -32,11 +33,11 @@ public class MovingWallBehaviour : MonoBehaviour
         }
         if (other.tag == "Terrain")
         {
-            Direction = -Direction;
+            IsMoving = false;
         }
     }
     void OnDrawGizmos()
     {
-        Gizmos.DrawRay(transform.position, transform.forward*4);
+        Gizmos.DrawRay(transform.position + RaycastOffset, Direction*4);
     }
 }

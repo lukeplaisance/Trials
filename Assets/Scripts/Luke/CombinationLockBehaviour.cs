@@ -7,7 +7,7 @@ public class CombinationLockBehaviour : MonoBehaviour
     private List<int> answer = new List<int> { 3, 2, 4,};
     public List<Slot> Slots;
     [SerializeField]
-    private bool isLocked = true;
+    public bool isLocked = true;
     Color Default;
 
     public GameObject door;
