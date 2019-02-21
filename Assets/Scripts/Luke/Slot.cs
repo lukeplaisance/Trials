@@ -2,33 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Slot : MonoBehaviour
+namespace Luke
 {
-    public int current_value = 1;
-    [HideInInspector]
-    public MeshRenderer rend;
-
-    public void Rotate_Slot()
+    [System.Serializable]
+    public class Slot : MonoBehaviour
     {
-        var a = GetComponent<Animator>();
-        a.SetBool("IsRot", true);
-        StartCoroutine("Rotate");
-        current_value++;
-        if(current_value > 4)
-        {
-            current_value = 1;
-        }        
-    }
+        public int current_value = 1;
+        [HideInInspector] public MeshRenderer rend;
 
-    IEnumerator Rotate()
-    {
-        while(true)
+        public void Rotate_Slot()
         {
-            yield return new WaitForSeconds(1.0f);
             var a = GetComponent<Animator>();
-            a.SetBool("IsRot", false);
-            break;
+            a.SetBool("IsRot", true);
+            StartCoroutine("Rotate");
+            current_value++;
+            if (current_value > 4)
+            {
+                current_value = 1;
+            }
+        }
+
+        IEnumerator Rotate()
+        {
+            while (true)
+            {
+                yield return new WaitForSeconds(1.0f);
+                var a = GetComponent<Animator>();
+                a.SetBool("IsRot", false);
+                break;
+            }
         }
     }
 }
