@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IGrabbable
+namespace Zach
 {
-    void GetGrabbed(Transform trans);
-    void GetDropped();
+    public interface IGrabbable
+    {
+        void GetGrabbed(Transform trans);
+        void GetDropped();
+    }
 }

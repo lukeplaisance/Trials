@@ -2,25 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BAD : MonoBehaviour
+namespace Zach
 {
-    public MovingWallBehaviour wall1;
-    public MovingWallBehaviour wall2;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-    private void OnTriggerEnter(Collider other)
+    public class BAD : MonoBehaviour
     {
-        if (other.tag == "Player")
+        public MovingWallBehaviour wall1;
+
+        public MovingWallBehaviour wall2;
+
+        // Use this for initialization
+        void Start()
         {
-            wall1.IsMoving = true;
-            wall2.IsMoving = true;
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                wall1.isMoving = true;
+                wall2.isMoving = true;
+            }
         }
     }
 }

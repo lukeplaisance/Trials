@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-[CreateAssetMenu(menuName = "Trials/Note")]
-//Try try again
-public class NoteScriptable : ScriptableObject
+namespace Zach
 {
-    public bool IsEnabled;
-    public string Name;
-    public string Data;
+    [CreateAssetMenu(menuName = "Trials/Note")]
+    //Try try again
+    public class NoteScriptable : ScriptableObject
+    {
+        public bool isEnabled;
+        public string noteName;
+        public string data;
+    }
+
 }
