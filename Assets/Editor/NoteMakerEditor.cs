@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEditor;
+using Zach;
 
 namespace Luke
 {
@@ -41,8 +42,8 @@ namespace Luke
             if (GUILayout.Button("Create Note"))
             {
                 var note = CreateInstance(typeof(NoteScriptable)) as NoteScriptable;
-                note.Name = Title;
-                note.Data = Content;
+                note.noteName = Title;
+                note.data = Content;
 
                 AssetDatabase.CreateAsset(note, string.Format("Assets/Resources/Notes/{0}.asset", Title));
             }
