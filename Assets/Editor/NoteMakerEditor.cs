@@ -30,7 +30,7 @@ namespace Luke
             GUILayout.BeginVertical();
 
             EditorGUILayout.LabelField("Title");
-           Title = EditorGUILayout.TextArea(Title, GUILayout.Height(20), GUILayout.Width(250));
+            Title = EditorGUILayout.TextArea(Title, GUILayout.Height(20), GUILayout.Width(250));
             EditorGUILayout.Space();
             
             EditorGUILayout.LabelField("Content");
