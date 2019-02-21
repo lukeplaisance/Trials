@@ -1,43 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
-public class MovingWallBehaviour : MonoBehaviour
+namespace Zach
 {
-    public Vector3 Direction;
-    public Vector3 RaycastOffset;
-    public float Speed;
-    public bool IsMoving = false;
-	
-	void Update ()
+    public class MovingWallBehaviour : MonoBehaviour
     {
-        if(IsMoving)
-            transform.position += Direction * Speed * Time.deltaTime;
-        
-	}
+        public bool isMoving;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Player")
+        [SerializeField] private Vector3 direction;
+        [SerializeField] private Vector3 raycastOffset;
+        [SerializeField] private float speed;
+
+        private void Update()
         {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position + RaycastOffset, Direction * 4, out hit))
+            if (isMoving)
+                transform.position += direction * speed * Time.deltaTime;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Player"))
             {
-                if (hit.collider.gameObject.tag == "Terrain")
-                {
-                    SceneManager.LoadScene("GameOver");
-                    Debug.Log("Player is dead.");
-                }
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position + raycastOffset, direction * 4, out hit))
+                    if (hit.collider.gameObject.CompareTag("Terrain"))
+                    {
+                        SceneManager.LoadScene("GameOver");
+                        Debug.Log("Player is dead.");
+                    }
             }
+
+            if (other.CompareTag("Terrain")) isMoving = false;
         }
-        if (other.tag == "Terrain")
+
+        private void OnDrawGizmos()
         {
-            IsMoving = false;
+            Gizmos.DrawRay(transform.position + raycastOffset, direction * 4);
         }
-    }
-    void OnDrawGizmos()
-    {
-        Gizmos.DrawRay(transform.position + RaycastOffset, Direction*4);
     }
 }
