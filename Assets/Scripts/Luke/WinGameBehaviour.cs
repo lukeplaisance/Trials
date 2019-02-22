@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WinGameBehaviour : MonoBehaviour
+namespace Luke
 {
-    private void OnTriggerEnter(Collider other)
+    public class WinGameBehaviour : MonoBehaviour
     {
-        if(other.tag == "Player")
+        private void OnTriggerEnter(Collider other)
         {
-            SceneManager.LoadScene("YouWin");
+            if (other.tag == "Player")
+            {
+                SceneManager.LoadScene("YouWin");
+            }
         }
     }
 }
