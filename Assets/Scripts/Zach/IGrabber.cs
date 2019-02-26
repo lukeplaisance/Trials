@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IGrabber
+namespace Zach
 {
-    void Grab(IGrabbable grabbable);
-    void Drop(IGrabbable grabbable);
+    public interface IGrabber
+    {
+        void Grab(IGrabbable grabbable);
+        void Drop(IGrabbable grabbable);
+    }
 }

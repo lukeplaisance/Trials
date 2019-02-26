@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class PlayerInput
+namespace Zach
 {
-    public static Vector3 InputVector
+    public static class PlayerInput
     {
-        get
+        public static Vector3 InputVector
         {
-            var h = Input.GetAxis("Horizontal");
-            var v = Input.GetAxis("Vertical");
-            return new Vector3(h, 0, v);
+            get
+            {
+                var h = Input.GetAxis("Horizontal");
+                var v = Input.GetAxis("Vertical");
+                return new Vector3(h, 0, v);
+            }
         }
     }
 }

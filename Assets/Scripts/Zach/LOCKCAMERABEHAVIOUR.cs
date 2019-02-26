@@ -2,40 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Luke;
+using UnityEngine.Serialization;
 
-public class LOCKCAMERABEHAVIOUR : MonoBehaviour
+namespace Zach
 {
-    public GameObject lockCam;
-    public GameObject otherCam;
-    public NewPlayerMovementBehaviour player;
-    public CombinationLockBehaviour combo_lock;
-	// Use this for initialization
-	void Start ()
+    public class LOCKCAMERABEHAVIOUR : MonoBehaviour
     {
-        Cursor.visible = false;
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		if(combo_lock.isLocked == false)
+        public GameObject lockCam;
+        public GameObject otherCam;
+        public NewPlayerMovementBehaviour player;
+
+        public CombinationLockBehaviour comboLock;
+
+        // Use this for initialization
+        private void Start()
         {
-            lockCam.active = false;
-            otherCam.active = true;
-            player.IsFrozen = false;
             Cursor.visible = false;
         }
-	}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Player")
+        // Update is called once per frame
+        private void Update()
         {
-            lockCam.active = true;
-            otherCam.active = false;
-            Cursor.visible = true;
-            player.IsFrozen = true;
-            Cursor.visible = true;
+            if (comboLock.isLocked == false)
+            {
+                lockCam.SetActive(false);
+                otherCam.SetActive(true);
+                player.isFrozen = false;
+                Cursor.visible = false;
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                lockCam.SetActive(true);
+                otherCam.SetActive(false);
+                Cursor.visible = true;
+                player.isFrozen = true;
+                Cursor.visible = true;
+            }
         }
     }
 }

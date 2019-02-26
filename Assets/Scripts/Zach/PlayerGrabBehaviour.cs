@@ -2,53 +2,54 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerGrabBehaviour : MonoBehaviour, IGrabber
+namespace Zach
 {
-    public Transform grabbedObjectPos;
-    private BlockBehaviour grabit;
-    bool ObjectGrabbed = false;
-
-    public void Grab(IGrabbable grabbable)
+    public class PlayerGrabBehaviour : MonoBehaviour, IGrabber
     {
-        grabbable.GetGrabbed(grabbedObjectPos);
-    }
+        public Transform grabbedObjectPos;
+        private BlockBehaviour _grabit;
+        private bool _objectGrabbed = false;
 
-    public void Drop(IGrabbable grabbable)
-    {
-        grabbable.GetDropped();
-    }
-
-    // Use this for initialization
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        RaycastHit hit;
-        if (Input.GetButtonDown("Fire2") && ObjectGrabbed)
+        public void Grab(IGrabbable grabbable)
         {
-            Drop(grabit);
-            grabit = null;
-            ObjectGrabbed = false;
+            grabbable.GetGrabbed(grabbedObjectPos);
         }
-        else if (Physics.Raycast(transform.position, transform.forward, out hit,5))
+
+        public void Drop(IGrabbable grabbable)
         {
-            if(hit.collider.gameObject.tag == "Grabbable" && Input.GetButtonDown("Fire2"))
+            grabbable.GetDropped();
+        }
+
+        private void Update()
+        {
+            RaycastHit hit;
+            if (Input.GetButtonDown("Fire2") && _objectGrabbed)
             {
-                if (!ObjectGrabbed)
-                {
-                    grabit = hit.collider.gameObject.GetComponent<BlockBehaviour>();
-                    Grab(grabit);
-                    ObjectGrabbed = true;
-                }
-                    
+                Drop(_grabit);
+                _grabit = null;
+                _objectGrabbed = false;
             }
-            
-        }
-        
-    }
+            else if (Physics.Raycast(transform.position, transform.forward, out hit, 5))
+            {
+                if (hit.collider.gameObject.CompareTag("Grabbable") && Input.GetButtonDown("Fire2"))
+                {
+                    if (!_objectGrabbed)
+                    {
+                        _grabit = hit.collider.gameObject.GetComponent<BlockBehaviour>();
+                        Grab(_grabit);
+                        _objectGrabbed = true;
+                    }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.DrawRay(transform.position, transform.forward * 5);
+                }
+
+            }
+
+        }
+
+        private void OnDrawGizmos()
+        {
+            var transform1 = transform;
+            Gizmos.DrawRay(transform1.position, transform1.forward * 5);
+        }
     }
 }
