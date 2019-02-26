@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Zach
 {
+    [CreateAssetMenu]
     public class NotebookScriptable : ScriptableObject
     {
         public List<NoteScriptable> notes;
