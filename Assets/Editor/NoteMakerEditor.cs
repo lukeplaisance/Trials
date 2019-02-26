@@ -41,11 +41,12 @@ namespace Luke
 
             if (GUILayout.Button("Create Note"))
             {
-                var note = CreateInstance(typeof(NoteScriptable)) as NoteScriptable;
-                note.noteName = Title;
-                note.data = Content;
-
-                AssetDatabase.CreateAsset(note, string.Format("Assets/Resources/Notes/{0}.asset", Title));
+                var path = string.Format("Assets/Resources/NewNotebook.asset");
+                var notebook = AssetDatabase.LoadAssetAtPath<NotebookScriptable>(path);
+                var noteC = NoteScriptable.Create("NoteC");
+                noteC.noteName = Title;
+                noteC.data = Content;
+                notebook.AddNote(noteC);
             }
             GUILayout.EndVertical();
         }
