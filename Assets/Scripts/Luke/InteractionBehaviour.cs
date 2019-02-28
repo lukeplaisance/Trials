@@ -8,15 +8,19 @@ namespace Luke
 {
     public class InteractionBehaviour : MonoBehaviour, IInteractable
     {
+        public UnityEvent _response;
+        private IInteractor _Interactor;
+
         public IInteractor Interactor
         {
-            get { return Interactor;}
-            set { Interactor = value;}
+            get { return _Interactor;}
+            set { _Interactor = value;}
         }
+     
         public UnityEvent Response
         {
-            get { return Response; }
-            set { Response = value;}
+            get { return _response; }
+            set { _response = value;}
         }
 
         public void Interact(Object obj)
