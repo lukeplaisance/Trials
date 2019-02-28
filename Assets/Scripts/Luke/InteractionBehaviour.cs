@@ -8,8 +8,16 @@ namespace Luke
 {
     public class InteractionBehaviour : MonoBehaviour, IInteractable
     {
-        public IInteractor Interactor { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        public UnityEvent Response { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        public IInteractor Interactor
+        {
+            get { return Interactor;}
+            set { Interactor = value;}
+        }
+        public UnityEvent Response
+        {
+            get { return Response; }
+            set { Response = value;}
+        }
 
         public void Interact(Object obj)
         {
