@@ -3,30 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class SlotButtonBehaviour : MonoBehaviour
+namespace Luke
 {
-    public GameObject slotButton;
-    public UnityEvent OnClick = new UnityEvent();
-
-	// Use this for initialization
-	void Start ()
+    public class SlotButtonBehaviour : MonoBehaviour
     {
-        slotButton = gameObject;
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
+        public GameObject slotButton;
+        public UnityEvent OnClick = new UnityEvent();
 
-        if(Input.GetMouseButtonDown(0))
+        // Use this for initialization
+        void Start()
         {
-            if(Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject)
+            slotButton = gameObject;
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("Button Clicked");
-                OnClick.Invoke();
+                if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject)
+                {
+                    Debug.Log("Button Clicked");
+                    OnClick.Invoke();
+                }
             }
         }
-	}
+    }
 }

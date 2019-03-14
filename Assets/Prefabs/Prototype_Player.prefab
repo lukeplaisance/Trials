@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 143055941086591566}
   - component: {fileID: 114325124272316178}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Prototype_Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2264,6 +2264,7 @@ MonoBehaviour:
   gravity: 9.81
   camRight: {x: 0, y: 0, z: 0}
   camForward: {x: 0, y: 0, z: 0}
+  IsFrozen: 0
 --- !u!114 &114917820650132742
 MonoBehaviour:
   m_ObjectHideFlags: 1
