@@ -7,13 +7,12 @@ namespace Zach
 {
     public class PlayerInteractBehaviour : InteractorBehaviour
     {
-        public GameEvent interactStart;
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && currentInteraction != null)
             {
-                interactStart.Raise();
+                currentInteraction.Interact(this);
             }
         }
     }
