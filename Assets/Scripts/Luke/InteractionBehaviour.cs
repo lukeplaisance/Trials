@@ -11,12 +11,21 @@ namespace Luke
 {
     public class InteractionBehaviour : MonoBehaviour, IInteractable
     {
-        public UnityEvent _response;
-
         [TagField]
         public string TriggerTag;
         [TextArea]
         public string readme;
+
+        public List<UnityEvent> thing;
+        public UnityEvent _response;
+        public UnityEvent InteractStopResponse;
+
+        public InteractionResponseObject InteractionResponse;
+        [SerializeField]
+        public UnityEvent OnTriggerEnterResponse;
+        [SerializeField]
+        public UnityEvent OnTriggerExitResponse;
+
         private IInteractor _Interactor;
 
         public IInteractor Interactor
@@ -36,8 +45,14 @@ namespace Luke
             if (Interactor == null) return;
             if (obj != Interactor) return;
             Response.Invoke();
+            InteractionResponse.StartResponse();
         }
 
+        public void StopInteraction()
+        {
+            InteractStopResponse.Invoke();
+            InteractionResponse.StopResponse();
+        }
         /// <summary>
         /// comment this
         /// </summary>
@@ -49,14 +64,7 @@ namespace Luke
             if (Interactor == null) return;
             Interactor.SetInteraction(this);
             OnTriggerEnterResponse.Invoke();
-
         }
-
-        [SerializeField]
-        public UnityEvent OnTriggerEnterResponse;
-
-        [SerializeField]
-        public UnityEvent OnTriggerExitResponse;
 
         public void OnTriggerExit(Collider other)
         {
