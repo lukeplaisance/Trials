@@ -16,11 +16,10 @@ namespace Luke
         [TextArea]
         public string readme;
 
-        public List<UnityEvent> thing;
+        //public List<UnityEvent> thing;
         public UnityEvent _response;
         public UnityEvent InteractStopResponse;
 
-        public InteractionResponseObject InteractionResponse;
         [SerializeField]
         public UnityEvent OnTriggerEnterResponse;
         [SerializeField]
@@ -45,13 +44,11 @@ namespace Luke
             if (Interactor == null) return;
             if (obj != Interactor) return;
             Response.Invoke();
-            InteractionResponse.StartResponse();
         }
 
         public void StopInteraction()
         {
             InteractStopResponse.Invoke();
-            InteractionResponse.StopResponse();
         }
         /// <summary>
         /// comment this
