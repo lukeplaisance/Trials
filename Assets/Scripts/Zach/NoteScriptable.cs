@@ -9,7 +9,8 @@ namespace Zach
 {
     public class NoteScriptable : ScriptableObject
     {
-        public bool isEnabled;
+        [SerializeField]
+        private bool isEnabled;
         public string noteName;
         public string data;
 
@@ -18,6 +19,15 @@ namespace Zach
             var note = CreateInstance<NoteScriptable>();
             var path = string.Format("Assets/Resources/{0}.asset", name);
             return note;
+        }
+
+        public bool GetIsEnabled()
+        {
+            return isEnabled;
+        }
+        public void SetIsEnabled(bool enabled)
+        {
+            isEnabled = enabled;
         }
     }
 
