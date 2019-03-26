@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 136996284964091512}
   - component: {fileID: 114017127594207938}
   - component: {fileID: 143400501122541614}
+  - component: {fileID: 114696764468747790}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -234,7 +235,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1425885480547038}
-  m_LocalRotation: {x: 0.1087041, y: -0.09696698, z: 0.010655501, w: 0.98927623}
+  m_LocalRotation: {x: 0.108703904, y: -0.096967, z: 0.01065548, w: 0.98927623}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -291,7 +292,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1533628202790362}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.97085476, y: 2.5, z: -4.9048386}
+  m_LocalPosition: {x: 0.97085714, y: 2.4999998, z: -4.904838}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4669698005101056}
@@ -332,8 +333,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1006775819525274}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.45, y: 0.5, z: -6.29}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.45, y: -0.031, z: -6.2899995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4126654562162444}
@@ -347,7 +348,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1618997096156300}
-  m_LocalRotation: {x: 0.14452049, y: -0.0965167, z: 0.014165614, w: 0.98468155}
+  m_LocalRotation: {x: 0.14452054, y: -0.09651671, z: 0.0141656175, w: 0.98468155}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -401,7 +402,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1727965273071678}
-  m_LocalRotation: {x: 0.12660961, y: -0.09675779, z: 0.012409124, w: 0.9871444}
+  m_LocalRotation: {x: 0.12660918, y: -0.09675783, z: 0.012409049, w: 0.9871444}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -813,6 +814,18 @@ MonoBehaviour:
     FarClipPlane: 5000
     Dutch: 0
   m_ComponentOwner: {fileID: 4104157164608004}
+--- !u!114 &114696764468747790
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006775819525274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcab24c845306ce49a7aa27c844d6b48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractionState: 
 --- !u!114 &114764279517516336
 MonoBehaviour:
   m_ObjectHideFlags: 1

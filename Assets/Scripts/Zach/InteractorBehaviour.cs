@@ -10,12 +10,18 @@ namespace Zach
         public IInteractable currentInteraction;
         public void ReleaseInteraction(IInteractable interactable)
         {
-            currentInteraction = null;
+            if (currentInteraction == interactable)
+                currentInteraction = null;
+            else
+                Debug.LogWarning("Something tried to release an interaction that it wasn't involved in.");
         }
 
         public void SetInteraction(IInteractable interactable)
         {
-            currentInteraction = interactable;
+            if (currentInteraction == null)
+                currentInteraction = interactable;
+            else
+                Debug.LogWarning("Interactor already in an interaction.");
         }
     }
 }
