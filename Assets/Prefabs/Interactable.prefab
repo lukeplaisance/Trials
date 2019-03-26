@@ -152,6 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb12255610206f43980c7a0798af2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TriggerTag: Player
+  readme: 
   _response:
     m_PersistentCalls:
       m_Calls:
@@ -179,8 +181,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  TriggerTag: Player
-  readme: 
+  InteractStopResponse:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnTriggerEnterResponse:
     m_PersistentCalls:
       m_Calls:

@@ -17,7 +17,7 @@ namespace Luke
         public string readme;
 
         //public List<UnityEvent> thing;
-        public UnityEvent _response;
+        public UnityEvent OnInteractionResponse;
         public UnityEvent InteractStopResponse;
 
         [SerializeField]
@@ -35,8 +35,8 @@ namespace Luke
 
         public UnityEvent Response
         {
-            get { return _response; }
-            set { _response = value; }
+            get { return OnInteractionResponse; }
+            set { OnInteractionResponse = value; }
         }
 
         public void Interact(Object obj)

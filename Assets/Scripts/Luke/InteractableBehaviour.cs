@@ -15,7 +15,7 @@ namespace Luke
         // Use this for initialization
         void Start()
         {
-            response = _response;
+            response = OnInteractionResponse;
         }
 
         // Update is called once per frame
