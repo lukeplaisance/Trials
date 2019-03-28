@@ -15,16 +15,21 @@ public class PushPullBehaviour : MonoBehaviour
 	void Update ()
     {
         var v = Input.GetAxis("Vertical");
-        if (player.transform.position.x == front_col.transform.position.x || 
-            player.transform.position.x == back_col.transform.position.x)
+        if (player.transform.position.x == front_col.transform.position.x)
         {
-            Move(new Vector3(0,0,v));
+            Move(new Vector3(0,0,-v));
         }
-
-        if (player.transform.position.x == left_col.transform.position.x ||
-            player.transform.position.x == right_col.transform.position.x)
+        if (player.transform.position.x == back_col.transform.position.x)
+        {
+            Move(new Vector3(0, 0, v));
+        }
+        if (player.transform.position.x == left_col.transform.position.x)
         {
             Move(new Vector3(v,0,0));
+        }
+        if (player.transform.position.x == right_col.transform.position.x)
+        {
+            Move(new Vector3(-v, 0, 0));
         }
     }
 
