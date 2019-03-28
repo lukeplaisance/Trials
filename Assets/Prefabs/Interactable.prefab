@@ -24,7 +24,7 @@ GameObject:
   m_Layer: 0
   m_Name: Interactable
   m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -152,6 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb12255610206f43980c7a0798af2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TriggerTag: Player
+  readme: 
   _response:
     m_PersistentCalls:
       m_Calls:
@@ -179,8 +181,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  TriggerTag: Player
-  readme: 
+  InteractStopResponse:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnTriggerEnterResponse:
     m_PersistentCalls:
       m_Calls:
@@ -260,7 +265,7 @@ RectTransform:
   m_GameObject: {fileID: 1184396518976194}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.13174537, y: 0.13174537, z: 0.13174537}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224545952013477504}
   m_Father: {fileID: 4188758448780626}
@@ -269,7 +274,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.17, y: 0}
-  m_SizeDelta: {x: 28.63, y: 17.14}
+  m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224545952013477504
 RectTransform:

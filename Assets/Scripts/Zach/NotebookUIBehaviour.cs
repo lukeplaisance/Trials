@@ -2,48 +2,62 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Zach;
 
-public class NotebookUIBehaviour : MonoBehaviour
+namespace Zach
 {
-    public GameObject notePopUp;
-    public NotebookScriptable nb;
+    public class NotebookUIBehaviour : MonoBehaviour
+    {
+        public GameObject notePopUp;
+        public NotebookScriptable nb;
+        public float BaseOffsetY;
+        private float baseYCopy;
+        public float OffsetDistanceY;
+        public float YPosLimit;
 
-    public GameObject noteUI;
-	// Use this for initialization
-	void Start ()
-    {
-        
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
+        public GameObject noteUI;
 
-    public void CreateButtons()
-    {
-        var journalUI = this.transform.GetChild(0);
-        float yOffset = 30;
-        foreach (var note in nb.notes)
+        // Use this for initialization
+        void Start()
         {
-            var noteUIObject = Instantiate(noteUI,journalUI);
-            var uiButton = noteUIObject.GetComponent<Button>();
-            var nUIB = noteUIObject.GetComponent<NoteUIBehaviour>();
-            nUIB.note = note;
-            nUIB.NotePopUp = notePopUp;
-            noteUIObject.transform.position -= new Vector3(0, yOffset, 0);
-            yOffset += 30;
+            baseYCopy = BaseOffsetY;
         }
-    }
 
-    public void DestroyNoteUI()
-    {
-        var notes = FindObjectsOfType<NoteUIBehaviour>();
-        foreach (var note in notes)
+        // Update is called once per frame
+        void Update()
         {
-            Destroy(note.gameObject);
+
+        }
+
+        public void CreateButtons()
+        {
+            var journalUI = this.transform.GetChild(0);
+            float XOffset = 0;
+            foreach (var note in nb.notes)
+            {
+                if (-BaseOffsetY < YPosLimit)
+                {
+                    XOffset += 175;
+                    BaseOffsetY = baseYCopy;
+                }
+
+                var noteUIObject = Instantiate(noteUI, journalUI);
+                var uiButton = noteUIObject.GetComponent<Button>();
+                var nUIB = noteUIObject.GetComponent<NoteUIBehaviour>();
+                nUIB.note = note;
+                nUIB.NotePopUp = notePopUp;
+                noteUIObject.transform.position += new Vector3(XOffset, -BaseOffsetY, 0);
+                BaseOffsetY += OffsetDistanceY;
+            }
+        }
+
+        public void DestroyNoteUI()
+        {
+            BaseOffsetY = baseYCopy;
+            var notes = FindObjectsOfType<NoteUIBehaviour>();
+            foreach (var note in notes)
+            {
+                Destroy(note.gameObject);
+            }
         }
     }
 }
