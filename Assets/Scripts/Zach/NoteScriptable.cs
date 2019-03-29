@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 using UnityEngine.XR.WSA.Persistence;
 
 namespace Zach
@@ -28,6 +29,11 @@ namespace Zach
         public void SetIsEnabled(bool enabled)
         {
             isEnabled = enabled;
+        }
+
+        public void SetText(Text textui)
+        {
+            textui.text = data;
         }
     }
 
