@@ -10,14 +10,13 @@ namespace Zach
         // Use this for initialization
         private void Start()
         {
-
-        }
-
-        // Update is called once per frame
-        private void Update()
-        {
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = false;
+        }
+
+        public void ShowCursor(bool visible)
+        {
+            Cursor.visible = visible;
         }
     }
 }
