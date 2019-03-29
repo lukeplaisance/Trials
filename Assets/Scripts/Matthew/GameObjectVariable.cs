@@ -8,21 +8,21 @@ namespace Matthew
     {
         public string nameOfReference;
 
-        [NonSerialized] public GameObject ReferenceGameObject; //set this in inspector
+        [NonSerialized] private GameObject _referenceGameObject; //set this in inspector//worst comment ever this is a lie
 
         public GameObject Value
         {
-            get { return ReferenceGameObject; }
+            get { return _referenceGameObject; }
             set
             {
-                ReferenceGameObject = value;
-                nameOfReference = ReferenceGameObject.name;
+                _referenceGameObject = value;
+                nameOfReference = _referenceGameObject.name;
             }
         }
 
         public void SetActive(bool flag)
         {
-            ReferenceGameObject.SetActive(flag);
+            _referenceGameObject.SetActive(flag);
         }
     }
 }
