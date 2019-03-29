@@ -4,6 +4,7 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using Zach;
+using Matthew;
 
 
 namespace Luke
@@ -12,13 +13,13 @@ namespace Luke
     {
         private bool is_grabbed = false;
         private Transform grabbed_trans;
-        public GameObject player;
+        public GameObjectVariable player;
 
         void Update()
         {
             if (is_grabbed)
             {
-                player.transform.position = grabbed_trans.position;
+                player.ReferenceGameObject.transform.position = grabbed_trans.position;
             }
         }
 
