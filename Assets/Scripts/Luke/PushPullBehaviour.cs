@@ -10,30 +10,35 @@ namespace Luke
     {
         public float speed;
         public GameObjectVariable player;
-        public GameObject front_col;
-        public GameObject back_col;
-        public GameObject left_col;
-        public GameObject right_col;
+        public GrabMoveableBlockBehaviour front_col;
+        public GrabMoveableBlockBehaviour back_col;
+        public GrabMoveableBlockBehaviour left_col;
+        public GrabMoveableBlockBehaviour right_col; 
+
+        public void Start()
+        {
+          
+        }
 
         void Update()
         {
             var v = Input.GetAxis("Vertical");
-            if (player.ReferenceGameObject.transform.position.x == front_col.transform.position.x)
+            if (front_col.IsGrabbed)
             {
                 Move(new Vector3(0, 0, -v));
             }
 
-            if (player.ReferenceGameObject.transform.position.x == back_col.transform.position.x)
+            if (back_col.IsGrabbed)
             {
                 Move(new Vector3(0, 0, v));
             }
 
-            if (player.ReferenceGameObject.transform.position.x == left_col.transform.position.x)
+            if (left_col.IsGrabbed)
             {
                 Move(new Vector3(v, 0, 0));
             }
 
-            if (player.ReferenceGameObject.transform.position.x == right_col.transform.position.x)
+            if (right_col.IsGrabbed)
             {
                 Move(new Vector3(-v, 0, 0));
             }
