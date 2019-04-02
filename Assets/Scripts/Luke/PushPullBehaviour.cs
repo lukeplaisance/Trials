@@ -10,18 +10,16 @@ namespace Luke
     {
         public float speed;
         public GameObjectVariable player;
-        public GrabMoveableBlockBehaviour front_col;
+
+        //changed from gameobjects to grabmoveableblockbehaviours
+        public GrabMoveableBlockBehaviour front_col; 
         public GrabMoveableBlockBehaviour back_col;
         public GrabMoveableBlockBehaviour left_col;
         public GrabMoveableBlockBehaviour right_col; 
 
-        public void Start()
-        {
-          
-        }
-
         void Update()
         {
+            //now checking for if the collider is grabbed rather than positional check
             var v = Input.GetAxis("Vertical");
             if (front_col.IsGrabbed)
             {
