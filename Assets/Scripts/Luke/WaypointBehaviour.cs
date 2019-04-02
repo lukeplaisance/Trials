@@ -1,48 +1,73 @@
-﻿using System.Collections;
+﻿
 using System.Collections.Generic;
 using UnityEngine;
-using Matthew;
 using UnityEngine.Events;
-using UnityEngine.Experimental.Audio.Google;
+
 
 
 namespace Luke
 {
     public class WaypointBehaviour : MonoBehaviour
     {
-        public GameObjectVariable player_reference;
         public List<Transform> waypoints;
-        public bool is_spawned = false;
-        private Transform current_waypoint;
-        public GameEvent waypoint_reached;
-        public UnityEvent Response;
+        private Transform _current_waypoint;
+        public UnityEvent startResponse;
+        public Matthew.GameObjectVariable PlayerReference;
 
 
         private void Start()
         {
-            Response.Invoke();
-        }
-
-        public void SpawnPlayer(Transform waypoint)
-        {
-            Instantiate(player_reference, waypoint.position, Quaternion.identity);
-            is_spawned = true;
+            startResponse.Invoke();
         }
 
         private int currentWayPointIndex = 0;
-        public void MoveCurrentWaypoint()
-        {
-            if (currentWayPointIndex >= waypoints.Count)
-            {
-                currentWayPointIndex = 0;
-                return;
-            }
-            currentWayPointIndex += 1;
-        }
 
         public void SetCurrentWaypointTransform(Transform waypoint)
         {
-            current_waypoint = waypoint;
+            if (waypoints.Contains(waypoint))
+            {
+                _current_waypoint = waypoint;
+                currentWayPointIndex = waypoints.IndexOf(_current_waypoint);
+                return;
+            }
+            Debug.LogError("attempt to assign a waypoint not in the circuit");
+
+        }
+
+        public void Teleport()
+        {
+            PlayerReference.Transform.position = _current_waypoint.position;
+        }
+
+        
+        public void MoveNext()
+        {
+            int currentIndex = waypoints.IndexOf(_current_waypoint);
+            int nextIndex = currentIndex + 1 >= waypoints.Count  ? 0:currentIndex + 1;
+            SetCurrentWaypointTransform(waypoints[nextIndex]);
+            Teleport();
+            
         }
     }
+
+
+#if UNITY_EDITOR
+    [UnityEditor.CustomEditor(typeof(WaypointBehaviour))]
+    public class WaypointBehaviourInspector : UnityEditor.Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            var mt = target as WaypointBehaviour;
+            base.OnInspectorGUI();
+            if (GUILayout.Button("Teleport"))
+            {             
+                mt.Teleport();
+            }
+            if (GUILayout.Button("MoveNext"))
+            {             
+                mt.MoveNext();
+            }
+        }
+    }
+#endif
 }
