@@ -44,7 +44,7 @@ namespace Zach
                 var uiButton = noteUIObject.GetComponent<Button>();
                 var nUIB = noteUIObject.GetComponent<NoteUIBehaviour>();
                 nUIB.note = note;
-                nUIB.NotePopUp = notePopUp;
+                nUIB.NotePopUp.Value = notePopUp;
                 noteUIObject.transform.position += new Vector3(XOffset, -BaseOffsetY, 0);
                 BaseOffsetY += OffsetDistanceY;
             }
