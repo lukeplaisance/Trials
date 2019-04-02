@@ -6,7 +6,7 @@ using Zach;
 [CreateAssetMenu]
 public class NoteBook : ScriptableObject
 {
-    public List<NoteScriptable> Notes;
+    public List<NotebookScriptable> Notes;
 
 
     [MenuItem("GameObject/Create Material")]

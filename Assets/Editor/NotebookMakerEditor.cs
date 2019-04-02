@@ -13,11 +13,13 @@ namespace Zach
         {
             var notebook = NotebookScriptable.Create("NewNotebook");
             var noteA = NoteScriptable.Create("NoteA");
-            var noteB = NoteScriptable.Create("NoteB");
+            noteA.name = "InitNote";
+            noteA.noteName = "InitNote";
+            noteA.data = "Contents go here.";
             notebook.AddNote(noteA);
-            notebook.AddNote(noteB);
         }
 
+        [MenuItem("Tools/AddNoteToNotebook")]
         public static void AddNoteToBook()
         {
             var path = string.Format("Assets/Resources/NewNotebook.asset");
