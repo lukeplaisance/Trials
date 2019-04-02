@@ -1,16 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerStateBehaviour : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+public class PlayerStateBehaviour : MonoBehaviour
+{
+    public Cinemachine.CinemachineFreeLook freeLookCamera;
+    public Zach.NewPlayerMovementBehaviour movementBehaviour;
+    public Luke.GameEvent PlayerStartEvent;
+    public void Start()
+    {
+        PlayerStartEvent.Raise();
+    }
+    public void SetMovement(bool state)
+    {
+        if(state)
+        {
+            freeLookCamera.enabled = true;
+            movementBehaviour.enabled = true;
+        }
+        else
+        {
+            freeLookCamera.enabled = false;
+            movementBehaviour.enabled = false;
+            
+        }        
+    }
 }

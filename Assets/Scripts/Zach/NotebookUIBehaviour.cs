@@ -16,6 +16,19 @@ namespace Zach
 
         public GameObject noteUI;
 
+        public UnityEngine.Events.UnityEvent OnEnableResponses;
+        public UnityEngine.Events.UnityEvent OnDisableResponses;
+
+        public void OnEnable()
+        {
+            OnEnableResponses.Invoke();
+        }
+
+        public void OnDisable()
+        {
+            OnDisableResponses.Invoke();
+        }
+
         // Use this for initialization
         void Start()
         {
@@ -27,7 +40,7 @@ namespace Zach
         {
 
         }
-
+        public List<GameObject> notes = new List<GameObject>();
         public void CreateButtons()
         {
             var journalUI = this.transform.GetChild(0);
@@ -41,6 +54,7 @@ namespace Zach
                 }
 
                 var noteUIObject = Instantiate(noteUI, journalUI);
+                notes.Add(noteUIObject);
                 var uiButton = noteUIObject.GetComponent<Button>();
                 var nUIB = noteUIObject.GetComponent<NoteUIBehaviour>();
                 nUIB.note = note;
@@ -54,12 +68,12 @@ namespace Zach
         public void DestroyNoteUI()
         {
             BaseOffsetY = baseYCopy;
-            var notes = FindObjectsOfType<NoteUIBehaviour>();
+            
             foreach (var note in notes)
             {
-                Destroy(note.gameObject);
+                Destroy(note);
             }
-
+            notes = new List<GameObject>();
             Cursor.visible = false;
         }
     }

@@ -16,5 +16,20 @@ namespace Matthew
         {
             PlayerReference.Transform.position = transform.position;
         }
+        public Object DisableRequestor;
+        public void DisableMovementRequest(Object obj)
+        {
+            DisableRequestor = obj;
+            PlayerReference.Value.GetComponent<PlayerStateBehaviour>().SetMovement(false);
+        }
+
+        public void EnableMovementRequest(Object obj)
+        {
+            if(obj != DisableRequestor)
+            {
+                Debug.LogWarning("the object that is enabling the movement is not the object that disabled it");
+            }
+            PlayerReference.Value.GetComponent<PlayerStateBehaviour>().SetMovement(true);
+        }
     }
 }

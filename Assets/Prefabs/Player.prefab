@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 114771672726386748}
   - component: {fileID: 114765030729230912}
   - component: {fileID: 114943888298252376}
-  - component: {fileID: 114243243524840982}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3002,18 +3001,6 @@ MonoBehaviour:
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
---- !u!114 &114243243524840982
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1006775819525274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf233ad03deb7f84c90107ae407a6152, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartEvent: {fileID: 11400000, guid: b0fe9a1dd3310cc46b3c488fcf612518, type: 2}
 --- !u!114 &114243609469692268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3313,6 +3300,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137d8f12b9fec0f4e96f3b29216836e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  freeLookCamera: {fileID: 114234355326630034}
+  movementBehaviour: {fileID: 114771672726386748}
+  PlayerStartEvent: {fileID: 11400000, guid: b0fe9a1dd3310cc46b3c488fcf612518, type: 2}
 --- !u!136 &136091732272945364
 CapsuleCollider:
   m_ObjectHideFlags: 1
