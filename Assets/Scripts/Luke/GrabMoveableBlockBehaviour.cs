@@ -42,7 +42,7 @@ namespace Luke
         {
             if (other.CompareTag("Player"))
             {
-                Update();
+              
             }
         }
     }

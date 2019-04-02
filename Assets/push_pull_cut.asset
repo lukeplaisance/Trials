@@ -13,7 +13,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CustomBlends:
   - m_From: PlayerFreeLookCam
-    m_To: MovingBlockCam
+    m_To: InteractionCam
     m_Blend:
       m_Style: 2
-      m_Time: 1
+      m_Time: 0.25
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4

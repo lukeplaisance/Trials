@@ -12,7 +12,15 @@ namespace Matthew
 
         public GameObject Value
         {
-            get { return _referenceGameObject; }
+            get
+            {
+                if (_referenceGameObject == null)
+                {
+                    Debug.LogWarning("the attempted reference on " + _referenceGameObject.name + " could not be found");                 
+                }
+                    
+                return _referenceGameObject;
+            }
             set
             {
                 _referenceGameObject = value;
@@ -20,13 +28,18 @@ namespace Matthew
             }
         }
 
-
+        public Transform Transform
+        {
+            get { return Value.transform; }
+        }
         /// <summary>
         /// Sets the Object Active
         /// </summary>
         /// <param name="flag">true for active</param>
         public void SetActive(bool flag)
         {
+            if (_referenceGameObject == null)
+                Debug.Log(name + " is null when attempting to setactive");
             _referenceGameObject.SetActive(flag);
         }
     }
