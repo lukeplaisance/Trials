@@ -16,12 +16,12 @@ namespace Zach
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetButtonDown("Interact") && currentInteraction != null)
+            if (Input.GetButtonDown("Submit") && currentInteraction != null)
             {
                 currentInteraction.Interact(this);
                 InteractionState = currentInteraction == null ? "available" : "interacting";
             }
-            else if (Input.GetKeyDown(KeyCode.X) && currentInteraction != null)
+            else if (Input.GetButtonDown("Cancel") && currentInteraction != null)
             {
                 currentInteraction.StopInteraction();
                 InteractionState = currentInteraction == null ? "available" : "interacting";
