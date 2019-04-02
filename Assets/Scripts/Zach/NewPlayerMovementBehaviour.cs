@@ -47,7 +47,7 @@ namespace Zach
                     var right = new Vector3(camForward.z, 0, -camForward.x);
                     if (Input.GetKeyDown(KeyCode.Space))
                     {
-                        _controller.Move(new Vector3(0, jumpPower, 0));
+                        _moveVector += new Vector3(0,jumpPower,0);
                     }
                 }
 
@@ -62,7 +62,7 @@ namespace Zach
                         forward.z);
                 }
 
-                _controller.SimpleMove(_moveVector * speed);
+                _controller.Move(_moveVector * speed * Time.deltaTime);
             }
         }
     }
