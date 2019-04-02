@@ -6,7 +6,7 @@ namespace Matthew
     [CreateAssetMenu]
     public class GameObjectVariable : ScriptableObject
     {
-        public string nameOfReference;
+        public string nameOfReference; //name of the referenced object
 
         [NonSerialized] private GameObject _referenceGameObject; //set this in inspector//worst comment ever this is a lie
 
@@ -20,6 +20,11 @@ namespace Matthew
             }
         }
 
+
+        /// <summary>
+        /// Sets the Object Active
+        /// </summary>
+        /// <param name="flag">true for active</param>
         public void SetActive(bool flag)
         {
             _referenceGameObject.SetActive(flag);
