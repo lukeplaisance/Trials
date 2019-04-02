@@ -28,7 +28,11 @@ namespace Zach
             }
             else if (Input.GetButtonDown("Pause"))
             {
-                OpenMenu.Raise();
+                MenuOpen = !MenuOpen;
+                if (MenuOpen)
+                    CloseMenu.Raise();
+                else
+                    OpenMenu.Raise();
             }
         }
     }
