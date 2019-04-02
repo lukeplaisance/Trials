@@ -13,7 +13,7 @@ namespace Luke
         public GameObjectVariable player_reference;
         public List<Transform> waypoints;
         public bool is_spawned = false;
-        [HideInInspector] public Transform current_waypoint;
+        private Transform current_waypoint;
         public GameEvent waypoint_reached;
         public UnityEvent Response;
 
@@ -25,25 +25,24 @@ namespace Luke
 
         public void SpawnPlayer(Transform waypoint)
         {
-            Instantiate(player_reference);
+            Instantiate(player_reference, waypoint.position, Quaternion.identity);
             is_spawned = true;
-            player_reference.Value.transform.position = waypoint.position;
         }
 
+        private int currentWayPointIndex = 0;
         public void MoveCurrentWaypoint()
         {
-            for (int i = 0; i < waypoints.Count; i++)
+            if (currentWayPointIndex >= waypoints.Count)
             {
-                if (current_waypoint == null)
-                {
-                    current_waypoint = waypoints[0];
-                }
-                else
-                {
-                    current_waypoint = waypoints[i];
-                }
-                Debug.Log("current waypoint is " + current_waypoint.gameObject.name);
+                currentWayPointIndex = 0;
+                return;
             }
+            currentWayPointIndex += 1;
+        }
+
+        public void SetCurrentWaypointTransform(Transform waypoint)
+        {
+            current_waypoint = waypoint;
         }
     }
 }
