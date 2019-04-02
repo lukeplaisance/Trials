@@ -47,6 +47,7 @@ namespace Zach
                 nUIB.NotePopUp.Value = notePopUp;
                 noteUIObject.transform.position += new Vector3(XOffset, -BaseOffsetY, 0);
                 BaseOffsetY += OffsetDistanceY;
+                Cursor.visible = true;
             }
         }
 
@@ -58,6 +59,8 @@ namespace Zach
             {
                 Destroy(note.gameObject);
             }
+
+            Cursor.visible = false;
         }
     }
 }
