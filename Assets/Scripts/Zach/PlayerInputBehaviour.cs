@@ -18,25 +18,17 @@ namespace Zach
         {
             if (Input.GetButtonDown("Interact") && currentInteraction != null)
             {
-                if (InteractionState == "available" || InteractionState == "")
-                {
-                    currentInteraction.Interact(this);
-                    InteractionState = currentInteraction == null ? "available" : "interacting";
-                }
-
-                if (InteractionState == "interacting")
-                {
-                    currentInteraction.StopInteraction();
-                    InteractionState = "available";
-                }
+                currentInteraction.Interact(this);
+                InteractionState = currentInteraction == null ? "available" : "interacting";
+            }
+            else if (Input.GetKeyDown(KeyCode.X) && currentInteraction != null)
+            {
+                currentInteraction.StopInteraction();
+                InteractionState = currentInteraction == null ? "available" : "interacting";
             }
             else if (Input.GetButtonDown("Pause"))
             {
-                if(MenuOpen)
-                    CloseMenu.Raise();
-                else
-                    OpenMenu.Raise();
-                MenuOpen = !MenuOpen;
+                OpenMenu.Raise();
             }
         }
     }
