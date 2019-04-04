@@ -10,12 +10,18 @@ namespace Luke
     {
         public float speed;
         public GameObjectVariable player;
+        private CharacterController _controller;
 
         //changed from gameobjects to grabmoveableblockbehaviours
         public GrabMoveableBlockBehaviour front_col; 
         public GrabMoveableBlockBehaviour back_col;
         public GrabMoveableBlockBehaviour left_col;
-        public GrabMoveableBlockBehaviour right_col; 
+        public GrabMoveableBlockBehaviour right_col;
+
+        private void Start()
+        {
+            _controller = GetComponent<CharacterController>();
+        }
 
         void Update()
         {
@@ -23,30 +29,22 @@ namespace Luke
             var v = Input.GetAxis("Vertical");
             if (front_col.IsGrabbed)
             {
-                Move(new Vector3(0, 0, -v));
+                _controller.Move(new Vector3(0, 0, -v) * speed * Time.deltaTime);
             }
 
             if (back_col.IsGrabbed)
             {
-                Move(new Vector3(0, 0, v));
+               _controller.Move(new Vector3(0, 0, v) * speed * Time.deltaTime);
             }
 
             if (left_col.IsGrabbed)
             {
-                Move(new Vector3(v, 0, 0));
+               _controller.Move(new Vector3(v, 0, 0) * speed * Time.deltaTime);
             }
 
             if (right_col.IsGrabbed)
             {
-                Move(new Vector3(-v, 0, 0));
-            }
-        }
-
-        public void Move(Vector3 direction)
-        {
-            if (direction != Vector3.zero)
-            {
-                transform.position += direction * Time.deltaTime * speed;
+               _controller.Move(new Vector3(-v, 0, 0) * speed * Time.deltaTime);
             }
         }
     }
