@@ -4,6 +4,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 using Luke;
+using Matthew;
 
 namespace Lobodestroyo.Editor
 {
@@ -52,7 +53,7 @@ namespace Lobodestroyo.Editor
         {
             var fieldinfo = gameEvent.GetType().GetField("listeners", BindingFlags.NonPublic | BindingFlags.Instance);
             var l = fieldinfo.GetValue(gameEvent);
-            var listeners = l as List<GameEventListener>;
+            var listeners = l as List<IListener>;
 
             GUILayout.BeginVertical(EditorStyles.helpBox);
             if(listeners.Count <= 0)

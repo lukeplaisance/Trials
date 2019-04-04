@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Experimental.UIElements;
 
+using IListener = Matthew.IListener;
 
 namespace Luke
 {
-    public class GameEventListener : MonoBehaviour
+    public class GameEventListener : MonoBehaviour, IListener
     {
 
         public GameEvent Event;
@@ -23,13 +21,22 @@ namespace Luke
 
         private void OnEnable()
         {
-            Event.Subscribe(this);
+            Subscribe();
         }
 
         void OnDisable()
         {
-            Event.UnSubscribe(this);
+            UnSubscribe();
         }
 
+        public void Subscribe()
+        {
+            Event.RegisterListener(this);
+        }
+
+        public void UnSubscribe()
+        {
+            Event.UnregisterListener(this);
+        }
     }
 }

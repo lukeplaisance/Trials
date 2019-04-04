@@ -5,19 +5,21 @@ using UnityEditor;
 #endif  
 using UnityEngine;
 
+using Matthew;
+
 namespace Luke
 {
     [CreateAssetMenu]
-    public class GameEvent : ScriptableObject
+    public class GameEvent : ScriptableObject, ISubscribeable
     {
-        private List<GameEventListener> listeners = new List<GameEventListener>();
+        private List<IListener> listeners = new List<IListener>();
 
-        public void Subscribe(GameEventListener listener)
+        public void RegisterListener(IListener listener)
         {
             listeners.Add(listener);
         }
 
-        public void UnSubscribe(GameEventListener listener)
+        public void UnregisterListener(IListener listener)
         {
             listeners.Remove(listener);
         }
