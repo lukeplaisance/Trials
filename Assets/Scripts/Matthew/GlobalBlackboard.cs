@@ -31,5 +31,10 @@ namespace Matthew
             }
             PlayerReference.Value.GetComponent<PlayerStateBehaviour>().SetMovement(true);
         }
+
+        public void PrintInfo(string value)
+        {
+            Debug.Log("GlobalBlackBoard:: " + value);
+        }
     }
 }
