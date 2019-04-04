@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
-
+using GameEvent = Luke.GameEvent;
 namespace Assets.Scripts.Brett
 {
     [CreateAssetMenu]
