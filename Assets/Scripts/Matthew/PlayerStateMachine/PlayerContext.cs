@@ -35,6 +35,7 @@ namespace Matthew
 
         public void ChangeState(IState next)
         {
+            Debug.Log(string.Format("{0} -> {1}", CurrentState, next));
             CurrentState.OnExit(this);
             CurrentState = next;
             CurrentState.OnEnter(this);

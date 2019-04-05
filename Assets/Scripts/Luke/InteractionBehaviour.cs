@@ -15,7 +15,10 @@ namespace Luke
         public string TriggerTag;
         [TextArea]
         public string readme;
-
+        public GameEvent InteractionEnter;
+        public GameEvent InteractionExit;
+        public GameEvent InteractionStart;
+        public GameEvent InteractionStop;
         //public List<UnityEvent> thing;
         public UnityEvent OnInteractionResponse;
         public UnityEvent InteractStopResponse;
@@ -26,6 +29,14 @@ namespace Luke
         public UnityEvent OnTriggerExitResponse;
 
         private IInteractor _Interactor;
+
+        private void Start()
+        {
+            InteractionEnter = Resources.Load<GameEvent>("Events/InteractionEnter");
+            InteractionExit = Resources.Load<GameEvent>("Events/InteractionExit");
+            InteractionStart = Resources.Load<GameEvent>("Events/InteractionStart");
+            InteractionStop = Resources.Load<GameEvent>("Events/InteractionStop");
+        }
 
         public IInteractor Interactor
         {
