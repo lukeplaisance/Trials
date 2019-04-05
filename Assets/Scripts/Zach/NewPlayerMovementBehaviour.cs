@@ -23,13 +23,15 @@ namespace Zach
         public bool isGrounded;
         private Vector3 _prevPosition;
         private CharacterController _controller;
+        private Animator _animator;
         
 
         private void Start()
         {
-            _controller = GetComponent<CharacterController>();
             _prevPosition = transform.position;
+            _controller = GetComponent<CharacterController>();
             isGrounded = _controller.isGrounded;
+            _animator = GetComponent<Animator>();
         }
 
         // Update is called once per frame
@@ -58,13 +60,16 @@ namespace Zach
                     if (Input.GetButtonDown("Jump"))
                     {
                         _moveVector.y = jumpPower;
+                        _animator.SetTrigger("OnJump");
                     }
                 }
                 _controller.Move(_moveVector * speed * Time.deltaTime);
             }
             velocity = (transform.position - _prevPosition) / Time.deltaTime;
+            _animator.SetFloat("Velocity",velocity.magnitude);
             _prevPosition = transform.position;
             isGrounded = _controller.isGrounded;
+            _animator.SetBool("IsGrounded",isGrounded);
         }
     }
 }
