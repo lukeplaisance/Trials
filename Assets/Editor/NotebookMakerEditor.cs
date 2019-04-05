@@ -19,13 +19,13 @@ namespace Zach
             notebook.AddNote(noteA);
         }
 
-        [MenuItem("Tools/AddNoteToNotebook")]
-        public static void AddNoteToBook()
-        {
-            var path = string.Format("Assets/Resources/NewNotebook.asset");
-            var notebook = AssetDatabase.LoadAssetAtPath<NotebookScriptable>(path);
-            var noteC = NoteScriptable.Create("NoteC");
-            notebook.AddNote(noteC);
-        }
+        //[MenuItem("Tools/AddNoteToNotebook")]
+        //public static void AddNoteToBook()
+        //{
+        //    var path = string.Format("Assets/Resources/NewNotebook.asset");
+        //    var notebook = AssetDatabase.LoadAssetAtPath<NotebookScriptable>(path);
+        //    var noteC = NoteScriptable.Create("NoteC");
+        //    notebook.AddNote(noteC);
+        //}
     }
 }
