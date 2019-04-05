@@ -54,11 +54,13 @@ namespace Luke
         {
             if (Interactor == null) return;
             if (obj != Interactor) return;
+            InteractionStart.Raise();
             Response.Invoke();
         }
 
         public void StopInteraction()
         {
+            InteractionStop.Raise();
             InteractStopResponse.Invoke();
         }
         /// <summary>
@@ -67,10 +69,12 @@ namespace Luke
         /// <param name="other"></param>
         public void OnTriggerEnter(Collider other)
         {
+            
             if (!other.CompareTag(TriggerTag)) return;
             Interactor = other.GetComponent<IInteractor>();
             if (Interactor == null) return;
             Interactor.SetInteraction(this);
+            InteractionEnter.Raise();
             OnTriggerEnterResponse.Invoke();
         }
 
@@ -81,7 +85,9 @@ namespace Luke
             if (!other.CompareTag(TriggerTag)) return;
 
             Interactor.ReleaseInteraction(this);
+            InteractionExit.Raise();
             OnTriggerExitResponse.Invoke();
+            
         }
     }
 }
