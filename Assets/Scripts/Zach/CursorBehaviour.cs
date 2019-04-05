@@ -6,16 +6,12 @@ namespace Zach
 {
     public class CursorBehaviour : MonoBehaviour
     {
-
-        // Use this for initialization
-        private void Start()
-        {
-            Cursor.lockState = CursorLockMode.Confined;
-            Cursor.visible = false;
-        }
+     
+        
 
         public void ShowCursor(bool visible)
         {
+            Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = visible;
         }
     }

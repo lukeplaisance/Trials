@@ -63,6 +63,16 @@ namespace Luke
             InteractionStop.Raise();
             InteractStopResponse.Invoke();
         }
+
+        private void OnDisable()
+        {
+            ReleaseInteraction();
+        }
+
+        public void ReleaseInteraction()
+        {
+            Interactor.ReleaseInteraction(this);
+        }
         /// <summary>
         /// comment this
         /// </summary>

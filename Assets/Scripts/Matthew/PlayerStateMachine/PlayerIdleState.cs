@@ -1,97 +1,98 @@
-﻿
+﻿using Luke;
+using UnityEngine;
+
 namespace Matthew
 {
     public class PlayerIdleState : IState
     {
-        StateEventTransitionSubscription subscription_interaction;
-        StateEventTransitionSubscription subscription_pause;
+        private StateEventTransitionSubscription _subscriptionInteractionStart;
+        private StateEventTransitionSubscription _subscriptionPause;
+
         public void OnEnter(IContext context)
         {
-            subscription_interaction= new StateEventTransitionSubscription { 
-                Subscribeable = UnityEngine.Resources.Load("Events/InteractionStart") as Luke.GameEvent
+            _subscriptionInteractionStart = new StateEventTransitionSubscription
+            {
+                Subscribeable = Resources.Load("Events/InteractionStart") as GameEvent
             };
 
-            subscription_pause = new StateEventTransitionSubscription
+            _subscriptionPause = new StateEventTransitionSubscription
             {
-                Subscribeable = UnityEngine.Resources.Load("Events/OpenPauseMenu") as Luke.GameEvent
+                Subscribeable = Resources.Load("Events/OpenPauseMenu") as GameEvent
             };
         }
 
         public void OnExit(IContext context)
         {
-            subscription_interaction.UnSubscribe();
-            subscription_pause.UnSubscribe();
+            _subscriptionInteractionStart.UnSubscribe();
+            _subscriptionPause.UnSubscribe();
         }
 
         public void UpdateState(IContext context)
         {
-            if(subscription_pause.EventRaised)
-            {
-                context.ChangeState(new PlayerPauseState());
-            }
-            if(subscription_interaction.EventRaised)
-            {
-                context.ChangeState(new PlayerInteractState());
-            }
+            if (_subscriptionPause.EventRaised) context.ChangeState(new PlayerPauseState());
+            if (_subscriptionInteractionStart.EventRaised) context.ChangeState(new PlayerInteractState());
         }
     }
 
     public class PlayerInteractState : IState
     {
-        StateEventTransitionSubscription listener;
+        private StateEventTransitionSubscription _subscriptionStop;
+
+        private float timer = 2;
+
         public void OnEnter(IContext context)
         {
-            var playerbehaviour = (context as PlayerContext).Behaviour;
+            var playerbehaviour = ((PlayerContext) context).Behaviour;
             playerbehaviour.SetMovement(false);
 
-            listener = new StateEventTransitionSubscription
+            _subscriptionStop = new StateEventTransitionSubscription
             {
-                Subscribeable = UnityEngine.Resources.Load("Events/InteractionStop") as Luke.GameEvent
+                Subscribeable = Resources.Load("Events/InteractionStop") as GameEvent
             };
         }
 
 
         public void OnExit(IContext context)
         {
-            var playerbehaviour = (context as PlayerContext).Behaviour;
+            var playerbehaviour = ((PlayerContext) context).Behaviour;
             playerbehaviour.SetMovement(true);
-
+            _subscriptionStop.UnSubscribe();
         }
 
         public void UpdateState(IContext context)
         {
-            if (listener.EventRaised)
-                context.ChangeState(new PlayerIdleState());
-
+            if (!_subscriptionStop.EventRaised) return;
+ 
+            context.ChangeState(new PlayerIdleState());
         }
     }
 
     public class PlayerPauseState : IState
     {
-        StateEventTransitionSubscription listener;
+        private StateEventTransitionSubscription _subscriptionClosePauseMenu;
+
         public void OnEnter(IContext context)
         {
-            var playerbehaviour = (context as PlayerContext).Behaviour;
+            var playerbehaviour = ((PlayerContext) context).Behaviour;
             playerbehaviour.SetMovement(false);
-            listener = new StateEventTransitionSubscription
+            _subscriptionClosePauseMenu = new StateEventTransitionSubscription
             {
-                Subscribeable = UnityEngine.Resources.Load("Events/ClosePauseMenu") as Luke.GameEvent
+                Subscribeable = Resources.Load("Events/ClosePauseMenu") as GameEvent
             };
         }
- 
+
 
         public void OnExit(IContext context)
         {
-            var playerbehaviour = (context as PlayerContext).Behaviour;
+            var playerbehaviour = ((PlayerContext) context).Behaviour;
             playerbehaviour.SetMovement(true);
-            
+            _subscriptionClosePauseMenu.UnSubscribe();
         }
 
         public void UpdateState(IContext context)
         {
-            if (listener.EventRaised)
+            if (_subscriptionClosePauseMenu.EventRaised)
                 context.ChangeState(new PlayerIdleState());
-
         }
     }
 }
