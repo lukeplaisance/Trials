@@ -9,6 +9,7 @@ namespace Zach
     {
         [SerializeField]
         private Vector3 _moveVector;
+        private Vector3 _prevMoveVector;
         public Vector3 MoveVector
         {
             get { return _moveVector; }
@@ -47,7 +48,11 @@ namespace Zach
                 var right = new Vector3(forward.z, 0, -forward.x);
                 var targetDir = h * right + v * forward;
                 if (targetDir.magnitude > 0)
-                    transform.rotation = Quaternion.LookRotation(targetDir);
+                {
+                    //transform.rotation = Quaternion.LookRotation(targetDir);
+                    var rot = Quaternion.Euler(targetDir);
+                    transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(targetDir),0.25f);
+                }
                 _moveVector.x = targetDir.x;
                 _moveVector.z = targetDir.z;
                 if(!_controller.isGrounded)
@@ -55,18 +60,16 @@ namespace Zach
                     _moveVector.y = _moveVector.y - (gravity * Time.deltaTime);
                 }
                 
-                if (_controller.isGrounded)
+                if (_controller.isGrounded && Input.GetButtonDown("Jump"))
                 {
-                    if (Input.GetButtonDown("Jump"))
-                    {
-                        _moveVector.y = jumpPower;
-                        _animator.SetTrigger("OnJump");
-                    }
+                    _moveVector.y = jumpPower;
+                    Debug.Log("Test");
+                    _animator.SetTrigger("OnJump");
                 }
                 _controller.Move(_moveVector * speed * Time.deltaTime);
             }
             velocity = (transform.position - _prevPosition) / Time.deltaTime;
-            _animator.SetFloat("Velocity",velocity.magnitude);
+            _animator.SetFloat("Velocity",_controller.velocity.magnitude);
             _prevPosition = transform.position;
             isGrounded = _controller.isGrounded;
             _animator.SetBool("IsGrounded",isGrounded);
