@@ -640,7 +640,6 @@ GameObject:
   - component: {fileID: 4874758687630256}
   - component: {fileID: 114234355326630034}
   - component: {fileID: 114534198582789810}
-  - component: {fileID: 114773504149678116}
   m_Layer: 0
   m_Name: PlayerFreeLookCam
   m_TagString: Untagged
@@ -3256,42 +3255,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveVector: {x: 0, y: 0, z: 0}
   speed: 5
-  jumpPower: 4
-  gravity: 9.81
+  jumpPower: 12
+  gravity: 20
+  mag: 0
+  _prevMag: 0
   velocity: {x: 0, y: 0, z: 0}
   camRight: {x: 0, y: 0, z: 0}
   camForward: {x: 0, y: 0, z: 0}
   isFrozen: 0
   isGrounded: 0
---- !u!114 &114773504149678116
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1477399768201402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CollideAgainst:
-    serializedVersion: 2
-    m_Bits: 1
-  m_IgnoreTag: 
-  m_TransparentLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_MinimumDistanceFromTarget: 0.1
-  m_AvoidObstacles: 1
-  m_DistanceLimit: 0
-  m_MinimumOcclusionTime: 0
-  m_CameraRadius: 0.1
-  m_Strategy: 1
-  m_MaximumEffort: 4
-  m_SmoothingTime: 0
-  m_Damping: 0
-  m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 0
 --- !u!114 &114809749709474646
 MonoBehaviour:
   m_ObjectHideFlags: 3
