@@ -26,9 +26,11 @@ GameObject:
   - component: {fileID: 65935939388790728}
   - component: {fileID: 95567922639863220}
   - component: {fileID: 114869514563696162}
+  - component: {fileID: 114663615646519860}
+  - component: {fileID: 114154992380481214}
   m_Layer: 0
   m_Name: Pressure_Plate
-  m_TagString: Untagged
+  m_TagString: PressurePlate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,6 +134,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114154992380481214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000654472505822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f50eb075e31287f47ad51fc39c829f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: b0e7a6d046666e442abe60da51a3e2dc, type: 2}
+  TargetColliderTags:
+  - Player
+  - Grabbable
+--- !u!114 &114663615646519860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000654472505822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c577a61bf8fcfe4db2a9d6186cdcc9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: fae90d80d9555f042954273d72bf2936, type: 2}
+  TargetColliderTags:
+  - Player
+  - Grabbable
 --- !u!114 &114841693073231074
 MonoBehaviour:
   m_ObjectHideFlags: 1
