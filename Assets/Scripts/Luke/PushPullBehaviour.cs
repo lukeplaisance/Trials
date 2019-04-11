@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using Matthew;
 
@@ -9,7 +10,6 @@ namespace Luke
     public class PushPullBehaviour : MonoBehaviour
     {
         public float speed;
-        public GameObjectVariable player;
         public CharacterController _controller;
 
         //changed from gameobjects to grabmoveableblockbehaviours
@@ -45,6 +45,7 @@ namespace Luke
             {
                 _controller.Move(new Vector3(-v, 0, 0) * speed * Time.deltaTime);
             }
+
         }
     }
 }

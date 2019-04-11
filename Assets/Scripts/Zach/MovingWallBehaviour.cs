@@ -10,8 +10,6 @@ namespace Zach
         public bool IgnoreTerrain;
         public bool movingToStart;
         public bool movingToEnd;
-        public Vector3 startPos;
-        public Vector3 endPos;
         [SerializeField] private Vector3 direction;
         [SerializeField] private Vector3 raycastOffset;
         [SerializeField] private float speed;
@@ -20,17 +18,6 @@ namespace Zach
         {
             if (isMoving)
                 transform.position += direction * speed * Time.deltaTime;
-            if (movingToStart && Vector3.Distance(transform.position,startPos) < 0.1f)
-            {
-                isMoving = false;
-                movingToStart = false;
-            }
-
-            if (movingToEnd && Vector3.Distance(transform.position,endPos) < 0.1f)
-            {
-                isMoving = false;
-                movingToEnd = false;
-            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -46,7 +33,12 @@ namespace Zach
                     }
             }
 
-            if (other.CompareTag("Terrain") && !IgnoreTerrain) isMoving = false;
+            if (other.CompareTag("Terrain") && !IgnoreTerrain) 
+            {
+                isMoving = false;
+                movingToStart = false;
+                movingToEnd = false;
+            }
         }
 
         private void OnDrawGizmos()
@@ -58,14 +50,17 @@ namespace Zach
         {
             isMoving = true;
             movingToStart = true;
-            direction = startPos - transform.position;
+            movingToEnd = false;
+            direction = -direction;
+            Debug.Log("moving");
         }
 
         public void MoveToEnd()
         {
             isMoving = true;
             movingToEnd = true;
-            direction = endPos - transform.position;
+            movingToStart = false;
+            direction = -direction;
         }
     }
 }
