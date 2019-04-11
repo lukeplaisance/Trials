@@ -72,16 +72,8 @@ namespace Zach
                     var rot = Quaternion.Euler(targetDir);
                     transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(targetDir),0.25f);
                 }
-                _moveVector.x += targetDir.x;
-                if (_moveVector.x >= 5)
-                    _moveVector.x = 5;
-                _moveVector.z += targetDir.z;
-                if (_moveVector.z >= 5)
-                {
-                    _moveVector.z = 5;
-                }
-
-
+                _moveVector.x = targetDir.x;
+                _moveVector.z = targetDir.z;
                 if (!_controller.isGrounded)
                 {
                     _moveVector.y = _moveVector.y - (gravity * Time.deltaTime);
@@ -97,8 +89,6 @@ namespace Zach
                 _moveVector.x *= speed;
                 _moveVector.z *= speed;
                 _controller.Move(_moveVector * Time.deltaTime);
-                _moveVector.x -= targetDir.x;
-                _moveVector.z -= targetDir.z;
             }
             velocity = (transform.position - _prevPosition) / Time.deltaTime;
             _animator.SetFloat("Velocity",_controller.velocity.magnitude);
