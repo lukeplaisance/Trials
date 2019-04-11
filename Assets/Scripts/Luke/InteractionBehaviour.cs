@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Cinemachine;
-using UnityEditorInternal;
+﻿using Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 using Zach;
 
 namespace Luke
@@ -92,8 +88,7 @@ namespace Luke
             //this was how it started...
             if (!other.CompareTag(TriggerTag)) return;
 
-            Interactor.ReleaseInteraction(this);
-            InteractionExit.Raise();
+            ReleaseInteraction();
             OnTriggerExitResponse.Invoke();
             
         }

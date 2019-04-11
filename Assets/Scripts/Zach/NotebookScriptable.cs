@@ -14,12 +14,14 @@ namespace Zach
         {
             get { return notes ?? (notes = new List<NoteScriptable>()); }
         }
-
+#if UNITY_EDITOR
         public static NotebookScriptable Create(string name)
         {
             var nbs = CreateInstance<NotebookScriptable>();
             var path = string.Format("Assets/Resources/{0}.asset", name);
+
             AssetDatabase.CreateAsset(nbs, path);
+
             return nbs;
         }
 
@@ -29,5 +31,6 @@ namespace Zach
             AssetDatabase.AddObjectToAsset(note, this);
             AssetDatabase.SaveAssets();
         }
+#endif
     }
 }
