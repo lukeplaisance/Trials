@@ -7,7 +7,9 @@ namespace Zach
     public class MovingWallBehaviour : MonoBehaviour
     {
         public bool isMoving;
-
+        public bool IgnoreTerrain;
+        public bool movingToStart;
+        public bool movingToEnd;
         [SerializeField] private Vector3 direction;
         [SerializeField] private Vector3 raycastOffset;
         [SerializeField] private float speed;
@@ -31,12 +33,34 @@ namespace Zach
                     }
             }
 
-            if (other.CompareTag("Terrain")) isMoving = false;
+            if (other.CompareTag("Terrain") && !IgnoreTerrain) 
+            {
+                isMoving = false;
+                movingToStart = false;
+                movingToEnd = false;
+            }
         }
 
         private void OnDrawGizmos()
         {
             Gizmos.DrawRay(transform.position + raycastOffset, direction * 4);
+        }
+
+        public void MoveToStart()
+        {
+            isMoving = true;
+            movingToStart = true;
+            movingToEnd = false;
+            direction = -direction;
+            Debug.Log("moving");
+        }
+
+        public void MoveToEnd()
+        {
+            isMoving = true;
+            movingToEnd = true;
+            movingToStart = false;
+            direction = -direction;
         }
     }
 }

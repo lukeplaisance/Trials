@@ -25,12 +25,11 @@ namespace Luke
         }
 
         public void Raise()
-        {
-            Debug.Log(name + " Event Raised");
+        {Debug.Log(name + " Event Raised");
             for (int i = listeners.Count - 1; i >= 0; i--)
             {
                 listeners[i].OnEventRaised();
-               
+                
             }
         }
     }

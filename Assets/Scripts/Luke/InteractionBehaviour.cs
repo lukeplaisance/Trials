@@ -54,14 +54,22 @@ namespace Luke
         {
             if (Interactor == null) return;
             if (obj != Interactor) return;
-            InteractionStart.Raise();
+            
             Response.Invoke();
+            InteractionStart.Raise();
         }
 
         public void StopInteraction()
         {
-            InteractionStop.Raise();
+           
             InteractStopResponse.Invoke();
+            InteractionStop.Raise();
+        }
+
+        public void ReleaseInteraction()
+        {
+            Interactor.ReleaseInteraction(this);
+            InteractionExit.Raise();
         }
 
         private void OnDisable()
