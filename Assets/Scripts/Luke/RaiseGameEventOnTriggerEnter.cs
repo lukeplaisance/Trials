@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 namespace Luke
@@ -9,14 +10,17 @@ namespace Luke
 
         [SerializeField]
         private GameEvent gameEvent;
-        public string colliderTag;
+        public List<string> TargetColliderTags = new List<string>();
 
         public void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag(colliderTag))
+            TargetColliderTags.ForEach(x =>
             {
-                gameEvent.Raise();
-            }
+                if (other.CompareTag(x))
+                {
+                    gameEvent.Raise();
+                }
+            });
         }
     }
 }
