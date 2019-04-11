@@ -10,7 +10,6 @@ namespace Luke
     public class PushPullBehaviour : MonoBehaviour
     {
         public float speed;
-        public GameObjectVariable player;
         public CharacterController _controller;
 
         //changed from gameobjects to grabmoveableblockbehaviours
