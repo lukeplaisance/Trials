@@ -20,17 +20,10 @@ namespace Luke
 
         private void Start()
         {
-            player.OnValueChanged.AddListener(() =>
-            {
-                    _controller = player.Value.GetComponent<CharacterController>();
-                    Debug.Log("assign player");
-            });
         }
 
         void Update()
         {
-
-
             //now checking for if the collider is grabbed rather than positional check
             var v = Input.GetAxis("Vertical");
             if (front_col.IsGrabbed)
