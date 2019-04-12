@@ -59,10 +59,12 @@ namespace Zach
             //If the magnitude of the joystick is greater than the deadzone and the exponent
             //is less than the magnitude then ramp the exponent up so the player doesn't instantly
             //reach full speed
+            var prevX = _moveVector.x;
+            var prevZ = _moveVector.z;
             if (mag > 0.20f)
             {
                 if (_magExponent < mag)
-                    _magExponent += Time.deltaTime;
+                    _magExponent += (Time.deltaTime*1.5f);
             }
             if (mag < _magExponent)
             {
@@ -99,11 +101,18 @@ namespace Zach
                 _moveVector.y = jumpPower;
                 _animator.SetTrigger("OnJump");
             }
-
             //Apply the speed
             speed *= _magExponent;
-            _moveVector.x *= speed;
-            _moveVector.z *= speed;
+            if (_moveVector.x == 0 && _moveVector.z == 0 && _magExponent > 0.20f)
+            {
+                _moveVector.x = (prevX * _magExponent);
+                _moveVector.z = (prevZ * _magExponent);
+            }
+            else
+            {
+                _moveVector.x *= speed;
+                _moveVector.z *= speed;
+            }
             _controller.Move(_moveVector * Time.deltaTime);
         }
     }
