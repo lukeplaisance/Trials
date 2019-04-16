@@ -8,7 +8,6 @@ namespace Matthew
     public class PlayerStateBehaviour : MonoBehaviour
     {
 
-        public Cinemachine.CinemachineFreeLook freeLookCamera;
         public Zach.NewPlayerMovementBehaviour movementBehaviour;
         public Luke.GameEvent PlayerStartEvent;
         public IContext PlayerContext;
