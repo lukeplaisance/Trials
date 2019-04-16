@@ -13,6 +13,12 @@ namespace Zach
         [SerializeField] private Vector3 direction;
         [SerializeField] private Vector3 raycastOffset;
         [SerializeField] private float speed;
+        public Rigidbody rb;
+
+        private void Start()
+        {
+            rb = GetComponent<Rigidbody>();
+        }
 
         private void Update()
         {
@@ -38,6 +44,7 @@ namespace Zach
                 isMoving = false;
                 movingToStart = false;
                 movingToEnd = false;
+                rb.constraints = RigidbodyConstraints.FreezeAll;
             }
         }
 
