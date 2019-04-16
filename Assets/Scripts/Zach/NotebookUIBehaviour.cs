@@ -8,6 +8,8 @@ namespace Zach
     public class NotebookUIBehaviour : MonoBehaviour
     {
         public GameObject notePopUp;
+        public GameObject noteButtonParent;
+        public GameObject CloseButton;
         public NotebookScriptable nb;
         public float BaseOffsetY;
         private float baseYCopy;
@@ -43,7 +45,6 @@ namespace Zach
         public List<GameObject> notes = new List<GameObject>();
         public void CreateButtons()
         {
-            var journalUI = this.transform.GetChild(0);
             float XOffset = 0;
             foreach (var note in nb.notes)
             {
@@ -53,7 +54,7 @@ namespace Zach
                     BaseOffsetY = baseYCopy;
                 }
 
-                var noteUIObject = Instantiate(noteUI, journalUI);
+                var noteUIObject = Instantiate(noteUI, noteButtonParent.transform);
                 notes.Add(noteUIObject);
                 var uiButton = noteUIObject.GetComponent<Button>();
                 var nUIB = noteUIObject.GetComponent<NoteUIBehaviour>();
@@ -75,6 +76,12 @@ namespace Zach
             }
             notes = new List<GameObject>();
             Cursor.visible = false;
+        }
+
+        public void TurnOffUI()
+        {
+            noteButtonParent.SetActive(false);
+            CloseButton.SetActive(false);
         }
     }
 }
