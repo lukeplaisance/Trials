@@ -71,7 +71,7 @@ namespace Luke
         /// comment this
         /// </summary>
         /// <param name="other"></param>
-        public void OnTriggerEnter(Collider other)
+        public void OnTriggerStay(Collider other)
         {
             
             if (!other.CompareTag(TriggerTag)) return;
