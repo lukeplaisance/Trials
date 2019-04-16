@@ -24,7 +24,6 @@ namespace Matthew
         }
         public void SetMovement(bool state)
         {
-            freeLookCamera.enabled = state;
             movementBehaviour.isFrozen = !state;
         }
         private void Update()
