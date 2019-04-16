@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 114771672726386748}
   - component: {fileID: 114765030729230912}
   - component: {fileID: 114943888298252376}
+  - component: {fileID: 114546512526019892}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3077,6 +3078,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObjectReferencer: {fileID: 11400000, guid: 04222eee54f3a4a498b5bf1154be7c29,
     type: 2}
+--- !u!114 &114546512526019892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006775819525274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da7f65b98e8649442a504c8914907479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 71ee116cf04a91d4eb42a2b07d598e00, type: 2}
+  Notes: 
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1006775819525274}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114556248232077114
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -3258,7 +3288,7 @@ MonoBehaviour:
   jumpPower: 12
   gravity: 20
   mag: 0
-  _prevMag: 0
+  _magExponent: 0
   velocity: {x: 0, y: 0, z: 0}
   camRight: {x: 0, y: 0, z: 0}
   camForward: {x: 0, y: 0, z: 0}
