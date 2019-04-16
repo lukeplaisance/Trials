@@ -12,6 +12,8 @@ namespace Zach
 
         public GameEvent OpenMenu;
         public GameEvent CloseMenu;
+        public GameEvent OpenWaypointMenu;
+        public GameEvent CloseWaypointMenu;
         public bool MenuOpen { get; set; }
         // Update is called once per frame
         void Update()
@@ -44,6 +46,20 @@ namespace Zach
                 }
                 MenuOpen = !MenuOpen;
 
+            }
+
+            if (Input.GetButtonDown("Teleport"))
+            {
+                if (MenuOpen)
+                {
+                    CloseWaypointMenu.Raise();
+                }
+                else
+                {
+                    OpenWaypointMenu.Raise();
+                }
+
+                MenuOpen = !MenuOpen;
             }
         }
     }

@@ -8,7 +8,6 @@ namespace Matthew
     public class PlayerStateBehaviour : MonoBehaviour
     {
 
-        public Cinemachine.CinemachineFreeLook freeLookCamera;
         public Zach.NewPlayerMovementBehaviour movementBehaviour;
         public Luke.GameEvent PlayerStartEvent;
         private IContext PlayerContext;
@@ -24,7 +23,6 @@ namespace Matthew
         }
         public void SetMovement(bool state)
         {
-            freeLookCamera.enabled = state;
             movementBehaviour.isFrozen = !state;
         }
         private void Update()
