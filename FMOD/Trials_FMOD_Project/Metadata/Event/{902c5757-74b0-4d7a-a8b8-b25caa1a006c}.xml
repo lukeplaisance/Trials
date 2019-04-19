@@ -83,7 +83,7 @@
     </object>
     <object class="EventMixerMaster" id="{60250f6e-209c-42f9-8449-41349d5531e0}">
         <property name="volume">
-            <value>-13.5</value>
+            <value>-18</value>
         </property>
         <relationship name="effectChain">
             <destination>{697c6706-c7da-4f9e-957e-d8df66fb9e0c}</destination>
@@ -120,6 +120,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{26954911-a968-431d-962c-87fe1e8d7c41}">
+        <property name="volume">
+            <value>-11.5</value>
+        </property>
         <property name="name">
             <value>boot_on_stone</value>
         </property>
@@ -152,6 +155,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{0a84395d-81df-4f3a-95c2-09d2189468bd}">
+        <property name="volume">
+            <value>-13.5</value>
+        </property>
         <property name="name">
             <value>dirt_scrape</value>
         </property>

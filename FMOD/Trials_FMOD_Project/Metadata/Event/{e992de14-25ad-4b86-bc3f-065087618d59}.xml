@@ -5,7 +5,7 @@
             <value>general_tomb_hum</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>1</value>
         </property>
         <relationship name="folder">
             <destination>{112f6e15-f4f4-46d3-a193-c2507b093f78}</destination>
@@ -76,7 +76,7 @@
     </object>
     <object class="EventMixerMaster" id="{2f922b5b-083a-4559-b7b3-7f03c3264db9}">
         <property name="volume">
-            <value>-20.5</value>
+            <value>-8.5</value>
         </property>
         <relationship name="effectChain">
             <destination>{4f09eec2-2474-4169-8e68-f3e1bed11b9e}</destination>
@@ -103,6 +103,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{2000010f-0763-4bb3-ac50-5782a56df498}">
+        <property name="volume">
+            <value>-22.5</value>
+        </property>
         <property name="name">
             <value>Audio 1</value>
         </property>
@@ -133,7 +136,6 @@
     <object class="MixerBusEffectChain" id="{4f09eec2-2474-4169-8e68-f3e1bed11b9e}">
         <relationship name="effects">
             <destination>{74204e1e-51b2-47a3-9fab-4bc5835281ab}</destination>
-            <destination>{5b41c85a-9786-4dc6-a8cd-dd79ef197470}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{6c3ac456-9766-40aa-9c79-41061f689bcc}"/>
@@ -145,6 +147,5 @@
     </object>
     <object class="MixerBusPanner" id="{718de5ee-f245-4938-8b0e-a238daf7a39d}"/>
     <object class="MixerBusFader" id="{74204e1e-51b2-47a3-9fab-4bc5835281ab}"/>
-    <object class="SpatialiserEffect" id="{5b41c85a-9786-4dc6-a8cd-dd79ef197470}"/>
     <object class="MixerBusFader" id="{2007d943-bf6b-4ae6-9333-22205a69a43e}"/>
 </objects>
