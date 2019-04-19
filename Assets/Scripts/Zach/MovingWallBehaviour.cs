@@ -15,50 +15,30 @@ namespace Zach
         [SerializeField] private float speed;
         public Rigidbody rb;
 
-        FMOD.Studio.EventInstance slidingDoorsSound;
-        FMOD.Studio.EventInstance footstep;
-        private FMOD.Studio.PLAYBACK_STATE slidingDoorsSoundPlaybackState;
-        private int slidingDoorPlayCalls = 0;
-        //bool isPlaying = playbackState != FMOD.Studio.PLAYBACK_STATE.STOPPED;
-
-
+        private int slidingDoorsPlayCalls;
 
         private void Start()
         {
-            slidingDoorsSound = FMODUnity.RuntimeManager.CreateInstance("event:/hazard_hallway_sliding_doors");
-            slidingDoorsSoundPlaybackState = FMOD.Studio.PLAYBACK_STATE.STOPPED;
-
-            footstep = FMODUnity.RuntimeManager.CreateInstance("event:/general_stone_footstep");
-
-            //footstep.start();
-            //slidingDoorsSound.start();
-
+            
             rb = GetComponent<Rigidbody>();
         }
 
         private void Update()
         {
-            slidingDoorsSound.getPlaybackState(out slidingDoorsSoundPlaybackState);
-            Debug.Log(slidingDoorsSoundPlaybackState);
-
-           
-                
             
-
             if (isMoving)
                 transform.position += direction * speed * Time.deltaTime;
 
-            if (isMoving && slidingDoorPlayCalls == 0)
+            if (isMoving && slidingDoorsPlayCalls == 0)
             {
-                //slidingDoorsSound.start();
                 FMODUnity.RuntimeManager.PlayOneShot("event:/hazard_hallway_sliding_doors");
-                Debug.Log("sliding door sound should be playing");
-                slidingDoorPlayCalls++;
+                slidingDoorsPlayCalls++;
             }
-            /*if (!isMoving && slidingDoorPlayCalls)
+            if (!isMoving && slidingDoorsPlayCalls == 1)
             {
-                slidingDoorsSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            }*/
+                
+                slidingDoorsPlayCalls--;
+            }
             
         }
 
