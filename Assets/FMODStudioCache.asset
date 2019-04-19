@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114883684307458426}
-  - {fileID: 114946509956286532}
+  - {fileID: 114775056205481012}
+  - {fileID: 114367263334484096}
   EditorEvents:
-  - {fileID: 114866055760255990}
-  - {fileID: 114517857855508242}
-  - {fileID: 114245051899939550}
+  - {fileID: 114704418277414082}
+  - {fileID: 114361001200863850}
+  - {fileID: 114900026697192214}
+  - {fileID: 114746560211208852}
   MasterBanks:
-  - {fileID: 114946509956286532}
+  - {fileID: 114367263334484096}
   StringsBanks:
-  - {fileID: 114883684307458426}
-  stringsBankWriteTime: 636911114749078778
+  - {fileID: 114775056205481012}
+  stringsBankWriteTime: 636913106010000000
   cacheVersion: 3
 --- !u!114 &114016416929754378
 MonoBehaviour:
@@ -68,6 +69,25 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &114081641947022194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/scottchallinor/Downloads/GitHub/Trials/FMOD/Trials_FMOD_Project/Build/Desktop/Master
+    Bank.bank
+  lastModified: 636913104710000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1968000
+  Exists: 0
 --- !u!114 &114095564070707576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,6 +103,67 @@ MonoBehaviour:
   guid: 57572c90b0747a4da8b8b25caa1a006c
   Banks:
   - {fileID: 114454586327915856}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 10000
+  MaxDistance: 10000
+  Length: 500
+--- !u!114 &114138517291433966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: FMOD/Trials_FMOD_Project/FMODBuild/Desktop/Master Bank.strings.bank
+  lastModified: 636913096070000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 854
+  Exists: 1
+--- !u!114 &114195944077974624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/gameplay_music
+  guid: ad79e25852fd18468db1f82319e58cc0
+  Banks: []
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 135272
+--- !u!114 &114209856233162420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/general_stone_footstep
+  guid: 57572c90b0747a4da8b8b25caa1a006c
+  Banks:
+  - {fileID: 114673813644852200}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -111,6 +192,132 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+  Length: 2000
+--- !u!114 &114252257264585810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/scottchallinor/Downloads/GitHub/Trials/FMOD/Trials_FMOD_Project/FMODBuild/Desktop/Master
+    Bank.bank
+  lastModified: 636913096070000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 267520
+  Exists: 1
+--- !u!114 &114253849507406992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/general_stone_footstep
+  guid: 57572c90b0747a4da8b8b25caa1a006c
+  Banks:
+  - {fileID: 114749265140202522}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 10000
+  MaxDistance: 10000
+  Length: 500
+--- !u!114 &114361001200863850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/general_stone_footstep
+  guid: 57572c90b0747a4da8b8b25caa1a006c
+  Banks:
+  - {fileID: 114367263334484096}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 10000
+  MaxDistance: 10000
+  Length: 500
+--- !u!114 &114361220032575648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/push_block_interaction_start
+  guid: afefdd41dc7c34469f346bf5dc7ca901
+  Banks:
+  - {fileID: 114749265140202522}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 10000
+  MaxDistance: 10000
+  Length: 2000
+--- !u!114 &114367263334484096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/scottchallinor/Downloads/GitHub/Trials/FMOD/Trials_FMOD_Project/FMODBuild/Desktop/Master
+    Bank.bank
+  lastModified: 636913106010000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1968000
+  Exists: 1
+--- !u!114 &114370702264462750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/push_block_interaction_start
+  guid: afefdd41dc7c34469f346bf5dc7ca901
+  Banks:
+  - {fileID: 114673813644852200}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 10000
+  MaxDistance: 10000
   Length: 2000
 --- !u!114 &114454586327915856
 MonoBehaviour:
@@ -153,6 +360,28 @@ MonoBehaviour:
   MinDistance: 10000
   MaxDistance: 10000
   Length: 500
+--- !u!114 &114549765751798830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/general_tomb_hum
+  guid: 14de92e9ad25864bbc3f065087618d59
+  Banks:
+  - {fileID: 114673813644852200}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 18000
 --- !u!114 &114552763200345560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,6 +444,208 @@ MonoBehaviour:
   - Name: Desktop
     Value: 854
   Exists: 1
+--- !u!114 &114625027148933352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/general_stone_footstep
+  guid: 57572c90b0747a4da8b8b25caa1a006c
+  Banks:
+  - {fileID: 114252257264585810}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 10000
+  MaxDistance: 10000
+  Length: 500
+--- !u!114 &114636827361466488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/push_block_interaction_start
+  guid: afefdd41dc7c34469f346bf5dc7ca901
+  Banks:
+  - {fileID: 114252257264585810}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 10000
+  MaxDistance: 10000
+  Length: 2000
+--- !u!114 &114664380480195284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: FMOD/Trials_FMOD_Project/FMODBuild/Desktop/Master Bank.strings.bank
+  lastModified: 636913096070000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 854
+  Exists: 1
+--- !u!114 &114673813644852200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/scottchallinor/Downloads/GitHub/Trials/FMOD/Trials_FMOD_Project/FMODBuild/Desktop/Master
+    Bank.bank
+  lastModified: 636913096070000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 267520
+  Exists: 1
+--- !u!114 &114704418277414082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/general_tomb_hum
+  guid: 14de92e9ad25864bbc3f065087618d59
+  Banks:
+  - {fileID: 114367263334484096}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 18000
+--- !u!114 &114746560211208852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/gameplay_music
+  guid: ad79e25852fd18468db1f82319e58cc0
+  Banks:
+  - {fileID: 114367263334484096}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 135272
+--- !u!114 &114749265140202522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/scottchallinor/Downloads/GitHub/Trials/FMOD/Trials_FMOD_Project/FMODBuild/Desktop/Master
+    Bank.bank
+  lastModified: 636913096070000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 267520
+  Exists: 1
+--- !u!114 &114761708330234320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/general_tomb_hum
+  guid: 14de92e9ad25864bbc3f065087618d59
+  Banks:
+  - {fileID: 114252257264585810}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 18000
+--- !u!114 &114775056205481012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: FMOD/Trials_FMOD_Project/FMODBuild/Desktop/Master Bank.strings.bank
+  lastModified: 636913106010000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 910
+  Exists: 1
+--- !u!114 &114786130252942908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: FMOD/Trials_FMOD_Project/Build/Desktop/Master Bank.strings.bank
+  lastModified: 636913104710000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 910
+  Exists: 0
 --- !u!114 &114802149132220638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +664,24 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 267776
+  Exists: 1
+--- !u!114 &114864892137819180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: FMOD/Trials_FMOD_Project/FMODBuild/Desktop/Master Bank.strings.bank
+  lastModified: 636913096070000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 854
   Exists: 1
 --- !u!114 &114866055760255990
 MonoBehaviour:
@@ -256,6 +705,25 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 18000
+--- !u!114 &114879690071239572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/scottchallinor/Downloads/GitHub/Trials/FMOD/Trials_FMOD_Project/FMODBuild/Desktop/Master
+    Bank.bank
+  lastModified: 636913096070000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 267520
+  Exists: 1
 --- !u!114 &114883684307458426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +742,50 @@ MonoBehaviour:
   - Name: Desktop
     Value: 854
   Exists: 1
+--- !u!114 &114900026697192214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/push_block_interaction_start
+  guid: afefdd41dc7c34469f346bf5dc7ca901
+  Banks:
+  - {fileID: 114367263334484096}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 10000
+  MaxDistance: 10000
+  Length: 2000
+--- !u!114 &114915106014071144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/general_tomb_hum
+  guid: 14de92e9ad25864bbc3f065087618d59
+  Banks:
+  - {fileID: 114749265140202522}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 18000
 --- !u!114 &114924585300748576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +808,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 18000
+--- !u!114 &114944807607198544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: FMOD/Trials_FMOD_Project/FMODBuild/Desktop/Master Bank.strings.bank
+  lastModified: 636913096070000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 854
+  Exists: 1
 --- !u!114 &114946509956286532
 MonoBehaviour:
   m_ObjectHideFlags: 0

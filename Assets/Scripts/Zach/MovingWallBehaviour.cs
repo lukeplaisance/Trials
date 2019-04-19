@@ -18,6 +18,7 @@ namespace Zach
         FMOD.Studio.EventInstance slidingDoorsSound;
         FMOD.Studio.EventInstance footstep;
         private FMOD.Studio.PLAYBACK_STATE slidingDoorsSoundPlaybackState;
+        private int slidingDoorPlayCalls = 0;
         //bool isPlaying = playbackState != FMOD.Studio.PLAYBACK_STATE.STOPPED;
 
 
@@ -29,8 +30,8 @@ namespace Zach
 
             footstep = FMODUnity.RuntimeManager.CreateInstance("event:/general_stone_footstep");
 
-            footstep.start();
-            slidingDoorsSound.start();
+            //footstep.start();
+            //slidingDoorsSound.start();
 
             rb = GetComponent<Rigidbody>();
         }
@@ -47,16 +48,18 @@ namespace Zach
             if (isMoving)
                 transform.position += direction * speed * Time.deltaTime;
 
-            /*if (isMoving && slidingDoorsSoundPlaybackState == FMOD.Studio.PLAYBACK_STATE.STOPPED)
+            if (isMoving && slidingDoorPlayCalls == 0)
             {
-                slidingDoorsSound.start();
+                //slidingDoorsSound.start();
+                FMODUnity.RuntimeManager.PlayOneShot("event:/hazard_hallway_sliding_doors");
                 Debug.Log("sliding door sound should be playing");
+                slidingDoorPlayCalls++;
             }
-            if (!isMoving && slidingDoorsSoundPlaybackState == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+            /*if (!isMoving && slidingDoorPlayCalls)
             {
                 slidingDoorsSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            }
-            */
+            }*/
+            
         }
 
         private void OnTriggerEnter(Collider other)
