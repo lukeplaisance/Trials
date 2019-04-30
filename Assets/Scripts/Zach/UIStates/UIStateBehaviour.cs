@@ -20,7 +20,7 @@ namespace Zach
             UIContext = new UIContext()
             {
                 Behaviour = this,
-                CurrentState = new UINoUIState()
+                CurrentState = new UIHiddenState()
             };
         }
 

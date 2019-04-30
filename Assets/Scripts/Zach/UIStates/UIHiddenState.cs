@@ -6,21 +6,21 @@ using UnityEngine;
 
 namespace Zach
 {
-    public class UINoUIState : IState
+    public class UIHiddenState : IState
     {
-        StateEventTransitionSubscription subscription_journal;
-        StateEventTransitionSubscription subscription_note;
+        StateEventTransitionSubscription subscription_openPauseMenu;
+        StateEventTransitionSubscription subscription_openNote;
 
         public void OnEnter(IContext context)
         {
             var uiState = (context as UIContext).Behaviour;
             uiState.SetJournalActive(false);
             uiState.SetNoteActive(false);
-            subscription_note = new StateEventTransitionSubscription
+            subscription_openNote = new StateEventTransitionSubscription
             {
                 Subscribeable = Resources.Load("Events/OpenNote") as GameEvent
             };
-            subscription_journal = new StateEventTransitionSubscription
+            subscription_openPauseMenu = new StateEventTransitionSubscription
             {
                 Subscribeable = Resources.Load("Events/OpenPauseMenu") as GameEvent
             };
@@ -28,18 +28,18 @@ namespace Zach
 
         public void OnExit(IContext context)
         {
-            subscription_note.UnSubscribe();
-            subscription_journal.UnSubscribe();
+            subscription_openNote.UnSubscribe();
+            subscription_openPauseMenu.UnSubscribe();
         }
 
         public void UpdateState(IContext context)
         {
-            if (subscription_note.EventRaised)
+            if (subscription_openNote.EventRaised)
             {
                 context.ChangeState(new UINoteState());
             }
 
-            if (subscription_journal.EventRaised)
+            if (subscription_openPauseMenu.EventRaised)
             {
                 context.ChangeState(new UIJournalState());
             }

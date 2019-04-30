@@ -29,7 +29,7 @@ namespace Zach
 
         public void ResetContext()
         {
-            CurrentState = new UINoUIState();
+            CurrentState = new UIHiddenState();
             CurrentState.OnEnter(this);
         }
 

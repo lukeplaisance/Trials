@@ -8,8 +8,8 @@ namespace Zach
 {
     public class UINoteState : IState
     {
-        StateEventTransitionSubscription subscription_journal;
-        StateEventTransitionSubscription subscription_noUI;
+        StateEventTransitionSubscription subscription_openPauseMenu;
+        StateEventTransitionSubscription subscription_closePauseMenu;
         StateEventTransitionSubscription subscription_closeNote;
 
         public void OnEnter(IContext context)
@@ -17,9 +17,9 @@ namespace Zach
             var uiState = (context as UIContext).Behaviour;
             uiState.SetJournalActive(false);
             uiState.SetNoteActive(true);
-            subscription_noUI = new StateEventTransitionSubscription
+            subscription_closePauseMenu = new StateEventTransitionSubscription
             {
-                Subscribeable = Resources.Load("Events/OpenNote") as GameEvent
+                Subscribeable = Resources.Load("Events/ClosePauseMenu") as GameEvent
             };
 
             subscription_closeNote = new StateEventTransitionSubscription
@@ -27,7 +27,7 @@ namespace Zach
                 Subscribeable = Resources.Load("Events/CloseNote") as GameEvent
             };
 
-            subscription_journal = new StateEventTransitionSubscription
+            subscription_openPauseMenu = new StateEventTransitionSubscription
             {
                 Subscribeable = Resources.Load("Events/OpenPauseMenu") as GameEvent
             };
@@ -36,15 +36,16 @@ namespace Zach
 
         public void OnExit(IContext context)
         {
-            subscription_noUI.UnSubscribe();
-            subscription_journal.UnSubscribe();
+            subscription_closePauseMenu.UnSubscribe();
+            subscription_closeNote.UnSubscribe();
+            subscription_openPauseMenu.UnSubscribe();
         }
 
         public void UpdateState(IContext context)
         {
-            if (subscription_noUI.EventRaised)
+            if (subscription_closePauseMenu.EventRaised)
             {
-                context.ChangeState(new PlayerPauseState());
+                context.ChangeState(new UIHiddenState());
             }
 
             if (subscription_closeNote.EventRaised)
