@@ -1896,7 +1896,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1064269154971640}
-  m_LocalRotation: {x: 0.036529407, y: 0.9367793, z: -0.10293514, w: 0.33243734}
+  m_LocalRotation: {x: 0.036529403, y: 0.9367793, z: -0.102935135, w: 0.33243734}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1980,7 +1980,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1072250861473186}
-  m_LocalRotation: {x: 0.0425444, y: 0.93476063, z: -0.119891405, w: 0.33172062}
+  m_LocalRotation: {x: 0.042544406, y: 0.93476063, z: -0.11989141, w: 0.33172065}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2713,7 +2713,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: A
+  m_Text: X
 --- !u!114 &114076719847018774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3358,7 +3358,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300062, guid: 70a493d9bf2d43e4d943650151db43cc, type: 3}
+  m_Sprite: {fileID: 21300056, guid: 70a493d9bf2d43e4d943650151db43cc, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3401,6 +3401,8 @@ MonoBehaviour:
   InteractionState: available
   OpenMenu: {fileID: 11400000, guid: 35489432cc90846458a03d2a16912ecc, type: 2}
   CloseMenu: {fileID: 11400000, guid: 71ee116cf04a91d4eb42a2b07d598e00, type: 2}
+  OpenWaypointMenu: {fileID: 11400000, guid: b21b442919ca987408635d15388e85f1, type: 2}
+  CloseWaypointMenu: {fileID: 11400000, guid: 6e8931d826586974e9235c5a1ba1cfd8, type: 2}
 --- !u!114 &114704393701955658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3770,6 +3772,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.065, y: 0}
   m_SizeDelta: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
