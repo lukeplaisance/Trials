@@ -30,6 +30,8 @@ namespace Luke
         public void GetGrabbed(Transform trans)
         {
             is_grabbed = true;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/push_block_interaction_start");
+            Debug.Log("pushblock grabbed");
             grabbed_trans = trans;
         }
 

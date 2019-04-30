@@ -16,6 +16,7 @@ namespace Luke
         {
             animator.SetBool("Interacted", true);
             animator.Play("MoveAltar");
+            Debug.Log("altar rising sound should play");
         }
     }
 }
