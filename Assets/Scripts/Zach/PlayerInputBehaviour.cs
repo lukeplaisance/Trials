@@ -14,7 +14,8 @@ namespace Zach
         public GameEvent CloseMenu;
         public GameEvent OpenWaypointMenu;
         public GameEvent CloseWaypointMenu;
-        public bool MenuOpen { get; set; }
+        public bool PauseMenuOpen { get; set; }
+        public bool WaypointMenuOpen { get; set; }
         // Update is called once per frame
         void Update()
         {
@@ -33,7 +34,7 @@ namespace Zach
             if (Input.GetButtonDown("Pause"))
             {
                 
-                if (MenuOpen)
+                if (PauseMenuOpen)
                 {
                     
                     CloseMenu.Raise();
@@ -44,13 +45,13 @@ namespace Zach
                     
                     OpenMenu.Raise();
                 }
-                MenuOpen = !MenuOpen;
+                PauseMenuOpen = !PauseMenuOpen;
 
             }
 
-            if (Input.GetButtonDown("Teleport"))
+            if (Input.GetButtonDown("Home"))
             {
-                if (MenuOpen)
+                if (WaypointMenuOpen)
                 {
                     CloseWaypointMenu.Raise();
                 }
@@ -59,7 +60,7 @@ namespace Zach
                     OpenWaypointMenu.Raise();
                 }
 
-                MenuOpen = !MenuOpen;
+                WaypointMenuOpen = !WaypointMenuOpen;
             }
         }
     }
