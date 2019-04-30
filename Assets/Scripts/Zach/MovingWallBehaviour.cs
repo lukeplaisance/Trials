@@ -15,15 +15,31 @@ namespace Zach
         [SerializeField] private float speed;
         public Rigidbody rb;
 
+        private int slidingDoorsPlayCalls;
+
         private void Start()
         {
+            
             rb = GetComponent<Rigidbody>();
         }
 
         private void Update()
         {
+            
             if (isMoving)
                 transform.position += direction * speed * Time.deltaTime;
+
+            if (isMoving && slidingDoorsPlayCalls == 0)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/hazard_hallway_sliding_doors");
+                slidingDoorsPlayCalls++;
+            }
+            if (!isMoving && slidingDoorsPlayCalls == 1)
+            {
+                
+                slidingDoorsPlayCalls--;
+            }
+            
         }
 
         private void OnTriggerEnter(Collider other)
