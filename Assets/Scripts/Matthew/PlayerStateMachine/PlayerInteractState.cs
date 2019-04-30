@@ -19,12 +19,15 @@
         {
             var playerbehaviour = (context as PlayerContext).Behaviour;
             playerbehaviour.SetMovement(true);
+            listener.UnSubscribe();
 
         }
 
         public void UpdateState(IContext context)
         {
             if (listener.EventRaised)
+                context.ChangeState(new PlayerIdleState());
+            if (UnityEngine.Input.GetButtonDown("Cancel"))
                 context.ChangeState(new PlayerIdleState());
 
         }
