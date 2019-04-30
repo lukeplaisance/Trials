@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Luke;
 using UnityEngine;
 using UnityEngine.UI;
 using Zach;
@@ -11,6 +12,7 @@ namespace Zach
     {
         public GameObjectVariable NotePopUp;
         public NoteScriptable note;
+        public GameEvent OpenNote;
         private Button bttn;
         public void Start()
         {
@@ -31,7 +33,7 @@ namespace Zach
 
         public void OnClick()
         {
-
+            OpenNote.Raise();
             NotePopUp.Value.transform.GetChild(0).gameObject.SetActive(true);
             var PopUpTextChild = NotePopUp.Value.transform.GetChild(1);
             PopUpTextChild.gameObject.SetActive(true);
