@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114073986841268022}
-  - {fileID: 114682126733507240}
+  - {fileID: 114329790446182496}
   EditorEvents:
   - {fileID: 114704418277414082}
   - {fileID: 114361001200863850}
@@ -23,10 +23,11 @@ MonoBehaviour:
   MasterBanks:
   - {fileID: 114367263334484096}
   - {fileID: 114682126733507240}
+  - {fileID: 114329790446182496}
   StringsBanks:
   - {fileID: 114775056205481012}
   - {fileID: 114073986841268022}
-  stringsBankWriteTime: 636912993418742131
+  stringsBankWriteTime: 636922357166206462
   cacheVersion: 3
 --- !u!114 &114016416929754378
 MonoBehaviour:
@@ -84,7 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMOD\Trials_FMOD_Project\FMODBuild\Desktop\Master Bank.strings.bank
-  lastModified: 636912993418742131
+  lastModified: 636922357166206462
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -255,6 +256,25 @@ MonoBehaviour:
   MinDistance: 10000
   MaxDistance: 10000
   Length: 500
+--- !u!114 &114329790446182496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\s178025\Documents\Trials\FMOD\Trials_FMOD_Project\FMODBuild\Desktop\Master
+    Bank.bank
+  lastModified: 636922357166206462
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1993056
+  Exists: 1
 --- !u!114 &114361001200863850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,7 +289,7 @@ MonoBehaviour:
   Path: event:/general_stone_footstep
   guid: 57572c90b0747a4da8b8b25caa1a006c
   Banks:
-  - {fileID: 114682126733507240}
+  - {fileID: 114329790446182496}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -523,7 +543,7 @@ MonoBehaviour:
   Path: event:/hazard_hallway_sliding_doors
   guid: 4fedbc03bbb00e4682cf0feab5eeba8a
   Banks:
-  - {fileID: 114682126733507240}
+  - {fileID: 114329790446182496}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -586,7 +606,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 1993056
-  Exists: 1
+  Exists: 0
 --- !u!114 &114704418277414082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,7 +621,7 @@ MonoBehaviour:
   Path: event:/general_tomb_hum
   guid: 14de92e9ad25864bbc3f065087618d59
   Banks:
-  - {fileID: 114682126733507240}
+  - {fileID: 114329790446182496}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -623,7 +643,7 @@ MonoBehaviour:
   Path: event:/gameplay_music
   guid: ad79e25852fd18468db1f82319e58cc0
   Banks:
-  - {fileID: 114682126733507240}
+  - {fileID: 114329790446182496}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -818,7 +838,7 @@ MonoBehaviour:
   Path: event:/push_block_interaction_start
   guid: afefdd41dc7c34469f346bf5dc7ca901
   Banks:
-  - {fileID: 114682126733507240}
+  - {fileID: 114329790446182496}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
