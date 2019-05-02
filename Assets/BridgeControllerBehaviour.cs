@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,6 +8,7 @@ namespace Luke
 {
     public class BridgeControllerBehaviour : MonoBehaviour
     {
+        [NonSerialized]
         public bool condition;
         public UnityEvent ConditionResponse;
         public PlayerInventoryObject inventory;
