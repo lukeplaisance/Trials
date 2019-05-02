@@ -5,6 +5,7 @@ namespace Matthew
     {
         StateEventTransitionSubscription subscription_interaction;
         StateEventTransitionSubscription subscription_pause;
+        StateEventTransitionSubscription subscription_noteInteract;
         public void OnEnter(IContext context)
         {
             subscription_interaction= new StateEventTransitionSubscription { 
@@ -15,6 +16,13 @@ namespace Matthew
             {
                 Subscribeable = UnityEngine.Resources.Load("Events/OpenPauseMenu") as Luke.GameEvent
             };
+
+            subscription_noteInteract = new StateEventTransitionSubscription
+            {
+                Subscribeable = UnityEngine.Resources.Load("Events/NoteInteraction") as Luke.GameEvent
+            };
+
+
         }
 
         public void OnExit(IContext context)
@@ -29,9 +37,13 @@ namespace Matthew
             {
                 context.ChangeState(new PlayerPauseState());
             }
-            if(subscription_interaction.EventRaised)
+            if (subscription_interaction.EventRaised)
             {
                 context.ChangeState(new PlayerInteractState());
+            }
+            if (subscription_noteInteract.EventRaised)
+            {
+                context.ChangeState(new PlayerPauseState());
             }
         }
     }
