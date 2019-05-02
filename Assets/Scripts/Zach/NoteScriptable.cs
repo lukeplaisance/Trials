@@ -9,6 +9,7 @@ namespace Zach
         private bool isEnabled;
         public string noteName;
         public string data;
+        public AudioClip narration;
 
         public static NoteScriptable Create(string name)
         {
@@ -31,7 +32,4 @@ namespace Zach
             textui.text = data;
         }
     }
-
-    
-
 }
