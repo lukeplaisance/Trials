@@ -10,14 +10,14 @@ namespace Matthew
 
         public Zach.NewPlayerMovementBehaviour movementBehaviour;
         public Luke.GameEvent PlayerStartEvent;
-        public IContext PlayerContext;
+        private IContext PlayerContext;
 
         public void Start()
         {
             PlayerContext = new PlayerContext
             {
-                CurrentState = new PlayerIdleState(),
-                Behaviour = this
+                Behaviour = this,
+                CurrentState = new PlayerIdleState()
             };
             PlayerStartEvent.Raise();
         }

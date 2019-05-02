@@ -51,7 +51,12 @@ namespace Luke
             if (Interactor == null) return;
             if (obj != Interactor) return;
             
-            Response.Invoke();
+            Response.Invoke();//if you stop interaction here then the player will get stuck due to the following
+            //responses for stop get called
+            //interaction stop gets raised
+            //player does nothing because he is in idle
+            //interaction start gets raised
+            //player enters the interacting state
             InteractionStart.Raise();
         }
 
@@ -71,7 +76,7 @@ namespace Luke
         /// comment this
         /// </summary>
         /// <param name="other"></param>
-        public void OnTriggerStay(Collider other)
+        public void OnTriggerEnter(Collider other)
         {
             
             if (!other.CompareTag(TriggerTag)) return;
