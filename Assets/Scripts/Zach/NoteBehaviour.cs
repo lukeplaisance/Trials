@@ -10,6 +10,7 @@ namespace Zach
     public class NoteBehaviour : MonoBehaviour
     {
         public StringVariable NoteTextStringVariable;
+        public AudioVariable NoteAudioVariable;
         public GameEvent NoteInteract;
         public GameObjectVariable NoteUI;
         public NoteScriptable note;
@@ -33,6 +34,7 @@ namespace Zach
         {
             NoteTextStringVariable.Value = note.noteName;
             NoteTextStringVariable.MaxValue = note.data;
+            NoteAudioVariable.Value = note.narration;
             NoteInteract.Raise();
         }
     }
