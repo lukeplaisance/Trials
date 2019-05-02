@@ -36,5 +36,11 @@ namespace Matthew
         {
             Debug.Log("GlobalBlackBoard:: " + value);
         }
+
+        public void PlayFMODAudio(string eventName)
+        {
+            var tmp = "event:/general_stone_footstep";
+            FMODUnity.RuntimeManager.PlayOneShot(eventName);
+        }
     }
 }
