@@ -9,22 +9,33 @@ namespace Zach
 {
     public class NoteBehaviour : MonoBehaviour
     {
+        public StringVariable NoteTextStringVariable;
+        public AudioVariable NoteAudioVariable;
+        public GameEvent NoteInteract;
         public GameObjectVariable NoteUI;
         public NoteScriptable note;
 
-        public void SetNoteUIActive(bool on)
-        {
-            NoteUI.Value.transform.GetChild(0).gameObject.SetActive(on);
-            NoteUI.Value.transform.GetChild(1).gameObject.SetActive(on);
-            NoteUI.Value.transform.GetChild(2).gameObject.SetActive(on);
-        }
+        //public void SetNoteUIActive(bool on)
+        //{
+        //    NoteUI.Value.transform.GetChild(0).gameObject.SetActive(on);
+        //    NoteUI.Value.transform.GetChild(1).gameObject.SetActive(on);
+        //    NoteUI.Value.transform.GetChild(2).gameObject.SetActive(on);
+        //}
 
-        public void SetUIText()
+        //public void SetUIText()
+        //{
+        //    note.SetIsEnabled(true);
+        //    var textUI = NoteUI.Value.transform.GetChild(1);
+        //    var text = textUI.GetComponent<Text>();
+        //    text.text = note.data;
+        //}
+
+        public void OnInteract()
         {
-            note.SetIsEnabled(true);
-            var textUI = NoteUI.Value.transform.GetChild(1);
-            var text = textUI.GetComponent<Text>();
-            text.text = note.data;
+            NoteTextStringVariable.Value = note.noteName;
+            NoteTextStringVariable.MaxValue = note.data;
+            NoteAudioVariable.Value = note.narration;
+            NoteInteract.Raise();
         }
     }
 }
