@@ -109,7 +109,6 @@ GameObject:
   - component: {fileID: 224811051773505838}
   - component: {fileID: 222130118081180084}
   - component: {fileID: 114941701722590572}
-  - component: {fileID: 114927044152014224}
   - component: {fileID: 114117130252698172}
   m_Layer: 5
   m_Name: NotePopUp
@@ -862,7 +861,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 795eed5d74dafa4498804ab4a7771bac, type: 3}
-    m_FontSize: 35
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -874,69 +873,6 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Note Text Here
---- !u!114 &114927044152014224
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1516046679636464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20bdb2b2d9a50e846b2df6e2b6cd5cd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notePopUp: {fileID: 0}
-  noteButtonParent: {fileID: 0}
-  CloseButton: {fileID: 0}
-  nb: {fileID: 0}
-  BaseOffsetY: 0
-  OffsetDistanceY: 0
-  YPosLimit: 0
-  noteUI: {fileID: 0}
-  OnEnableResponses:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1139343509107752}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1959031910878818}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1249590307373836}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnDisableResponses:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  notes: []
 --- !u!114 &114941701722590572
 MonoBehaviour:
   m_ObjectHideFlags: 1
