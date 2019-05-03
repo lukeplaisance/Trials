@@ -30,11 +30,8 @@ namespace Matthew
         private void OnGUI()
         {
             EditorGUILayout.Space();
-            if (GUILayout.Button("Refresh"))
-            {
-                RefreshStateBehaviourList();
-            }
-
+            
+            RefreshStateBehaviourList();
             foreach (var sb in StateBehaviours)
             {
                 GUILayout.BeginHorizontal();
