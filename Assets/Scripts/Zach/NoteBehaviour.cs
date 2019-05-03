@@ -35,6 +35,7 @@ namespace Zach
             NoteTextStringVariable.Value = note.noteName;
             NoteTextStringVariable.MaxValue = note.data;
             NoteAudioVariable.Value = note.narration;
+            note.SetIsEnabled(true);
             NoteInteract.Raise();
         }
     }
