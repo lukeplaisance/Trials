@@ -10,10 +10,11 @@ namespace Luke
 
         private List<Item> Player_Inventory;
 
-        public bool has_item = false;
+        public bool has_item;
 
         void OnEnable()
         {
+            has_item = false;
             Player_Inventory = new List<Item>();
         }
         public void AddItem(Item item)
