@@ -14,9 +14,15 @@ namespace Matthew
             instance = this;
         }
 
+        public void FMODAudioMuteAllEvents(bool value)
+        {
+            FMODUnity.RuntimeManager.MuteAllEvents(value);
+        }
+
         public void PlayFMODAudio(string value)
         {
             FMODUnity.RuntimeManager.PlayOneShot(value);
+            
         }
 
         [SerializeField]
