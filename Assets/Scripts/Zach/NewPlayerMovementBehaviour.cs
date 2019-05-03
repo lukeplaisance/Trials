@@ -14,6 +14,7 @@ namespace Zach
         public Vector3 MoveVector
         {
             get { return _moveVector; }
+            set { _moveVector = value; }
         }
         public float speed = 5;
         private float baseSpeed;
@@ -92,6 +93,11 @@ namespace Zach
             if (!_controller.isGrounded)
             {
                 _moveVector.y = _moveVector.y - (gravity * Time.deltaTime);
+            }
+
+            if (_controller.isGrounded)
+            {
+                _moveVector.y = -0.5f;
             }
             
             //If the player pushes the jump button and is grounded then set the move vector to the jump value
