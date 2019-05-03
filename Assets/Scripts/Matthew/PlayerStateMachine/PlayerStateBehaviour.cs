@@ -5,12 +5,17 @@ namespace Matthew
 {
 
 
-    public class PlayerStateBehaviour : MonoBehaviour
+    public class PlayerStateBehaviour : StateBehaviour
     {
 
         public Zach.NewPlayerMovementBehaviour movementBehaviour;
         public Luke.GameEvent PlayerStartEvent;
         private IContext PlayerContext;
+
+        public override IContext Context
+        {
+            get { return PlayerContext; }
+        }
 
         public void Start()
         {
