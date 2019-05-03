@@ -17,7 +17,6 @@ namespace Zach
             globalBlackboard.PlayFMODAudio("event:/"+NarrationSource.clip.name);
 #endif
             NarrationSource.Play();
-            Debug.Log("Played audio:" + NarrationSource.clip.name);
  
 
         }
