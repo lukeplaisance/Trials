@@ -6,6 +6,19 @@ namespace Matthew
     [CreateAssetMenu]
     public class GlobalBlackboard : ScriptableObject
     {
+        public static GlobalBlackboard instance;
+
+        //ToDo:: make this a real singleton
+        void OnEnable()
+        {
+            instance = this;
+        }
+
+        public void PlayFMODAudio(string value)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(value);
+        }
+
         [SerializeField]
         GameObjectVariable PlayerReference;
         public void InstantiateObject(GameObject prefab)
