@@ -2,6 +2,7 @@
 
 using System.Security.Permissions;
 using Cinemachine;
+using Luke;
 using UnityEngine;
 using Zach;
 
@@ -9,14 +10,37 @@ namespace Matthew
 {
 
 
-    public class PlayerStateBehaviour : StateBehaviour
+    public class PlayerStateBehaviour : StateBehaviour, IInteractor
     {
-
         public Zach.NewPlayerMovementBehaviour movementBehaviour;
         public Luke.GameEvent PlayerStartEvent;
         public GameObjectVariable flCam;
         private IContext PlayerContext;
+        public GameEvent OpenMenu;
+        public GameEvent CloseMenu;
+        public GameEvent OpenWaypointMenu;
+        public GameEvent CloseWaypointMenu;
+        public bool PauseMenuOpen { get; set; }
+        public bool WaypointMenuOpen { get; set; }
 
+        public IInteractable CurrentInteraction;
+        public void ReleaseInteraction(IInteractable interactable)
+        {
+            if (CurrentInteraction == interactable)
+                CurrentInteraction = null;
+            else
+                Debug.LogWarning("Something tried to release an interaction that it wasn't involved in.");
+        }
+
+        public void SetInteraction(IInteractable interactable)
+        {
+            if (CurrentInteraction == null)
+                CurrentInteraction = interactable;
+            else
+                Debug.LogWarning("Interactor already in an interaction.");
+        }
+
+   
         public override IContext Context
         {
             get { return PlayerContext; }
@@ -51,7 +75,26 @@ namespace Matthew
         private void Update()
         {
             PlayerContext.UpdateContext();
-        }
 
+            // Update is called once per frame
+
+
+
+
+            if (Input.GetButtonDown("Home"))
+            {
+                if (WaypointMenuOpen)
+                {
+                    CloseWaypointMenu.Raise();
+                }
+                else
+                {
+                    OpenWaypointMenu.Raise();
+                }
+
+                WaypointMenuOpen = !WaypointMenuOpen;
+            }
+        }
     }
+
 }

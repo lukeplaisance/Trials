@@ -22,10 +22,17 @@
         }
 
         public void UpdateState(IContext context)
-        {
-            if (UnityEngine.Input.GetButtonDown("Pause"))
+        {            
+            if (Zach.PlayerInput.CancelPressed)
             {
+                if((context as PlayerContext).Behaviour.CurrentInteraction != null)
+                {
+                    context.ChangeState(new PlayerInteractState());
+                    return;
+                }
+                    
                 context.ChangeState(new PlayerIdleState());
+                return;
             }
 
         }
