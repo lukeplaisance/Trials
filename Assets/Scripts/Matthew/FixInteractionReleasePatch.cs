@@ -10,8 +10,10 @@ namespace Matthew
         /// </summary>
         void Start ()
         {
-            interactableBehaviours = GetComponentsInChildren<Luke.InteractionBehaviour>().ToList();
+            interactableBehaviours = GetComponentsInChildren<Luke.InteractionBehaviour>().ToList();            
             interactableBehaviours.ForEach(ib => ib.InteractStopResponse.AddListener(ib.ReleaseInteraction));
+            interactableBehaviours.ForEach(ib => ib.OnTriggerStayResponse.AddListener(ib.SetInteractionToThis));
+
         }
 	
  
