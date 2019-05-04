@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 95881375980929188}
   - component: {fileID: 136996284964091512}
   - component: {fileID: 143400501122541614}
-  - component: {fileID: 114696764468747790}
   - component: {fileID: 114771672726386748}
   - component: {fileID: 114765030729230912}
   - component: {fileID: 114943888298252376}
@@ -5658,22 +5657,6 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
---- !u!114 &114696764468747790
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1006775819525274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcab24c845306ce49a7aa27c844d6b48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractionState: available
-  OpenMenu: {fileID: 11400000, guid: 35489432cc90846458a03d2a16912ecc, type: 2}
-  CloseMenu: {fileID: 11400000, guid: 71ee116cf04a91d4eb42a2b07d598e00, type: 2}
-  OpenWaypointMenu: {fileID: 11400000, guid: b21b442919ca987408635d15388e85f1, type: 2}
-  CloseWaypointMenu: {fileID: 11400000, guid: 6e8931d826586974e9235c5a1ba1cfd8, type: 2}
 --- !u!114 &114704393701955658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5822,7 +5805,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementBehaviour: {fileID: 114771672726386748}
   PlayerStartEvent: {fileID: 11400000, guid: b0fe9a1dd3310cc46b3c488fcf612518, type: 2}
-  flCam: {fileID: 0}
+  flCam: {fileID: 11400000, guid: 04222eee54f3a4a498b5bf1154be7c29, type: 2}
+  OpenMenu: {fileID: 11400000, guid: 35489432cc90846458a03d2a16912ecc, type: 2}
+  CloseMenu: {fileID: 11400000, guid: 71ee116cf04a91d4eb42a2b07d598e00, type: 2}
+  OpenWaypointMenu: {fileID: 11400000, guid: b21b442919ca987408635d15388e85f1, type: 2}
+  CloseWaypointMenu: {fileID: 11400000, guid: 6e8931d826586974e9235c5a1ba1cfd8, type: 2}
 --- !u!136 &136091732272945364
 CapsuleCollider:
   m_ObjectHideFlags: 1
