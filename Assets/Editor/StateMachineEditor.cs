@@ -27,6 +27,10 @@ namespace Matthew
             var sbs = FindObjectsOfType<StateBehaviour>();
             StateBehaviours.AddRange(sbs);
         }
+        private void Update()
+        {
+            Repaint();
+        }
         private void OnGUI()
         {
             EditorGUILayout.Space();
