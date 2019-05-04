@@ -10,7 +10,6 @@ namespace Zach
     {
         StateEventTransitionSubscription subscription_openPauseMenu;
         StateEventTransitionSubscription subscription_openNote;
-
         public void OnEnter(IContext context)
         {
             var uiState = (context as UIContext).Behaviour;
@@ -38,11 +37,11 @@ namespace Zach
             {
                 context.ChangeState(new UINoteState());
             }
-
-            if (subscription_openPauseMenu.EventRaised)
+            if (Input.GetButtonDown("Pause") || subscription_openPauseMenu.EventRaised)
             {
                 context.ChangeState(new UIJournalState());
             }
+
         }
     }
 }

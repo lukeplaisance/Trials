@@ -29,11 +29,14 @@ namespace Matthew
         {
             subscription_interaction.UnSubscribe();
             subscription_pause.UnSubscribe();
+            subscription_noteInteract.UnSubscribe();
         }
 
         public void UpdateState(IContext context)
         {
-            if(subscription_pause.EventRaised)
+            var playercontext = (PlayerContext) context;
+
+            if(UnityEngine.Input.GetButtonDown("Pause"))
             {
                 context.ChangeState(new PlayerPauseState());
             }
@@ -41,6 +44,7 @@ namespace Matthew
             {
                 context.ChangeState(new PlayerInteractState());
             }
+            
             if (subscription_noteInteract.EventRaised)
             {
                 context.ChangeState(new PlayerPauseState());

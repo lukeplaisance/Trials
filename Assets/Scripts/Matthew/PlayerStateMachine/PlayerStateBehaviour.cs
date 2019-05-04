@@ -1,18 +1,26 @@
 ﻿
 
+using System.Security.Permissions;
 using Cinemachine;
 using UnityEngine;
+using Zach;
+
 namespace Matthew
 {
 
 
-    public class PlayerStateBehaviour : MonoBehaviour
+    public class PlayerStateBehaviour : StateBehaviour
     {
 
         public Zach.NewPlayerMovementBehaviour movementBehaviour;
         public Luke.GameEvent PlayerStartEvent;
         public GameObjectVariable flCam;
         private IContext PlayerContext;
+
+        public override IContext Context
+        {
+            get { return PlayerContext; }
+        }
 
         public void Start()
         {
