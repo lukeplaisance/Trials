@@ -39,7 +39,7 @@ namespace Zach
                 context.ChangeState(new UINoteState());
             }
 
-            if (subscription_closePauseMenu.EventRaised)
+            if (subscription_closePauseMenu.EventRaised || Input.GetButtonDown("Pause"))
             {
                 context.ChangeState(new UIHiddenState());
             }

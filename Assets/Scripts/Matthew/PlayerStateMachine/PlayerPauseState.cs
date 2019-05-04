@@ -23,8 +23,10 @@
 
         public void UpdateState(IContext context)
         {
-            if (listener.EventRaised)
+            if (UnityEngine.Input.GetButtonDown("Pause"))
+            {
                 context.ChangeState(new PlayerIdleState());
+            }
 
         }
     }

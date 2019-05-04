@@ -24,7 +24,6 @@ namespace Zach
             Debug.Log(string.Format("{0} -> {1}", CurrentState, next));
             CurrentState.OnExit(this);
             CurrentState = next;
-            CurrentState.OnEnter(this);
         }
 
         public void ResetContext()

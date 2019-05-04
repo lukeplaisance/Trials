@@ -31,23 +31,7 @@ namespace Zach
                 InteractionState = currentInteraction == null ? "available" : "interacting";
             }
 
-            if (Input.GetButtonDown("Pause"))
-            {
-                
-                if (PauseMenuOpen)
-                {
-                    
-                    CloseMenu.Raise();
-                }
-                    
-                else
-                {
-                    
-                    OpenMenu.Raise();
-                }
-                PauseMenuOpen = !PauseMenuOpen;
-
-            }
+            
 
             if (Input.GetButtonDown("Home"))
             {

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Luke;
 using UnityEngine;
+using Zach;
 
 namespace Matthew
 {
@@ -38,7 +40,6 @@ namespace Matthew
             Debug.Log(string.Format("{0} -> {1}", CurrentState, next));
             CurrentState.OnExit(this);
             CurrentState = next;
-            CurrentState.OnEnter(this);
         }
     }
 }
