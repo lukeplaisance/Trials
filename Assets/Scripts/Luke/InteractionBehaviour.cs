@@ -12,6 +12,7 @@ namespace Luke
         [TextArea]
         public string readme;
         public GameEvent InteractionEnter;
+        public GameEvent InteractionStay;
         public GameEvent InteractionExit;
         public GameEvent InteractionStart;
         public GameEvent InteractionStop;
@@ -19,6 +20,8 @@ namespace Luke
         public UnityEvent OnInteractionResponse;
         public UnityEvent InteractStopResponse;
 
+        [SerializeField]
+        public UnityEvent OnTriggerStayResponse;
         [SerializeField]
         public UnityEvent OnTriggerEnterResponse;
         [SerializeField]
@@ -62,7 +65,7 @@ namespace Luke
 
         public void StopInteraction()
         {
-           
+            Debug.Log("stopping interaction");
             InteractStopResponse.Invoke();
             InteractionStop.Raise();
         }
@@ -86,6 +89,19 @@ namespace Luke
             InteractionEnter.Raise();
             OnTriggerEnterResponse.Invoke();
         }
+        public void SetInteractionToThis()
+        {            
+            if (Interactor == null) return;
+            Interactor.SetInteraction(this);
+        }
+        public void OnTriggerStay(Collider other)
+        {
+            if (!other.CompareTag(TriggerTag)) return;
+            if (Interactor != null)
+                return;
+            InteractionStay.Raise();
+            OnTriggerStayResponse.Invoke();
+        }
 
         public void OnTriggerExit(Collider other)
         {
@@ -94,8 +110,7 @@ namespace Luke
             if (!other.CompareTag(TriggerTag)) return;
 
             ReleaseInteraction();
-            OnTriggerExitResponse.Invoke();
-            
+            OnTriggerExitResponse.Invoke();            
         }
     }
 }

@@ -36,19 +36,29 @@ namespace Matthew
         {
             var playercontext = (PlayerContext) context;
 
-            if(UnityEngine.Input.GetButtonDown("Pause"))
+            if (subscription_noteInteract.EventRaised)
             {
                 context.ChangeState(new PlayerPauseState());
+                return;
             }
             if (subscription_interaction.EventRaised)
             {
                 context.ChangeState(new PlayerInteractState());
+                return;
             }
-            
-            if (subscription_noteInteract.EventRaised)
+
+            if (Zach.PlayerInput.SubmitPressed)
+            {
+                playercontext.Behaviour.CurrentInteraction?.Interact(playercontext.Behaviour);
+                return;
+            }
+
+            if (Zach.PlayerInput.PausePressed)
             {
                 context.ChangeState(new PlayerPauseState());
+                return;
             }
+
         }
     }
 }

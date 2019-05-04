@@ -25,21 +25,21 @@ namespace Matthew
 
         public void UpdateContext()
         {
-            CurrentState.UpdateState(this);
+            _currentState.UpdateState(this);
         }
 
         public void ResetContext()
         {
-            CurrentState = new PlayerIdleState();
-            CurrentState.OnEnter(this);
+            _currentState = new PlayerIdleState();
+            _currentState.OnEnter(this);
         }
 
 
         public void ChangeState(IState next)
         {
-            Debug.Log(string.Format("{0} -> {1}", CurrentState, next));
-            CurrentState.OnExit(this);
-            CurrentState = next;
+            _currentState.OnExit(this);
+            _currentState = next;
+            _currentState.OnEnter(this);
         }
     }
 }
