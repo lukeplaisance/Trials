@@ -16,6 +16,7 @@ namespace Luke
                 animator.SetBool("IsDown", true);
                 animator.Play("MovePressurePlateDown");
                 Debug.Log("pressure plate sound should play");
+                FMODUnity.RuntimeManager.PlayOneShot("event:/pressure_plate");
             }
         }
 

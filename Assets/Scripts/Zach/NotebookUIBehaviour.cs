@@ -24,6 +24,7 @@ namespace Zach
         public void OnEnable()
         {
             OnEnableResponses.Invoke();
+
         }
 
         public void OnDisable()
@@ -73,6 +74,7 @@ namespace Zach
             foreach (var note in notes)
             {
                 Destroy(note);
+     
             }
             notes = new List<GameObject>();
             Cursor.visible = false;

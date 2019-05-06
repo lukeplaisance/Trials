@@ -16,7 +16,6 @@ public class PlayBridgeSound : MonoBehaviour {
 
     public void PlayOnesShotBridgeSound()
     {
-        Debug.Log("bridge sound should play");
-        //FMODUnity.RuntimeManager.PlayOneShot("event:/bridge_lowering_sound");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/bridge_lower");
     }
 }

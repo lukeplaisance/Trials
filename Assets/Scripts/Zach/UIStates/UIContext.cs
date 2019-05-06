@@ -25,17 +25,22 @@ namespace Zach
             CurrentState.OnExit(this);
             CurrentState = next;
             CurrentState.OnEnter(this);
+            Debug.Log("close whole notebook");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/notebook_close");
         }
 
         public void ResetContext()
         {
             CurrentState = new UIHiddenState();
             CurrentState.OnEnter(this);
+
+
         }
 
         public void UpdateContext()
         {
             CurrentState.UpdateState(this);
+
         }
     }
 }

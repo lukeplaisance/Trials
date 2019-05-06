@@ -15,11 +15,14 @@ namespace Zach
         {
             var uiState = (context as UIContext).Behaviour;
             uiState.SetJournalActive(true);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/notebook_open");
             uiState.SetNoteActive(false);
             subscription_openNote = new StateEventTransitionSubscription
             {
                 Subscribeable = Resources.Load("Events/OpenNote") as GameEvent
+
             };
+         
             subscription_closePauseMenu = new StateEventTransitionSubscription
             {
                 Subscribeable = Resources.Load("Events/ClosePauseMenu") as GameEvent
@@ -37,6 +40,7 @@ namespace Zach
             if (subscription_openNote.EventRaised)
             {
                 context.ChangeState(new UINoteState());
+              
             }
 
             if (subscription_closePauseMenu.EventRaised)

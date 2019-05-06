@@ -28,16 +28,19 @@ namespace Zach
         void Update()
         {
             UIContext.UpdateContext();
+
         }
 
         public void SetNoteActive(bool state)
         {
             NoteUI.SetActive(state);
+           
         }
 
         public void SetJournalActive(bool state)
         {
             JournalUI.SetActive(state);
+
         }
     }
 }
