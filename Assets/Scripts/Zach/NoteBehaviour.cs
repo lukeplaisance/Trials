@@ -37,6 +37,7 @@ namespace Zach
             NoteAudioVariable.Value = note.narration;
             note.SetIsEnabled(true);
             NoteInteract.Raise();
+            FMODUnity.RuntimeManager.PlayOneShot("event:/notebook_open");
         }
     }
 }

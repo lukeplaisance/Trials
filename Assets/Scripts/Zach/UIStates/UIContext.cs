@@ -22,10 +22,11 @@ namespace Zach
         public void ChangeState(IState next)
         {
             Debug.Log(string.Format("{0} -> {1}", CurrentState, next));
-            _currentState.OnExit(this);
-            _currentState = next;
-            _currentState.OnEnter(this);
-
+            CurrentState.OnExit(this);
+            CurrentState = next;
+            CurrentState.OnEnter(this);
+            Debug.Log("close whole notebook");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/notebook_close");
         }
 
         public void ResetContext()
@@ -36,7 +37,7 @@ namespace Zach
 
         public void UpdateContext()
         {
-            _currentState.UpdateState(this);    
+            _currentState.UpdateState(this);
         }
     }
 }

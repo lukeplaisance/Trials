@@ -10,6 +10,7 @@ namespace Matthew
         private void Awake()
         {
             gameObjectReferencer.Value = gameObject;
+            Debug.Log("NOTE POPUP SOUND");
         }
     }
 }
