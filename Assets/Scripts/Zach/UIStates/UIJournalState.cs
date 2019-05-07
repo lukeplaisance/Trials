@@ -7,24 +7,30 @@ using UnityEngine;
 namespace Zach
 {
     public class UIJournalState : IState
-    { 
+    {
         StateEventTransitionSubscription subscription_openNote;
 
         public void OnEnter(IContext context)
         {
             var uiState = (context as UIContext).Behaviour;
             uiState.SetJournalActive(true);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/notebook_open");
             uiState.SetNoteActive(false);
             subscription_openNote = new StateEventTransitionSubscription
             {
                 Subscribeable = Resources.Load("Events/OpenNote") as GameEvent
+
             };
- 
+
+            /*subscription_closePauseMenu = new StateEventTransitionSubscription
+            {
+                Subscribeable = Resources.Load("Events/ClosePauseMenu") as GameEvent
+            };*/
         }
 
         public void OnExit(IContext context)
         {
-            subscription_openNote.UnSubscribe(); 
+            subscription_openNote.UnSubscribe();
         }
 
         public void UpdateState(IContext context)

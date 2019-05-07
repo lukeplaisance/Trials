@@ -15,6 +15,22 @@ namespace Zach
         public GameObjectVariable NoteUI;
         public NoteScriptable note;
 
+
+
+        public FMOD.Studio.EventInstance VoiceOver;
+        FMOD.Studio.PLAYBACK_STATE VoiceOverPlaybackState;
+
+        public void Start()
+        {
+            VoiceOver = FMODUnity.RuntimeManager.CreateInstance("event:/Note1_Voiceover");
+            
+        }
+
+        public void Update()
+        {
+            VoiceOver.getPlaybackState(out VoiceOverPlaybackState);
+            
+        }
         //public void SetNoteUIActive(bool on)
         //{
         //    NoteUI.Value.transform.GetChild(0).gameObject.SetActive(on);
@@ -37,6 +53,13 @@ namespace Zach
             NoteAudioVariable.Value = note.narration;
             note.SetIsEnabled(true);
             NoteInteract.Raise();
+            FMODUnity.RuntimeManager.PlayOneShot("event:/notebook_open");
+            VoiceOver.start();
+            
+            
+
+
+
         }
     }
 }
