@@ -17,6 +17,7 @@ namespace Luke
         public GrabMoveableBlockBehaviour back_col;
         public GrabMoveableBlockBehaviour left_col;
         public GrabMoveableBlockBehaviour right_col;
+        public bool isColliding = false;
         GameObjectVariable PlayerRef;
         Animator PlayerAnimator;
         private void Start()
@@ -33,26 +34,38 @@ namespace Luke
             
             if (front_col.IsGrabbed)
             {
-                PlayerAnimator.SetFloat("PushSpeed", v);
-                _controller.Move(new Vector3(0, 0, -v) * speed * Time.deltaTime);
+                if (!isColliding)
+                {
+                    PlayerAnimator.SetFloat("PushSpeed", v);
+                    _controller.Move(new Vector3(0, 0, -v) * speed * Time.deltaTime);
+                }
             }
 
             if (back_col.IsGrabbed)
             {
-                PlayerAnimator.SetFloat("PushSpeed", v);
-                _controller.Move(new Vector3(0, 0, v) * speed * Time.deltaTime);
+                if (!isColliding)
+                {
+                    PlayerAnimator.SetFloat("PushSpeed", v);
+                    _controller.Move(new Vector3(0, 0, v) * speed * Time.deltaTime);
+                }
             }
 
             if (left_col.IsGrabbed)
             {
-                PlayerAnimator.SetFloat("PushSpeed", v);
-                _controller.Move(new Vector3(v, 0, 0) * speed * Time.deltaTime);
+                if (!isColliding)
+                {
+                    PlayerAnimator.SetFloat("PushSpeed", v);
+                    _controller.Move(new Vector3(v, 0, 0) * speed * Time.deltaTime);
+                }
             }
 
             if (right_col.IsGrabbed)
             {
-                PlayerAnimator.SetFloat("PushSpeed", v);
-                _controller.Move(new Vector3(-v, 0, 0) * speed * Time.deltaTime);
+                if (!isColliding)
+                {
+                    PlayerAnimator.SetFloat("PushSpeed", v);
+                    _controller.Move(new Vector3(-v, 0, 0) * speed * Time.deltaTime);
+                }
             }
 
         }
