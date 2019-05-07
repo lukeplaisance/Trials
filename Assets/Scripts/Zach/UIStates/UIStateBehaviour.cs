@@ -6,13 +6,18 @@ using UnityEngine;
 //don't blame me. - Zach
 namespace Zach
 {
-    public class UIStateBehaviour : MonoBehaviour
+    public class UIStateBehaviour : Matthew.StateBehaviour
     {
         public IContext UIContext;
 
         public GameObject JournalUI;
 
         public GameObject NoteUI;
+
+        public override IContext Context
+        {
+            get { return UIContext; }
+        }
 
         // Use this for initialization
         void Start()

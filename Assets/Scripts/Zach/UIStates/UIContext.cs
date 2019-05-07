@@ -22,20 +22,21 @@ namespace Zach
         public void ChangeState(IState next)
         {
             Debug.Log(string.Format("{0} -> {1}", CurrentState, next));
-            CurrentState.OnExit(this);
-            CurrentState = next;
-            CurrentState.OnEnter(this);
+            _currentState.OnExit(this);
+            _currentState = next;
+            _currentState.OnEnter(this);
+
         }
 
         public void ResetContext()
         {
-            CurrentState = new UIHiddenState();
-            CurrentState.OnEnter(this);
+            _currentState = new UIHiddenState();
+            _currentState.OnEnter(this);
         }
 
         public void UpdateContext()
         {
-            CurrentState.UpdateState(this);
+            _currentState.UpdateState(this);    
         }
     }
 }

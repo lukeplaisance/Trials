@@ -24,7 +24,7 @@ GameObject:
   m_Layer: 0
   m_Name: Collider-Back-Interactable
   m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -58,7 +58,7 @@ GameObject:
   m_Layer: 0
   m_Name: Collider-Right-Interactable
   m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 114961318372419498}
   - component: {fileID: 143263748003990366}
   - component: {fileID: 114086601251345064}
+  - component: {fileID: 54995214167373578}
   m_Layer: 0
   m_Name: MoveableBlock
   m_TagString: Grabbable
@@ -128,7 +129,7 @@ GameObject:
   m_Layer: 0
   m_Name: Collider-Front-Interactable
   m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -162,7 +163,7 @@ GameObject:
   m_Layer: 0
   m_Name: Collider-Left-Interactable
   m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -206,26 +207,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1824167369294286}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 1.5, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4493057357699610}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4191730646488094
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1756120810520550}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: -0.4, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4493057357699610}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4194361940302418
 Transform:
   m_ObjectHideFlags: 1
@@ -246,19 +247,19 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1342712435294750}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.53, y: -3.5, z: -170.4989}
+  m_LocalPosition: {x: -12.37, y: -3.5, z: -41.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4742302466724450}
   - {fileID: 4625495686245620}
-  - {fileID: 4517943759803882}
-  - {fileID: 4748182725055936}
   - {fileID: 4807088314971068}
   - {fileID: 4062792449874226}
+  - {fileID: 4517943759803882}
+  - {fileID: 4191730646488094}
   - {fileID: 4913197194445056}
   - {fileID: 4194361940302418}
-  - {fileID: 4191730646488094}
   - {fileID: 4951610084299088}
+  - {fileID: 4748182725055936}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -273,7 +274,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4493057357699610}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4625495686245620
 Transform:
@@ -295,8 +296,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1924119043766866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.184, y: 0.334, z: 0}
+  m_LocalScale: {x: 1.6823, y: 1.6056, z: 1.704}
   m_Children: []
   m_Father: {fileID: 4493057357699610}
   m_RootOrder: 0
@@ -312,7 +313,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4493057357699610}
-  m_RootOrder: 3
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4807088314971068
 Transform:
@@ -320,13 +321,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1636326346672684}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -1.5, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4493057357699610}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4913197194445056
 Transform:
   m_ObjectHideFlags: 1
@@ -351,7 +352,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4493057357699610}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!23 &23681771022488064
 MeshRenderer:
@@ -437,6 +438,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1924119043766866}
   m_Mesh: {fileID: 4300000, guid: 8a47024c4e220cd4c877f002a553ced4, type: 3}
+--- !u!54 &54995214167373578
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1342712435294750}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65284162950083086
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -521,6 +537,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 11400000, guid: 118a73d6defb98a40a36c93e19fc5ac5, type: 2}
+  BlockInteractionStart: {fileID: 0}
+  BlockInteractionStop: {fileID: 0}
 --- !u!114 &114219315906957814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -533,6 +551,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 11400000, guid: 118a73d6defb98a40a36c93e19fc5ac5, type: 2}
+  BlockInteractionStart: {fileID: 0}
+  BlockInteractionStop: {fileID: 0}
 --- !u!114 &114555722364897132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -547,6 +567,7 @@ MonoBehaviour:
   TriggerTag: Player
   readme: 
   InteractionEnter: {fileID: 11400000, guid: 6c78854e61d526d4ab8a7df6d44bfebc, type: 2}
+  InteractionStay: {fileID: 11400000, guid: 4703022eeb53db14d85269f02af4be8e, type: 2}
   InteractionExit: {fileID: 11400000, guid: 2a8a400eca1f22a44a73ddcf37e637ac, type: 2}
   InteractionStart: {fileID: 11400000, guid: c6f477513b65b7547bc08318ca98d1ce, type: 2}
   InteractionStop: {fileID: 11400000, guid: 2e43d50494228ff4d8fc13f6259202ac, type: 2}
@@ -591,6 +612,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnTriggerStayResponse:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   OnTriggerEnterResponse:
@@ -639,6 +665,7 @@ MonoBehaviour:
   TriggerTag: Player
   readme: 
   InteractionEnter: {fileID: 11400000, guid: 6c78854e61d526d4ab8a7df6d44bfebc, type: 2}
+  InteractionStay: {fileID: 11400000, guid: 4703022eeb53db14d85269f02af4be8e, type: 2}
   InteractionExit: {fileID: 11400000, guid: 2a8a400eca1f22a44a73ddcf37e637ac, type: 2}
   InteractionStart: {fileID: 11400000, guid: c6f477513b65b7547bc08318ca98d1ce, type: 2}
   InteractionStop: {fileID: 11400000, guid: 2e43d50494228ff4d8fc13f6259202ac, type: 2}
@@ -685,6 +712,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  OnTriggerStayResponse:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnTriggerEnterResponse:
     m_PersistentCalls:
       m_Calls:
@@ -729,6 +761,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 11400000, guid: 118a73d6defb98a40a36c93e19fc5ac5, type: 2}
+  BlockInteractionStart: {fileID: 0}
+  BlockInteractionStop: {fileID: 0}
 --- !u!114 &114731025703118880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -743,6 +777,7 @@ MonoBehaviour:
   TriggerTag: Player
   readme: 
   InteractionEnter: {fileID: 11400000, guid: 6c78854e61d526d4ab8a7df6d44bfebc, type: 2}
+  InteractionStay: {fileID: 11400000, guid: 4703022eeb53db14d85269f02af4be8e, type: 2}
   InteractionExit: {fileID: 11400000, guid: 2a8a400eca1f22a44a73ddcf37e637ac, type: 2}
   InteractionStart: {fileID: 11400000, guid: c6f477513b65b7547bc08318ca98d1ce, type: 2}
   InteractionStop: {fileID: 11400000, guid: 2e43d50494228ff4d8fc13f6259202ac, type: 2}
@@ -789,6 +824,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  OnTriggerStayResponse:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnTriggerEnterResponse:
     m_PersistentCalls:
       m_Calls:
@@ -833,6 +873,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 11400000, guid: 118a73d6defb98a40a36c93e19fc5ac5, type: 2}
+  BlockInteractionStart: {fileID: 0}
+  BlockInteractionStop: {fileID: 0}
 --- !u!114 &114844077478078308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -847,6 +889,7 @@ MonoBehaviour:
   TriggerTag: Player
   readme: 
   InteractionEnter: {fileID: 11400000, guid: 6c78854e61d526d4ab8a7df6d44bfebc, type: 2}
+  InteractionStay: {fileID: 11400000, guid: 4703022eeb53db14d85269f02af4be8e, type: 2}
   InteractionExit: {fileID: 11400000, guid: 2a8a400eca1f22a44a73ddcf37e637ac, type: 2}
   InteractionStart: {fileID: 11400000, guid: c6f477513b65b7547bc08318ca98d1ce, type: 2}
   InteractionStop: {fileID: 11400000, guid: 2e43d50494228ff4d8fc13f6259202ac, type: 2}
@@ -891,6 +934,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnTriggerStayResponse:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   OnTriggerEnterResponse:

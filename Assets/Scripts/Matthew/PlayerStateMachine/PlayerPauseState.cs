@@ -22,9 +22,18 @@
         }
 
         public void UpdateState(IContext context)
-        {
-            if (listener.EventRaised)
+        {            
+            if (Zach.PlayerInput.CancelPressed)
+            {
+                if((context as PlayerContext).Behaviour.CurrentInteraction != null)
+                {
+                    context.ChangeState(new PlayerInteractState());
+                    return;
+                }
+                    
                 context.ChangeState(new PlayerIdleState());
+                return;
+            }
 
         }
     }

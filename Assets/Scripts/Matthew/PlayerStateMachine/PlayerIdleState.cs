@@ -29,22 +29,36 @@ namespace Matthew
         {
             subscription_interaction.UnSubscribe();
             subscription_pause.UnSubscribe();
+            subscription_noteInteract.UnSubscribe();
         }
 
         public void UpdateState(IContext context)
         {
-            if(subscription_pause.EventRaised)
+            var playercontext = (PlayerContext) context;
+
+            if (subscription_noteInteract.EventRaised)
             {
                 context.ChangeState(new PlayerPauseState());
+                return;
             }
             if (subscription_interaction.EventRaised)
             {
                 context.ChangeState(new PlayerInteractState());
+                return;
             }
-            if (subscription_noteInteract.EventRaised)
+
+            if (Zach.PlayerInput.SubmitPressed)
+            {
+                playercontext.Behaviour.CurrentInteraction?.Interact(playercontext.Behaviour);
+                return;
+            }
+
+            if (Zach.PlayerInput.PausePressed)
             {
                 context.ChangeState(new PlayerPauseState());
+                return;
             }
+
         }
     }
 }

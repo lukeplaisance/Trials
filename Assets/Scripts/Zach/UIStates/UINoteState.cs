@@ -43,14 +43,17 @@ namespace Zach
 
         public void UpdateState(IContext context)
         {
-            if (subscription_closePauseMenu.EventRaised)
+            
+            if (PlayerInput.CancelPressed)
             {
                 context.ChangeState(new UIHiddenState());
+                return;
             }
 
             if (subscription_closeNote.EventRaised)
             {
                 context.ChangeState(new UIJournalState());
+                return;
             }
         }
     }
