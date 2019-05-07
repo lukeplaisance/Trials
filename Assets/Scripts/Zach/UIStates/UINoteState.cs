@@ -12,6 +12,10 @@ namespace Zach
         StateEventTransitionSubscription subscription_closePauseMenu;
         StateEventTransitionSubscription subscription_closeNote;
 
+        //private FMOD.Studio.EventInstance VoiceOver;
+        
+        
+
         public void OnEnter(IContext context)
         {
             var uiState = (context as UIContext).Behaviour;
@@ -19,6 +23,7 @@ namespace Zach
             uiState.SetNoteActive(true);
             Debug.Log("note book interaction scotty");
             FMODUnity.RuntimeManager.PlayOneShot("event:/notebook_selection");
+            //VoiceOver.start();
             subscription_closePauseMenu = new StateEventTransitionSubscription
             {
                 Subscribeable = Resources.Load("Events/ClosePauseMenu") as GameEvent
@@ -59,6 +64,8 @@ namespace Zach
                 context.ChangeState(new UIJournalState());
                 Debug.Log("CLOSE NOTEBOOK");
                 FMODUnity.RuntimeManager.PlayOneShot("event:/notebook_close");
+
+                
             }
         }
     }

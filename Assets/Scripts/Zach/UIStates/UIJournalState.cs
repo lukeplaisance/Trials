@@ -22,10 +22,10 @@ namespace Zach
 
             };
 
-            subscription_closePauseMenu = new StateEventTransitionSubscription
+            /*subscription_closePauseMenu = new StateEventTransitionSubscription
             {
                 Subscribeable = Resources.Load("Events/ClosePauseMenu") as GameEvent
-            };
+            };*/
         }
 
         public void OnExit(IContext context)
