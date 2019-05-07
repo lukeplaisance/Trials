@@ -9,6 +9,9 @@ namespace Zach
     public class UIHiddenState : IState
     {
         StateEventTransitionSubscription subscription_openNote;
+
+
+
         public void OnEnter(IContext context)
         {
             var uiState = (context as UIContext).Behaviour;
@@ -24,6 +27,9 @@ namespace Zach
         public void OnExit(IContext context)
         {
             subscription_openNote.UnSubscribe();
+            Debug.Log("close note?");
+            
+            
         }
 
         public void UpdateState(IContext context)
@@ -31,6 +37,7 @@ namespace Zach
             if (subscription_openNote.EventRaised)
             {
                 context.ChangeState(new UINoteState());
+                Debug.Log("open note?");
                 return;
             }
             if (Zach.PlayerInput.PausePressed)
