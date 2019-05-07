@@ -26,7 +26,12 @@ namespace Zach
         public Vector3 camRight;
         public Vector3 camForward;
         public bool isFrozen = false;
-        public bool isGrounded;
+
+        public static bool IsGrounded
+        {
+            get { return isGrounded; }
+        }
+        private static bool isGrounded;
         private Vector3 _prevPosition;
         private CharacterController _controller;
         private Animator _animator;

@@ -1,4 +1,6 @@
 ﻿
+using Zach;
+
 namespace Matthew
 {
     public class PlayerIdleState : IState
@@ -21,8 +23,6 @@ namespace Matthew
             {
                 Subscribeable = UnityEngine.Resources.Load("Events/NoteInteraction") as Luke.GameEvent
             };
-
-
         }
 
         public void OnExit(IContext context)
@@ -36,6 +36,11 @@ namespace Matthew
         {
             var playercontext = (PlayerContext) context;
 
+            if (!NewPlayerMovementBehaviour.IsGrounded)
+            {
+                context.ChangeState(new PlayerInAirState());
+                return;
+            }
             if (subscription_noteInteract.EventRaised)
             {
                 context.ChangeState(new PlayerPauseState());
