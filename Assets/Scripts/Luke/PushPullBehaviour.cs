@@ -17,6 +17,8 @@ namespace Luke
         public GrabMoveableBlockBehaviour back_col;
         public GrabMoveableBlockBehaviour left_col;
         public GrabMoveableBlockBehaviour right_col;
+        public bool isFrontColliding = false;
+        public bool isBackColliding = false;
         GameObjectVariable PlayerRef;
         Animator PlayerAnimator;
         private void Start()
@@ -30,7 +32,10 @@ namespace Luke
         {
             //now checking for if the collider is grabbed rather than positional check
             var v = Input.GetAxis("Vertical");
-            
+            if (v > 0 && isFrontColliding)
+                v = 0;
+            else if (v < 0 && isBackColliding)
+                v = 0;
             if (front_col.IsGrabbed)
             {
                 PlayerAnimator.SetFloat("PushSpeed", v);
