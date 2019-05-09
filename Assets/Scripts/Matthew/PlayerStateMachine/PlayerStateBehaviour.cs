@@ -58,6 +58,11 @@ namespace Matthew
         }
         public void SetMovement(bool state)
         {
+            movementBehaviour.isFrozen = !state;
+        }
+
+        public void SetCamera(bool state)
+        {
             var cam = flCam.Value.GetComponent<CinemachineFreeLook>();
             if (state)
             {
@@ -69,8 +74,6 @@ namespace Matthew
                 cam.m_XAxis.m_MaxSpeed = 0;
                 cam.m_YAxis.m_MaxSpeed = 0;
             }
-
-            movementBehaviour.isFrozen = !state;
         }
         private void Update()
         {
@@ -83,16 +86,22 @@ namespace Matthew
 
             if (Input.GetButtonDown("Home"))
             {
-                if (WaypointMenuOpen)
+                if (Input.GetButtonDown("LB"))
                 {
-                    CloseWaypointMenu.Raise();
-                }
-                else
-                {
-                    OpenWaypointMenu.Raise();
-                }
+                    if (Input.GetButtonDown("RB"))
+                    {
+                        if (WaypointMenuOpen)
+                        {
+                            CloseWaypointMenu.Raise();
+                        }
+                        else
+                        {
+                            OpenWaypointMenu.Raise();
+                        }
 
-                WaypointMenuOpen = !WaypointMenuOpen;
+                        WaypointMenuOpen = !WaypointMenuOpen;
+                    }
+                }
             }
         }
     }
