@@ -86,16 +86,22 @@ namespace Matthew
 
             if (Input.GetButtonDown("Home"))
             {
-                if (WaypointMenuOpen)
+                if (Input.GetButtonDown("LB"))
                 {
-                    CloseWaypointMenu.Raise();
-                }
-                else
-                {
-                    OpenWaypointMenu.Raise();
-                }
+                    if (Input.GetButtonDown("RB"))
+                    {
+                        if (WaypointMenuOpen)
+                        {
+                            CloseWaypointMenu.Raise();
+                        }
+                        else
+                        {
+                            OpenWaypointMenu.Raise();
+                        }
 
-                WaypointMenuOpen = !WaypointMenuOpen;
+                        WaypointMenuOpen = !WaypointMenuOpen;
+                    }
+                }
             }
         }
     }
