@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
+using UnityEngine.Events;
 
 namespace Zach
 {
@@ -14,6 +13,7 @@ namespace Zach
         [SerializeField] private Vector3 raycastOffset;
         [SerializeField] private float speed;
         public Rigidbody rb;
+        public UnityEvent Response;
 
         private int slidingDoorsPlayCalls;
 
@@ -50,7 +50,7 @@ namespace Zach
                 if (Physics.Raycast(transform.position + raycastOffset, direction * 4, out hit))
                     if (hit.collider.gameObject.CompareTag("Terrain"))
                     {
-                        SceneManager.LoadScene("GameOver");
+                        Response.Invoke();
                         Debug.Log("Player is dead.");
                     }
             }
