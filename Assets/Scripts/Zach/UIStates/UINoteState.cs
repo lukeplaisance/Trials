@@ -21,6 +21,7 @@ namespace Zach
             var uiState = (context as UIContext).Behaviour;
             uiState.SetJournalActive(false);
             uiState.SetNoteActive(true);
+            uiState.SetButtonActove(true);
             Debug.Log("note book interaction scotty");
             FMODUnity.RuntimeManager.PlayOneShot("event:/notebook_selection");
             //VoiceOver.start();
