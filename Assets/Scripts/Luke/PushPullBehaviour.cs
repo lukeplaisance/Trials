@@ -61,5 +61,15 @@ namespace Luke
             }
 
         }
+
+        public void SetFrontCollision(bool state)
+        {
+            isFrontColliding = state;
+        }
+
+        public void SetBackCollision(bool state)
+        {
+            isBackColliding = state;
+        }
     }
 }

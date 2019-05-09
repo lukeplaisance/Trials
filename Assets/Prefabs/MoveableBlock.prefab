@@ -142,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4679790182436436}
   - component: {fileID: 65153757367971472}
-  - component: {fileID: 114498313092257264}
+  - component: {fileID: 114969669209759570}
   m_Layer: 0
   m_Name: Left-Front
   m_TagString: Untagged
@@ -278,7 +278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4490318160752684}
   - component: {fileID: 65063306895142024}
-  - component: {fileID: 114210879863257652}
+  - component: {fileID: 114155191592052996}
   m_Layer: 0
   m_Name: Back-Back
   m_TagString: Untagged
@@ -882,6 +882,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: {fileID: 114961318372419498}
   isFrontCollider: 1
+--- !u!114 &114155191592052996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1835023432146306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b60f3c867ef0e44fa576bccddfbf935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block: {fileID: 114961318372419498}
+  isFrontCollider: 0
 --- !u!114 &114190361253307870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -924,7 +937,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: {fileID: 114961318372419498}
   isFrontCollider: 0
---- !u!114 &114210879863257652
 --- !u!114 &114219315906957814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -954,7 +966,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: {fileID: 114961318372419498}
   isFrontCollider: 1
---- !u!114 &114498313092257264
 --- !u!114 &114555722364897132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1600,6 +1611,19 @@ MonoBehaviour:
   right_col: {fileID: 114719994595211088}
   isFrontColliding: 0
   isBackColliding: 0
+--- !u!114 &114969669209759570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1557920300753130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b60f3c867ef0e44fa576bccddfbf935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block: {fileID: 114961318372419498}
+  isFrontCollider: 1
 --- !u!135 &135630533475092814
 SphereCollider:
   m_ObjectHideFlags: 1
