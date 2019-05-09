@@ -6,12 +6,26 @@ using UnityEngine;
 public class PushPullPatch : MonoBehaviour
 {
     public PushPullBehaviour block;
+    public bool isFrontCollider;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") || other.CompareTag("Grabbable"))
             return;
-        block.isColliding = true;
+        if(isFrontCollider)
+            block.isFrontColliding = true;
+        else
+            block.isBackColliding = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player") || other.CompareTag("Grabbable"))
+            return;
+        if (isFrontCollider)
+            block.isFrontColliding = false;
+        else
+            block.isBackColliding = false;
     }
 
 }
