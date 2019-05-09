@@ -8,28 +8,30 @@ namespace Zach
 {
     public class UIJournalState : IState
     {
-        StateEventTransitionSubscription subscription_closePauseMenu;
         StateEventTransitionSubscription subscription_openNote;
 
         public void OnEnter(IContext context)
         {
             var uiState = (context as UIContext).Behaviour;
             uiState.SetJournalActive(true);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/notebook_open");
             uiState.SetNoteActive(false);
+            uiState.SetButtonActove(true);
             subscription_openNote = new StateEventTransitionSubscription
             {
                 Subscribeable = Resources.Load("Events/OpenNote") as GameEvent
+
             };
-            subscription_closePauseMenu = new StateEventTransitionSubscription
+
+            /*subscription_closePauseMenu = new StateEventTransitionSubscription
             {
                 Subscribeable = Resources.Load("Events/ClosePauseMenu") as GameEvent
-            };
+            };*/
         }
 
         public void OnExit(IContext context)
         {
             subscription_openNote.UnSubscribe();
-            subscription_closePauseMenu.UnSubscribe();
         }
 
         public void UpdateState(IContext context)
@@ -37,12 +39,14 @@ namespace Zach
             if (subscription_openNote.EventRaised)
             {
                 context.ChangeState(new UINoteState());
+                return;
             }
-
-            if (subscription_closePauseMenu.EventRaised)
+            if (Zach.PlayerInput.CancelPressed)
             {
                 context.ChangeState(new UIHiddenState());
+                return;
             }
+
         }
     }
 }

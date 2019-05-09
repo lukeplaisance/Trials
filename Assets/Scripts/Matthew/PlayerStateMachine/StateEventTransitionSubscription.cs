@@ -9,7 +9,10 @@ namespace Matthew
     public class StateEventTransitionSubscription : IListener
     {
         private ISubscribeable _subscribeable;
-
+        public override string ToString()
+        {
+            return base.ToString() + _subscribeable.ToString();
+        }
         public ISubscribeable Subscribeable
         {
             get

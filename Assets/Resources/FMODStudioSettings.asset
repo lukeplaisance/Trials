@@ -15,7 +15,7 @@ MonoBehaviour:
   HasPlatforms: 1
   sourceProjectPath: FMOD\Trials_FMOD_Project\Trials_FMOD_Project.fspro
   SourceProjectPathUnformatted: FMOD\Trials_FMOD_Project\Trials_FMOD_Project.fspro
-  SourceBankPathUnformatted: FMOD/Trials_FMOD_Project/FMODBuild
+  SourceBankPathUnformatted: FMOD\Trials_FMOD_Project\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0
@@ -26,7 +26,7 @@ MonoBehaviour:
     Value: 3
   SampleRateSettings:
   - Platform: 1
-    Value: 48000
+    Value: 44100
   - Platform: 2
     Value: 0
   LiveUpdateSettings:
@@ -36,7 +36,7 @@ MonoBehaviour:
     Value: 0
   OverlaySettings:
   - Platform: 1
-    Value: 1
+    Value: 0
   - Platform: 2
     Value: 0
   LoggingSettings:
