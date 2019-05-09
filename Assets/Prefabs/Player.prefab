@@ -5886,7 +5886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveVector: {x: 0, y: 0, z: 0}
-  speed: 5
+  speed: 4
   jumpPower: 9
   gravity: 20
   mag: 0
@@ -5895,7 +5895,6 @@ MonoBehaviour:
   camRight: {x: 0, y: 0, z: 0}
   camForward: {x: 0, y: 0, z: 0}
   isFrozen: 1
-  isGrounded: 0
 --- !u!114 &114809749709474646
 MonoBehaviour:
   m_ObjectHideFlags: 1
