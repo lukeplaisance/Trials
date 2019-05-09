@@ -50,11 +50,11 @@ namespace Zach
             Debug.Log("close whole notebook");
             FMODUnity.RuntimeManager.PlayOneShot("event:/notebook_close");
 
-            Debug.Log(VoiceOverPlaybackState);
-            if (VoiceOverPlaybackState == FMOD.Studio.PLAYBACK_STATE.PLAYING)
-            {
-                voiceOver.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            }
+            //Debug.Log(VoiceOverPlaybackState);
+            //if (VoiceOverPlaybackState == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+            //{
+            //    voiceOver.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            //}
         }
 
         public void ResetContext()
