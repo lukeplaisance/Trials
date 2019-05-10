@@ -92,7 +92,9 @@ namespace Zach
 
         public void SetSelected()
         {
-            eventSys.SetSelectedGameObject(buttonGOs[0]);
+            var button = buttonGOs[0].GetComponent<Button>();
+            eventSys.SetSelectedGameObject(button.gameObject);
+            button.OnSelect(null);
         }
     }
 }
