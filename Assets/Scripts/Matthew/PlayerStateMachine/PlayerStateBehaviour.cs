@@ -81,12 +81,9 @@ namespace Matthew
 
             // Update is called once per frame
 
-
-
-
-            if (Input.GetButtonDown("Home"))
+            if (Input.GetButton("Home"))
             {
-                if (Input.GetButtonDown("LB"))
+                if (Input.GetButton("LB"))
                 {
                     if (Input.GetButtonDown("RB"))
                     {
