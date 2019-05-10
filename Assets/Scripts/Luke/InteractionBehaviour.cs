@@ -29,6 +29,11 @@ namespace Luke
 
         private IInteractor _Interactor;
 
+        public void ChangePosition(float y)
+        {
+            this.transform.position = new Vector3(100,y,100);
+        }
+
         private void Start()
         {
             InteractionEnter = Resources.Load<GameEvent>("Events/InteractionEnter");
@@ -113,5 +118,7 @@ namespace Luke
             ReleaseInteraction();
             OnTriggerExitResponse.Invoke();            
         }
+
+        
     }
 }
