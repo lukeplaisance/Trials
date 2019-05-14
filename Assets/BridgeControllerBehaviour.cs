@@ -14,7 +14,7 @@ namespace Luke
         public UnityEvent ExecuteIfFalseResponse;
         public PlayerInventoryObject inventory;
         public Item key;
-        public void CheckCondition()
+        public void CheckInventoryForItem()
         {
             inventory.CheckForItem(key);
             condition = inventory.has_item;
