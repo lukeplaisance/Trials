@@ -27496,7 +27496,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-314748
+  m_Name: pb_Mesh-196358
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -71829,20 +71829,9 @@ MonoBehaviour:
   raycastOffset: {x: -8, y: 4, z: -20}
   speed: 4
   rb: {fileID: 0}
-  Response:
+  PlayerCrushedResponse:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 416222493}
-        m_MethodName: Teleport
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1336324504
@@ -89716,20 +89705,9 @@ MonoBehaviour:
   raycastOffset: {x: 8, y: 4, z: 20}
   speed: 4
   rb: {fileID: 0}
-  Response:
+  PlayerCrushedResponse:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 416222493}
-        m_MethodName: Teleport
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1855292712

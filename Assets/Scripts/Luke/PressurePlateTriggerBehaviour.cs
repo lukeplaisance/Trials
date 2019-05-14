@@ -11,7 +11,7 @@ namespace Luke
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Player") || other.CompareTag("Grabbable"))
+            if (other.CompareTag("Grabbable"))
             {
                 animator.SetBool("IsDown", true);
                 animator.Play("MovePressurePlateDown");
@@ -23,7 +23,7 @@ namespace Luke
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.CompareTag("Player") || other.CompareTag("Grabbable"))
+            if (other.CompareTag("Grabbable"))
             {
                 animator.SetBool("IsDown", false);
                 animator.Play("MovePressurePlateUp");
