@@ -26,7 +26,9 @@ namespace Zach
         public Vector3 camRight;
         public Vector3 camForward;
         public bool isFrozen = false;
-
+        public Vector3 forward;
+        public Vector3 targetDir;
+        public GameObject anchor;
         public static bool IsGrounded
         {
             get { return isGrounded; }
@@ -81,10 +83,10 @@ namespace Zach
             }
             var h = PlayerInput.InputVector.normalized.x;
             var v = PlayerInput.InputVector.normalized.z;
-            var forward = Camera.main.transform.TransformDirection(Vector3.forward);
+            forward = Camera.main.transform.TransformDirection(Vector3.forward);
             forward.y = 0;
             var right = new Vector3(forward.z, 0, -forward.x);
-            var targetDir = h * right + v * forward;
+            targetDir = h * right + v * forward;
             if (targetDir.magnitude > 0)
             {
                 var rot = Quaternion.Euler(targetDir);
