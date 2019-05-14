@@ -18,6 +18,7 @@ namespace Luke
                 Debug.Log("pressure plate sound should play");
                 FMODUnity.RuntimeManager.PlayOneShot("event:/pressure_plate");
             }
+            
         }
 
         private void OnTriggerExit(Collider other)

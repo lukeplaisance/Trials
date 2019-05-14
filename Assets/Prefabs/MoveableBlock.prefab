@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 143263748003990366}
   - component: {fileID: 114086601251345064}
   - component: {fileID: 54995214167373578}
+  - component: {fileID: 65477015177775452}
   m_Layer: 0
   m_Name: MoveableBlock
   m_TagString: Grabbable
@@ -439,7 +440,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1342712435294750}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.04, y: -3.53, z: -166.03}
+  m_LocalPosition: {x: 5.4400005, y: -3.5, z: -100.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4742302466724450}
@@ -761,6 +762,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1, z: 0.5}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!65 &65477015177775452
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1342712435294750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6947093, y: 1.5499516, z: 1.5927505}
+  m_Center: {x: -0.17056203, y: 0.3222661, z: 0.017734528}
 --- !u!65 &65487582081429032
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1902,7 +1915,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 1
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
