@@ -17,6 +17,7 @@ namespace Zach
             var uiState = (context as UIContext).Behaviour;
             uiState.SetJournalActive(false);
             uiState.SetNoteActive(false);
+            uiState.SetButtonActove(false);
             subscription_openNote = new StateEventTransitionSubscription
             {
                 Subscribeable = Resources.Load("Events/OpenNote") as GameEvent

@@ -16,6 +16,7 @@ namespace Zach
             uiState.SetJournalActive(true);
             FMODUnity.RuntimeManager.PlayOneShot("event:/notebook_open");
             uiState.SetNoteActive(false);
+            uiState.SetButtonActove(true);
             subscription_openNote = new StateEventTransitionSubscription
             {
                 Subscribeable = Resources.Load("Events/OpenNote") as GameEvent
