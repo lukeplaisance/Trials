@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 65209759318405106}
   - component: {fileID: 114626991358434060}
   m_Layer: 0
-  m_Name: CampSite
+  m_Name: HazardHallway
   m_TagString: Waypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,6 +95,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1962105642662528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4109074821333980}
+  - component: {fileID: 65043716322929898}
+  - component: {fileID: 114272375135813244}
+  m_Layer: 0
+  m_Name: Bridge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4109074821333980
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1962105642662528}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.59, z: -77.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4861033346190954}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4386663636939084
 Transform:
   m_ObjectHideFlags: 1
@@ -102,7 +132,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1098870369484664}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.8, y: -0.99, z: -101.6}
+  m_LocalPosition: {x: -19.17, y: -3.776, z: -98.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4861033346190954}
@@ -115,7 +145,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285724545639654}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -3.54, z: -131.29}
+  m_LocalPosition: {x: -0, y: -3.54, z: -133.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4861033346190954}
@@ -128,11 +158,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1303917403931164}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2, y: -2.97, z: -20.4}
+  m_LocalPosition: {x: -0.33, y: -1.86, z: -36.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4861033346190954}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4852584302134532
 Transform:
@@ -141,7 +171,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1327365998761684}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.4, y: -3.54, z: -166.195}
+  m_LocalPosition: {x: -19, y: -3.54, z: -166.195}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4861033346190954}
@@ -154,16 +184,29 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1642851579682426}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4.3038936}
+  m_LocalPosition: {x: 0, y: 0, z: -4.303894}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4852584302134532}
   - {fileID: 4386663636939084}
   - {fileID: 4453050663020954}
+  - {fileID: 4109074821333980}
   - {fileID: 4673741799522354}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65043716322929898
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1962105642662528}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 18.754204, y: 12.121383, z: 1}
+  m_Center: {x: 0.11220932, y: 5.5606914, z: 0}
 --- !u!65 &65209759318405106
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -174,8 +217,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 2.5, z: 2.5}
-  m_Center: {x: 0.1, y: 1, z: 0}
+  m_Size: {x: 18.405659, y: 10.332792, z: 6.9323883}
+  m_Center: {x: -0.6599965, y: 4.916396, z: 0.2857895}
 --- !u!65 &65720167223085722
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -186,8 +229,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 2.5, z: 2.5}
-  m_Center: {x: 0.1, y: 1, z: 0}
+  m_Size: {x: 15.099774, y: 11.706085, z: 15.101959}
+  m_Center: {x: 1.8016858, y: 5.6030426, z: 1.1388931}
 --- !u!65 &65868165160894756
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -198,8 +241,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 2.5, z: 2.5}
-  m_Center: {x: 0.1, y: 1, z: 0}
+  m_Size: {x: 7.074192, y: 9.260681, z: 2.5}
+  m_Center: {x: 0.13281345, y: 4.3803415, z: 0}
 --- !u!65 &65983858239624002
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -210,8 +253,35 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 2.5, z: 2.5}
-  m_Center: {x: 0.1, y: 1, z: 0}
+  m_Size: {x: 15.276179, y: 11.337769, z: 7.3627167}
+  m_Center: {x: -0.10283518, y: 5.4188843, z: -2.4313583}
+--- !u!114 &114272375135813244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1962105642662528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de7342248f071847a5f696f5f617dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114654063387590428}
+        m_MethodName: SetCurrentWaypointTransform
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4109074821333980}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114626991358434060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -252,8 +322,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints:
   - {fileID: 4852584302134532}
-  - {fileID: 4386663636939084}
   - {fileID: 4453050663020954}
+  - {fileID: 4386663636939084}
+  - {fileID: 4109074821333980}
   - {fileID: 4673741799522354}
   startResponse:
     m_PersistentCalls:
