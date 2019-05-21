@@ -91,7 +91,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 112000002, guid: 7f89428a30c150145b4f81292df3bc06,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5078,12 +5078,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 416222493}
-        m_MethodName: SetCurrentWaypointTransform
-        m_Mode: 2
+      - m_Target: {fileID: 1656723833}
+        m_MethodName: Load
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 416222494}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -13508,6 +13508,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114654063387590428, guid: 17d7c7e731beb564da886a4a5fdbaab2,
+        type: 2}
+      propertyPath: startResponse.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4861033346190954, guid: 17d7c7e731beb564da886a4a5fdbaab2, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -13540,11 +13545,57 @@ Prefab:
       propertyPath: m_RootOrder
       value: 21
       objectReference: {fileID: 0}
-    - target: {fileID: 4109074821333980, guid: 17d7c7e731beb564da886a4a5fdbaab2, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -79.37
+    - target: {fileID: 4673741799522354, guid: 17d7c7e731beb564da886a4a5fdbaab2, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4852584302134532, guid: 17d7c7e731beb564da886a4a5fdbaab2, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4453050663020954, guid: 17d7c7e731beb564da886a4a5fdbaab2, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109074821333980, guid: 17d7c7e731beb564da886a4a5fdbaab2, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386663636939084, guid: 17d7c7e731beb564da886a4a5fdbaab2, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114654063387590428, guid: 17d7c7e731beb564da886a4a5fdbaab2,
+        type: 2}
+      propertyPath: startResponse.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1656723833}
+    - target: {fileID: 114654063387590428, guid: 17d7c7e731beb564da886a4a5fdbaab2,
+        type: 2}
+      propertyPath: startResponse.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Load
+      objectReference: {fileID: 0}
+    - target: {fileID: 114654063387590428, guid: 17d7c7e731beb564da886a4a5fdbaab2,
+        type: 2}
+      propertyPath: startResponse.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114654063387590428, guid: 17d7c7e731beb564da886a4a5fdbaab2,
+        type: 2}
+      propertyPath: startResponse.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114654063387590428, guid: 17d7c7e731beb564da886a4a5fdbaab2,
+        type: 2}
+      propertyPath: startResponse.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114614232966436126, guid: 17d7c7e731beb564da886a4a5fdbaab2, type: 2}
+    - {fileID: 114455440841831810, guid: 17d7c7e731beb564da886a4a5fdbaab2, type: 2}
+    - {fileID: 114719825177250122, guid: 17d7c7e731beb564da886a4a5fdbaab2, type: 2}
+    - {fileID: 114635282135867950, guid: 17d7c7e731beb564da886a4a5fdbaab2, type: 2}
+    - {fileID: 114610379849680754, guid: 17d7c7e731beb564da886a4a5fdbaab2, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 17d7c7e731beb564da886a4a5fdbaab2, type: 2}
   m_IsPrefabAsset: 0
 --- !u!114 &416222493 stripped
@@ -13555,7 +13606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3733efe584972d4468a369679c898145, type: 3}
 --- !u!4 &416222494 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4852584302134532, guid: 17d7c7e731beb564da886a4a5fdbaab2,
+  m_CorrespondingSourceObject: {fileID: 4861033346190954, guid: 17d7c7e731beb564da886a4a5fdbaab2,
     type: 2}
   m_PrefabInternal: {fileID: 416222492}
 --- !u!1001 &420568201
@@ -79927,6 +79978,47 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4543279521131508, guid: 4d3378107b40edc4682a834a29042981,
     type: 2}
   m_PrefabInternal: {fileID: 1644845171}
+--- !u!1 &1656723831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1656723832}
+  - component: {fileID: 1656723833}
+  m_Layer: 0
+  m_Name: CheckpointController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1656723832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1656723831}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 416222494}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1656723833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1656723831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5a279082c05b664b8e08806a09bdd44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoint_controller: {fileID: 416222493}
 --- !u!1001 &1657547892
 Prefab:
   m_ObjectHideFlags: 0
