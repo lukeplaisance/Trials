@@ -13,9 +13,8 @@ namespace Luke
         public Animator animator;
         public GameObjectVariable player; //static reference to the playre prefab
         public float threshold; //threshold of the radius of the player
-        public float animation_speed;
+        public float animation_speed; //cut the speed in half
         public bool in_range;
-        public UnityEvent Response;
 
         void Start()
         {
@@ -32,7 +31,8 @@ namespace Luke
 
         public void CheckDistanceofPlayer()
         {
-            if(Vector3.Distance(gameObject.transform.position, player.Transform.position) < threshold)
+            var distance = Vector3.Distance(gameObject.transform.position, player.Transform.position);
+            if (distance < threshold)
             {
                 Debug.Log("Player is in range");
                 in_range = true;
@@ -48,8 +48,7 @@ namespace Luke
 
         void Update()
         {
-            Debug.Log(animator.speed);
-            Response.Invoke();
+            CheckDistanceofPlayer();
         }
     }
 }
