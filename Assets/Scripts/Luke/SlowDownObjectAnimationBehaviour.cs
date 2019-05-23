@@ -11,8 +11,9 @@ namespace Luke
     public class SlowDownObjectAnimationBehaviour : MonoBehaviour
     {
         public Animator animator;
-        public GameObjectVariable player;
-        public float threshold;
+        public GameObjectVariable player; //static reference to the playre prefab
+        public float threshold; //threshold of the radius of the player
+        public float animation_speed;
         public bool in_range;
         public UnityEvent Response;
 
@@ -35,7 +36,7 @@ namespace Luke
             {
                 Debug.Log("Player is in range");
                 in_range = true;
-                SlowDownObjectAnimation(0.5f);
+                SlowDownObjectAnimation(animation_speed);
             }
             else
             {
