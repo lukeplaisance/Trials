@@ -15,6 +15,7 @@ namespace Luke
         public float threshold; //threshold of the radius of the player
         public float animation_speed; //cut the speed in half
         public bool in_range;
+        public UnityEvent play_animation;
 
         void Start()
         {
@@ -27,6 +28,11 @@ namespace Luke
             {
                 animator.speed = speed;
             }
+        }
+
+        public void ReturnObjectAnimationSpeed()
+        {
+            animator.speed = 1;
         }
 
         public void CheckDistanceofPlayer()
@@ -48,7 +54,8 @@ namespace Luke
 
         void Update()
         {
-            CheckDistanceofPlayer();
+            Debug.Log(animator.speed);
+            play_animation.Invoke();
         }
     }
 }
