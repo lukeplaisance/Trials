@@ -5078,12 +5078,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1656723833}
-        m_MethodName: Load
-        m_Mode: 1
+      - m_Target: {fileID: 416222493}
+        m_MethodName: SetCurrentWaypointTransform
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1945212962}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -25532,7 +25532,7 @@ Transform:
   m_Children:
   - {fileID: 511011768}
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &618930753
 MonoBehaviour:
@@ -39163,7 +39163,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &973651912 stripped
 Transform:
@@ -40156,6 +40156,39 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b99a0a5998b2736429fd2a2fd1d01c5e, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &998246728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 998246729}
+  m_Layer: 0
+  m_Name: MessageSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &998246729
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998246728}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 356.5, y: 200.5}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1002887073
 Prefab:
   m_ObjectHideFlags: 0
@@ -44323,7 +44356,7 @@ Prefab:
     - target: {fileID: 224522498674036170, guid: 8327cc63070da5e4ba181f4b45e66fc5,
         type: 2}
       propertyPath: m_RootOrder
-      value: 33
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 224522498674036170, guid: 8327cc63070da5e4ba181f4b45e66fc5,
         type: 2}
@@ -71455,6 +71488,7 @@ GameObject:
   - component: {fileID: 1336324506}
   - component: {fileID: 1336324498}
   - component: {fileID: 1336324505}
+  - component: {fileID: 1336324508}
   m_Layer: 0
   m_Name: Crushing_Wall_Right
   m_TagString: Terrain
@@ -71928,6 +71962,17 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1336324508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1336324497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f610f2f560db3af4f8627e9c48bf2bdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1341811476 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4714923750602826, guid: 25d8b420c43bcad4681d156c10ca939e,
@@ -76023,7 +76068,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh25892
+  m_Name: pb_Mesh25868
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -87718,7 +87763,7 @@ Prefab:
     - target: {fileID: 224522498674036170, guid: 8327cc63070da5e4ba181f4b45e66fc5,
         type: 2}
       propertyPath: m_RootOrder
-      value: 34
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 224522498674036170, guid: 8327cc63070da5e4ba181f4b45e66fc5,
         type: 2}
@@ -91593,7 +91638,7 @@ Prefab:
     - target: {fileID: 224193115831852038, guid: 84edab1c4b36c1043888c6ac2f0bbe7a,
         type: 2}
       propertyPath: m_RootOrder
-      value: 32
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 224193115831852038, guid: 84edab1c4b36c1043888c6ac2f0bbe7a,
         type: 2}
@@ -93100,6 +93145,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4966423760656282, guid: d2ea792b49ba4014dab1a55e89c90eb5,
     type: 2}
   m_PrefabInternal: {fileID: 1636621581}
+--- !u!4 &1945212962 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4852584302134532, guid: 17d7c7e731beb564da886a4a5fdbaab2,
+    type: 2}
+  m_PrefabInternal: {fileID: 416222492}
 --- !u!1001 &1947030337
 Prefab:
   m_ObjectHideFlags: 0
@@ -93816,7 +93866,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1968153518
 GameObject:
@@ -100021,7 +100071,7 @@ RectTransform:
   - {fileID: 1019217546}
   - {fileID: 977191870}
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
