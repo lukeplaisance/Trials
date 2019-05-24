@@ -12,21 +12,12 @@ namespace Zach
         [SerializeField] private Vector3 direction;
         [SerializeField] private Vector3 raycastOffset;
         [SerializeField] private float speed;
-        public Rigidbody rb;
         public UnityEvent PlayerCrushedResponse;
-        //public UnityEvent MoveWallToStart;
 
         private int slidingDoorsPlayCalls;
 
-        private void Start()
-        {
-            
-            rb = GetComponent<Rigidbody>();
-        }
-
         private void Update()
         {
-            
             if (isMoving)
                 transform.position += direction * speed * Time.deltaTime;
 
@@ -40,13 +31,13 @@ namespace Zach
                 
                 slidingDoorsPlayCalls--;
             }
-            
         }
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
+                other.transform.SetParent(this.transform);
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position + raycastOffset, direction * 4, out hit))
                     if (hit.collider.gameObject.CompareTag("Terrain"))
@@ -61,12 +52,15 @@ namespace Zach
                 isMoving = false;
                 movingToStart = false;
                 movingToEnd = false;
-                rb.constraints = RigidbodyConstraints.FreezeAll;
             }   
         }
 
         private void OnTriggerExit(Collider other)
         {
+            if (other.CompareTag("Player"))
+            {
+                other.transform.SetParent(null);
+            }
             if (!other.CompareTag("Terrain") && other.CompareTag("Grabbable"))
             {
                 isMoving = true;
