@@ -8,11 +8,10 @@ using UnityEngineInternal;
 
 namespace Luke
 {
-    public class SlowDownObjectAnimationBehaviour : MonoBehaviour
+    public class ChangeObjectAnimationSpeedBehaviour : MonoBehaviour
     {
         public Animator animator;
         public GameObjectVariable player; //static reference to the playre prefab
-        public float threshold; //threshold of the radius of the player
         public float animation_speed; //cut the speed in half
         public bool in_range;
         public UnityEvent play_animation;
@@ -35,21 +34,21 @@ namespace Luke
             animator.speed = 1;
         }
 
-        public void CheckDistanceofPlayer()
+        void OnTriggerEnter(Collider other)
         {
-            var distance = Vector3.Distance(gameObject.transform.position, player.Transform.position);
-            if (distance < threshold)
+            if (other.CompareTag("Astrolabe"))
             {
                 Debug.Log("Player is in range");
                 in_range = true;
                 SlowDownObjectAnimation(animation_speed);
             }
-            else
-            {
-                in_range = false;
-                animator.speed = 1;
-                return;
-            }
+        }
+
+        void OnTriggerExit(Collider other)
+        {
+            in_range = false;
+            animator.speed = 1;
+            return;
         }
 
         void Update()
