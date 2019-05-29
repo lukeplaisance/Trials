@@ -10,7 +10,7 @@ public class PushPullPatch : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("Grabbable") || other.CompareTag("Waypoint"))
+        if (other.CompareTag("Player") || other.CompareTag("Grabbable") || other.CompareTag("Waypoint") || other.CompareTag("PressurePlate"))
             return;
         if(isFrontCollider)
             block.isFrontColliding = true;

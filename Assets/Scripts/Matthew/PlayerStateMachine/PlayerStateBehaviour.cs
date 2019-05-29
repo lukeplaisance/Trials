@@ -81,26 +81,20 @@ namespace Matthew
 
             // Update is called once per frame
 
-
-
-
-            if (Input.GetButtonDown("Home"))
+            if (Input.GetButton("Home"))
             {
                 if (Input.GetButtonDown("LB"))
                 {
-                    if (Input.GetButtonDown("RB"))
+                    if (WaypointMenuOpen)
                     {
-                        if (WaypointMenuOpen)
-                        {
-                            CloseWaypointMenu.Raise();
-                        }
-                        else
-                        {
-                            OpenWaypointMenu.Raise();
-                        }
-
-                        WaypointMenuOpen = !WaypointMenuOpen;
+                        CloseWaypointMenu.Raise();
                     }
+                    else
+                    {
+                        OpenWaypointMenu.Raise();
+                    }
+
+                    WaypointMenuOpen = !WaypointMenuOpen;
                 }
             }
         }

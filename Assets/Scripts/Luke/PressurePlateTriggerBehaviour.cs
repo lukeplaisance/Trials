@@ -11,18 +11,19 @@ namespace Luke
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Player") || other.CompareTag("Grabbable"))
+            if (other.CompareTag("Grabbable"))
             {
                 animator.SetBool("IsDown", true);
                 animator.Play("MovePressurePlateDown");
                 Debug.Log("pressure plate sound should play");
                 FMODUnity.RuntimeManager.PlayOneShot("event:/pressure_plate");
             }
+            
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.CompareTag("Player") || other.CompareTag("Grabbable"))
+            if (other.CompareTag("Grabbable"))
             {
                 animator.SetBool("IsDown", false);
                 animator.Play("MovePressurePlateUp");
