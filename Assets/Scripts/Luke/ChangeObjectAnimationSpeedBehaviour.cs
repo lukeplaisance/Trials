@@ -18,16 +18,6 @@ namespace Luke
             animator = GetComponent<Animator>();
         }
 
-        public void SlowDownObjectAnimation(float speed)
-        {
-            animator.speed = speed;
-        }
-
-        public void ReturnObjectAnimationSpeed()
-        {
-            animator.speed = 1;
-        }
-
         void Update()
         {
             Debug.Log(animator.speed);

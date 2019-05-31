@@ -1923,8 +1923,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4299764510716092}
   - component: {fileID: 135571147165535444}
-  - component: {fileID: 114786186564628958}
-  - component: {fileID: 114489612009407430}
+  - component: {fileID: 114217121155396542}
+  - component: {fileID: 114527775530841612}
   m_Layer: 0
   m_Name: AstrolabeBubble
   m_TagString: Astrolabe
@@ -4400,7 +4400,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1071385368937398}
-  m_LocalRotation: {x: 0.14012277, y: 0.25966808, z: -0.038111225, w: 0.9547176}
+  m_LocalRotation: {x: 0.14012277, y: 0.2596681, z: -0.03811123, w: 0.9547176}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5444,7 +5444,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1064269154971640}
-  m_LocalRotation: {x: 0.10539607, y: 0.2608797, z: -0.028665533, w: 0.9591725}
+  m_LocalRotation: {x: 0.10539608, y: 0.26087967, z: -0.028665531, w: 0.9591725}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7788,6 +7788,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114217121155396542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1496331884742962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75765dee12a0119448fd38307f28adac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animators: []
+  set_animation_speed: 0.3
 --- !u!114 &114234355326630034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8070,19 +8083,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 100
---- !u!114 &114489612009407430
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1496331884742962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fbbf5ae133aa0347aeb1e5d0841929d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameObjectReferencer: {fileID: 11400000, guid: 038d6109c37082e4c98e75f595af3ba9,
-    type: 2}
 --- !u!114 &114497920221532122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8153,6 +8153,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114527775530841612
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1496331884742962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fbbf5ae133aa0347aeb1e5d0841929d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectReferencer: {fileID: 11400000, guid: 038d6109c37082e4c98e75f595af3ba9,
+    type: 2}
 --- !u!114 &114534198582789810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8380,18 +8393,6 @@ MonoBehaviour:
   isFrozen: 0
   forward: {x: 0, y: 0, z: 0}
   targetDir: {x: 0, y: 0, z: 0}
---- !u!114 &114786186564628958
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1496331884742962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78f7c06686b39b14491a010db2f87fae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  astrolabe_bubble: {fileID: 0}
 --- !u!114 &114809749709474646
 MonoBehaviour:
   m_ObjectHideFlags: 1
