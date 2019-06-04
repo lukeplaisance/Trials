@@ -11,7 +11,7 @@ namespace Matthew
         private int _currentIndex;
         public List<WaitResponse> responses;
 
-        public void Execute()
+        void OnEnable()
         {
             //for every response
             foreach (var response in responses)
@@ -25,8 +25,17 @@ namespace Matthew
                         //call the next function inside the OnDone
                         responses[_currentIndex].Invoke(this);
                 };
+        }
 
+        public void Execute()
+        {
             responses[_currentIndex].Invoke(this);
+            Debug.Log("WaitResponse Executed");
+        }
+
+        public void ResetIndex()
+        {
+            _currentIndex = 0;
         }
     }
 }
