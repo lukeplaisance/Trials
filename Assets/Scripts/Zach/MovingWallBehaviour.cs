@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
+using UnityEngine.Events;
 
 namespace Zach
 {
@@ -14,6 +13,8 @@ namespace Zach
         [SerializeField] private Vector3 raycastOffset;
         [SerializeField] private float speed;
         public Rigidbody rb;
+        public UnityEvent PlayerCrushedResponse;
+        //public UnityEvent MoveWallToStart;
 
         private int slidingDoorsPlayCalls;
 
@@ -50,17 +51,27 @@ namespace Zach
                 if (Physics.Raycast(transform.position + raycastOffset, direction * 4, out hit))
                     if (hit.collider.gameObject.CompareTag("Terrain"))
                     {
-                        SceneManager.LoadScene("GameOver");
+                        PlayerCrushedResponse.Invoke();
                         Debug.Log("Player is dead.");
                     }
             }
 
-            if (other.CompareTag("Terrain") && !IgnoreTerrain) 
+            if (other.CompareTag("Terrain") && !IgnoreTerrain || other.CompareTag("Grabbable"))
             {
                 isMoving = false;
                 movingToStart = false;
                 movingToEnd = false;
                 rb.constraints = RigidbodyConstraints.FreezeAll;
+            }   
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (!other.CompareTag("Terrain") && other.CompareTag("Grabbable"))
+            {
+                isMoving = true;
+                movingToStart = true;
+                movingToEnd = false;
             }
         }
 

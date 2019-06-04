@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 0
   HasPlatforms: 1
-  sourceProjectPath: FMOD\Trials_FMOD_Project\Trials_FMOD_Project.fspro
-  SourceProjectPathUnformatted: FMOD\Trials_FMOD_Project\Trials_FMOD_Project.fspro
-  SourceBankPathUnformatted: FMOD/Trials_FMOD_Project/FMODBuild
+  sourceProjectPath: FMOD/Trials_FMOD_Project/Trials_FMOD_Project.fspro
+  SourceProjectPathUnformatted: FMOD/Trials_FMOD_Project/Trials_FMOD_Project.fspro
+  SourceBankPathUnformatted: FMOD\Trials_FMOD_Project\FMODBuild
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0
@@ -26,7 +26,7 @@ MonoBehaviour:
     Value: 3
   SampleRateSettings:
   - Platform: 1
-    Value: 48000
+    Value: 44100
   - Platform: 2
     Value: 0
   LiveUpdateSettings:
