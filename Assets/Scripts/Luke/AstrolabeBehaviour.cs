@@ -3,16 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class AstrolabeBehaviour : MonoBehaviour
+
+namespace Luke
 {
-    public UnityEvent Activate;
-	
-	// Update is called once per frame
-	void Update ()
+    public class AstrolabeBehaviour : MonoBehaviour
     {
-        if (Input.GetButtonDown("Fire4"))
+        public GameEvent Activate_Astrolabe;
+        public GameEvent Cooldown_Astrolabe;
+
+        public UnityEvent Activate;
+
+        void Update()
         {
-            Activate.Invoke();
+            if (Input.GetButtonDown("Fire4"))
+            {
+                Activate.Invoke();
+                Debug.Log(Activate_Astrolabe + "Raised");
+            }
         }
-	}
+
+        void OnDisable()
+        {
+            Debug.Log(Cooldown_Astrolabe + "Raised");
+        }
+    }
 }

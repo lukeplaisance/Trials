@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -66,6 +66,6 @@ namespace Matthew
             position.height = responseheight;
             EditorGUI.PropertyField(position, _responseProperty);
         }
-#endif
     }
+#endif
 }
