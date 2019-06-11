@@ -1,31 +1,31 @@
 ﻿namespace Matthew
 {
     public class PlayerInteractState : IState
-    {
-        StateEventTransitionSubscription listener;
+    {        
         public void OnEnter(IContext context)
-        {
-            var playerbehaviour = (context as PlayerContext).Behaviour;
-            playerbehaviour.SetMovement(false);
-
-            listener = new StateEventTransitionSubscription
-            {
-                Subscribeable = UnityEngine.Resources.Load("Events/InteractionStop") as Luke.GameEvent
-            };
+        { 
+            ((PlayerContext)context).Behaviour.SetMovement(false); 
         }
 
 
         public void OnExit(IContext context)
-        {
-            var playerbehaviour = (context as PlayerContext).Behaviour;
-            playerbehaviour.SetMovement(true);
-
+        { 
+            ((PlayerContext)context).Behaviour.SetMovement(true);
         }
 
         public void UpdateState(IContext context)
         {
-            if (listener.EventRaised)
+            if (Zach.PlayerInput.CancelPressed)
+            {
+                ((PlayerContext)context).Behaviour.CurrentInteraction.StopInteraction();
                 context.ChangeState(new PlayerIdleState());
+                return;
+            }
+            if (Zach.PlayerInput.PausePressed)
+            {                
+                context.ChangeState(new PlayerPauseState());
+                return;
+            }
 
         }
     }

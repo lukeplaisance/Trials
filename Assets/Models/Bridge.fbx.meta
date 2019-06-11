@@ -96,6 +96,8 @@ ModelImporter:
     100180: transform65
     100182: transform66
     100184: transform67
+    100186: pCube118
+    100188: pCylinder32
     400000: //RootNode
     400002: pCube66
     400004: pCube68
@@ -189,10 +191,19 @@ ModelImporter:
     400180: transform65
     400182: transform66
     400184: transform67
+    400186: pCube118
+    400188: pCylinder32
     2100000: lambert1
+    2100002: lambert7
     2300000: pPlane81
+    2300002: pCube118
+    2300004: pCylinder32
     3300000: pPlane81
+    3300002: pCube118
+    3300004: pCylinder32
     4300000: pPlane81
+    4300002: pCube118
+    4300004: pCylinder32
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -232,7 +243,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0

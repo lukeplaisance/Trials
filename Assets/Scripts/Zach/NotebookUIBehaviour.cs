@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Zach
@@ -8,13 +9,16 @@ namespace Zach
     public class NotebookUIBehaviour : MonoBehaviour
     {
         public GameObject notePopUp;
+        public GameObject noteButtonParent;
+        public GameObject CloseButton;
         public NotebookScriptable nb;
         public float BaseOffsetY;
         private float baseYCopy;
         public float OffsetDistanceY;
         public float YPosLimit;
-
+        public EventSystem eventSys;
         public GameObject noteUI;
+        public List<GameObject> buttonGOs = new List<GameObject>();
 
         public UnityEngine.Events.UnityEvent OnEnableResponses;
         public UnityEngine.Events.UnityEvent OnDisableResponses;
@@ -22,6 +26,7 @@ namespace Zach
         public void OnEnable()
         {
             OnEnableResponses.Invoke();
+
         }
 
         public void OnDisable()
@@ -43,7 +48,6 @@ namespace Zach
         public List<GameObject> notes = new List<GameObject>();
         public void CreateButtons()
         {
-            var journalUI = this.transform.GetChild(0);
             float XOffset = 0;
             foreach (var note in nb.notes)
             {
@@ -53,7 +57,7 @@ namespace Zach
                     BaseOffsetY = baseYCopy;
                 }
 
-                var noteUIObject = Instantiate(noteUI, journalUI);
+                var noteUIObject = Instantiate(noteUI, noteButtonParent.transform);
                 notes.Add(noteUIObject);
                 var uiButton = noteUIObject.GetComponent<Button>();
                 var nUIB = noteUIObject.GetComponent<NoteUIBehaviour>();
@@ -62,6 +66,8 @@ namespace Zach
                 noteUIObject.transform.position += new Vector3(XOffset, -BaseOffsetY, 0);
                 BaseOffsetY += OffsetDistanceY;
                 Cursor.visible = true;
+                buttonGOs.Add(noteUIObject);
+                
             }
         }
 
@@ -72,9 +78,23 @@ namespace Zach
             foreach (var note in notes)
             {
                 Destroy(note);
+     
             }
             notes = new List<GameObject>();
             Cursor.visible = false;
+        }
+
+        public void TurnOffUI()
+        {
+            noteButtonParent.SetActive(false);
+            CloseButton.SetActive(false);
+        }
+
+        public void SetSelected()
+        {
+            var button = buttonGOs[0].GetComponent<Button>();
+            eventSys.SetSelectedGameObject(button.gameObject);
+            button.OnSelect(null);
         }
     }
 }

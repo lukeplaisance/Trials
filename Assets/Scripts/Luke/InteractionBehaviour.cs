@@ -12,6 +12,7 @@ namespace Luke
         [TextArea]
         public string readme;
         public GameEvent InteractionEnter;
+        public GameEvent InteractionStay;
         public GameEvent InteractionExit;
         public GameEvent InteractionStart;
         public GameEvent InteractionStop;
@@ -20,11 +21,18 @@ namespace Luke
         public UnityEvent InteractStopResponse;
 
         [SerializeField]
+        public UnityEvent OnTriggerStayResponse;
+        [SerializeField]
         public UnityEvent OnTriggerEnterResponse;
         [SerializeField]
         public UnityEvent OnTriggerExitResponse;
 
         private IInteractor _Interactor;
+
+        public void ChangePosition(float y)
+        {
+            this.transform.position = new Vector3(100,y,100);
+        }
 
         private void Start()
         {
@@ -32,6 +40,7 @@ namespace Luke
             InteractionExit = Resources.Load<GameEvent>("Events/InteractionExit");
             InteractionStart = Resources.Load<GameEvent>("Events/InteractionStart");
             InteractionStop = Resources.Load<GameEvent>("Events/InteractionStop");
+            InteractionStay = Resources.Load<GameEvent>("Events/InteractionStay");
         }
 
         public IInteractor Interactor
@@ -51,13 +60,18 @@ namespace Luke
             if (Interactor == null) return;
             if (obj != Interactor) return;
             
-            Response.Invoke();
+            Response.Invoke();//if you stop interaction here then the player will get stuck due to the following
+            //responses for stop get called
+            //interaction stop gets raised
+            //player does nothing because he is in idle
+            //interaction start gets raised
+            //player enters the interacting state
             InteractionStart.Raise();
         }
 
         public void StopInteraction()
         {
-           
+            Debug.Log("stopping interaction");
             InteractStopResponse.Invoke();
             InteractionStop.Raise();
         }
@@ -81,6 +95,19 @@ namespace Luke
             InteractionEnter.Raise();
             OnTriggerEnterResponse.Invoke();
         }
+        public void SetInteractionToThis()
+        {   
+            Interactor.SetInteraction(this);
+        }
+
+        private void OnTriggerStay(Collider other)
+        {
+            if (!other.CompareTag(TriggerTag)) return;
+            Interactor = other.GetComponent<IInteractor>();
+            if (Interactor == null) return;
+            InteractionStay.Raise();
+            OnTriggerStayResponse.Invoke();
+        }
 
         public void OnTriggerExit(Collider other)
         {
@@ -89,8 +116,9 @@ namespace Luke
             if (!other.CompareTag(TriggerTag)) return;
 
             ReleaseInteraction();
-            OnTriggerExitResponse.Invoke();
-            
+            OnTriggerExitResponse.Invoke();            
         }
+
+        
     }
 }
