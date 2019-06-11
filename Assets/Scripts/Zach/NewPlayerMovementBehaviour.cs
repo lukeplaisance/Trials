@@ -113,7 +113,7 @@ namespace Zach
             }
             
             //If the player pushes the jump button and is grounded then set the move vector to the jump value
-            //and trigger the jump animation
+            //and trigger the jump animator
             if (_controller.isGrounded && Input.GetButtonDown("Jump"))
             {
                 _moveVector.y = jumpPower;

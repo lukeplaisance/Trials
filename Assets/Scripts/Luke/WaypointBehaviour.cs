@@ -14,6 +14,10 @@ namespace Luke
         public UnityEvent startResponse;
         public Matthew.GameObjectVariable PlayerReference;
 
+        public Transform CurrentWaypoint
+        {
+            get { return _current_waypoint; }
+        }
 
         private void Start()
         {
