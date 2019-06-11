@@ -91,7 +91,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 112000002, guid: 7f89428a30c150145b4f81292df3bc06,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -9592,13 +9592,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 277194931}
         m_MethodName: LoadNewScene
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: Testing.Trinity
+          m_StringArgument: Terrain_Level
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -72280,7 +72280,6 @@ MonoBehaviour:
   direction: {x: -1, y: 0, z: 0}
   raycastOffset: {x: -8, y: 4, z: -20}
   speed: 4
-  rb: {fileID: 0}
   PlayerCrushedResponse:
     m_PersistentCalls:
       m_Calls:
@@ -90208,7 +90207,6 @@ MonoBehaviour:
   direction: {x: 1, y: 0, z: 0}
   raycastOffset: {x: 8, y: 4, z: 20}
   speed: 4
-  rb: {fileID: 0}
   PlayerCrushedResponse:
     m_PersistentCalls:
       m_Calls:
