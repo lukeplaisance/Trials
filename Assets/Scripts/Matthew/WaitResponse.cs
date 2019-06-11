@@ -66,6 +66,6 @@ namespace Matthew
             position.height = responseheight;
             EditorGUI.PropertyField(position, _responseProperty);
         }
-#endif
     }
+#endif
 }
