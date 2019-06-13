@@ -57,7 +57,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_fbxHistory: '{"UnityEngine.MeshFilter": "{\"MeshFilter\":{\"m_Mesh\":{\"fileID\":4300000,\"guid\":\"8a47024c4e220cd4c877f002a553ced4\",\"type\":3}}}","UnityEngine.MeshRenderer":
-    "{\"MeshRenderer\":{\"m_Enabled\":true,\"m_CastShadows\":1,\"m_ReceiveShadows\":true,\"m_DynamicOccludee\":true,\"m_MotionVectors\":1,\"m_LightProbeUsage\":1,\"m_ReflectionProbeUsage\":1,\"m_RenderingLayerMask\":4294967295,\"m_Materials\":[{\"fileID\":10303,\"guid\":\"0000000000000000f000000000000000\",\"type\":0}],\"m_StaticBatchInfo\":{\"firstSubMesh\":0,\"subMeshCount\":0},\"m_StaticBatchRoot\":{\"instanceID\":0},\"m_ProbeAnchor\":{\"instanceID\":0},\"m_LightProbeVolumeOverride\":{\"instanceID\":0},\"m_ScaleInLightmap\":1.0,\"m_PreserveUVs\":false,\"m_IgnoreNormalsForChartDetection\":false,\"m_ImportantGI\":false,\"m_StitchLightmapSeams\":false,\"m_SelectedEditorRenderState\":3,\"m_MinimumChartSize\":4,\"m_AutoUVMaxDistance\":0.5,\"m_AutoUVMaxAngle\":89.0,\"m_LightmapParameters\":{\"instanceID\":0},\"m_SortingLayerID\":0,\"m_SortingLayer\":0,\"m_SortingOrder\":0}}"}'
+    "{\"MeshRenderer\":{\"m_Enabled\":true,\"m_CastShadows\":1,\"m_ReceiveShadows\":true,\"m_DynamicOccludee\":true,\"m_MotionVectors\":1,\"m_LightProbeUsage\":1,\"m_ReflectionProbeUsage\":1,\"m_RenderingLayerMask\":4294967295,\"m_Materials\":[{\"fileID\":2100000,\"guid\":\"31321ba15b8f8eb4c954353edc038b1d\",\"type\":2}],\"m_StaticBatchInfo\":{\"firstSubMesh\":0,\"subMeshCount\":0},\"m_StaticBatchRoot\":{\"instanceID\":0},\"m_ProbeAnchor\":{\"instanceID\":0},\"m_LightProbeVolumeOverride\":{\"instanceID\":0},\"m_ScaleInLightmap\":1.0,\"m_PreserveUVs\":false,\"m_IgnoreNormalsForChartDetection\":false,\"m_ImportantGI\":false,\"m_StitchLightmapSeams\":false,\"m_SelectedEditorRenderState\":3,\"m_MinimumChartSize\":4,\"m_AutoUVMaxDistance\":0.5,\"m_AutoUVMaxAngle\":89.0,\"m_LightmapParameters\":{\"instanceID\":0},\"m_SortingLayerID\":0,\"m_SortingLayer\":0,\"m_SortingOrder\":0}}"}'
   m_nameMapping: []
   m_fbxModel: {fileID: 100000, guid: 8a47024c4e220cd4c877f002a553ced4, type: 3}
   m_autoUpdate: 1
