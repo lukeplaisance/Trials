@@ -1,17 +1,35 @@
 fileFormatVersion: 2
-guid: 2fea6e236f9d3c848a3ec7334ddd39f7
+guid: aac0416f527b638478a63225c4a71148
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: UV_Checkers1
-    2100002: UV_Checkers
-    2100004: Material.002
-    2100006: Material.001
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: WaterTemple
+    100000: Armature.000
+    100002: PillarBone1
+    100004: PillarBone2
+    100006: PillarBone3
+    100008: PillarBone4
+    100010: PillarBone5
+    100012: PillarBone6
+    100014: PillarBoneBase
+    100016: //RootNode
+    100018: TallPillarKP.001
+    400000: Armature.000
+    400002: PillarBone1
+    400004: PillarBone2
+    400006: PillarBone3
+    400008: PillarBone4
+    400010: PillarBone5
+    400012: PillarBone6
+    400014: PillarBoneBase
+    400016: //RootNode
+    400018: TallPillarKP.001
+    2100000: BlueTexture
+    4300000: TallPillarKP.001
+    7400000: Armature.000|ArmatureAction.001
+    7400002: Armature.000|ArmatureAction.002
+    7400004: Armature.000|persp1|Take 001|BaseLayer
+    9500000: //RootNode
+    13700000: TallPillarKP.001
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -63,8 +81,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -89,7 +107,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
