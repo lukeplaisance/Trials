@@ -1,30 +1,20 @@
 fileFormatVersion: 2
-guid: 22a4988f93c826244853a51bd0db0b01
+guid: 9a068e3fcbd848c4686262a3afafcc81
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: RockE_LOD0
-    100004: RockE_LOD1
-    100006: RockE_LOD2
     400000: //RootNode
-    400002: RockE_LOD0
-    400004: RockE_LOD1
-    400006: RockE_LOD2
-    2100000: lambert1
-    2300000: RockE_LOD0
-    2300002: RockE_LOD1
-    2300004: RockE_LOD2
-    3300000: RockE_LOD0
-    3300002: RockE_LOD1
-    3300004: RockE_LOD2
-    4300000: RockE_LOD0
-    4300002: RockE_LOD1
-    4300004: RockE_LOD2
-    20500000: //RootNode
+    2100000: UV_Checkers1
+    2100002: UV_Checkers
+    2100004: Material.001
+    2100006: Material.002
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: WaterTemple
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -52,10 +42,7 @@ ModelImporter:
     clipAnimations: []
     isReadable: 1
   meshes:
-    lODScreenPercentages:
-    - 0.25
-    - 0.125
-    - 0.01
+    lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
@@ -64,7 +51,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -83,7 +70,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
