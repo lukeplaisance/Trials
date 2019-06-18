@@ -14,6 +14,20 @@ namespace Zach
         {
             get { return Input.GetButtonDown("Submit"); }
         }
+
+        private static bool _forceCancel = false;
+        public static bool ForceCancel
+        {
+            get { return _forceCancel; }
+            set
+            {
+                _forceCancel = value;
+                if (_forceCancel == true)
+                    Debug.Log("Something tried to force cancel");
+                else
+                    Debug.Log("Something tried to turn off force cancel");
+            }
+        }
         public static bool CancelPressed
         {
             get { return Input.GetButtonDown("Cancel"); }
@@ -28,4 +42,5 @@ namespace Zach
             }
         }
     }
+
 }
