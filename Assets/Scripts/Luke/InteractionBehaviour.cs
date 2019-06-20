@@ -119,6 +119,10 @@ namespace Luke
             OnTriggerExitResponse.Invoke();            
         }
 
-        
+        //Call this function in wait and respond if you want an interaction to end automatically
+        public void ForceInteractionCancel()
+        {
+            PlayerInput.ForceCancel = true;
+        }
     }
 }

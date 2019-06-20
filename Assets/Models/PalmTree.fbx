@@ -7,12 +7,12 @@ FBXHeaderExtension:  {
 	CreationTimeStamp:  {
 		Version: 1000
 		Year: 2019
-		Month: 5
-		Day: 24
-		Hour: 16
-		Minute: 39
-		Second: 33
-		Millisecond: 682
+		Month: 6
+		Day: 4
+		Hour: 10
+		Minute: 15
+		Second: 6
+		Millisecond: 885
 	}
 	Creator: "FBX SDK/FBX Plugins version 2018.1.1"
 	SceneInfo: "SceneInfo::GlobalInfo", "UserData" {
@@ -28,8 +28,8 @@ FBXHeaderExtension:  {
 			Comment: ""
 		}
 		Properties70:  {
-			P: "DocumentUrl", "KString", "Url", "", "C:\Users\s178001\AppData\Local\Temp\tmp49e58db1.tmp"
-			P: "SrcDocumentUrl", "KString", "Url", "", "C:\Users\s178001\AppData\Local\Temp\tmp49e58db1.tmp"
+			P: "DocumentUrl", "KString", "Url", "", "C:\Users\s178001\AppData\Local\Temp\tmp67dfbd7d.tmp"
+			P: "SrcDocumentUrl", "KString", "Url", "", "C:\Users\s178001\AppData\Local\Temp\tmp67dfbd7d.tmp"
 			P: "Original", "Compound", "", ""
 			P: "Original|ApplicationVendor", "KString", "", "", ""
 			P: "Original|ApplicationName", "KString", "", "", "Unity FBX Exporter"
@@ -58,7 +58,7 @@ GlobalSettings:  {
 		P: "UnitScaleFactor", "double", "Number", "",1
 		P: "OriginalUnitScaleFactor", "double", "Number", "",1
 		P: "AmbientColor", "ColorRGB", "Color", "",0,0,0
-		P: "DefaultCamera", "KString", "", "", "persp1"
+		P: "DefaultCamera", "KString", "", "", "Producer Perspective"
 		P: "TimeMode", "enum", "", "",0
 		P: "TimeProtocol", "enum", "", "",2
 		P: "SnapOnFrameMode", "enum", "", "",0
@@ -75,7 +75,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 1572719824, "Scene", "Scene" {
+	Document: 1547539664, "Scene", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
 			P: "ActiveAnimStackName", "KString", "", "", ""
@@ -95,12 +95,12 @@ References:  {
 
 Definitions:  {
 	Version: 100
-	Count: 16
+	Count: 13
 	ObjectType: "GlobalSettings" {
 		Count: 1
 	}
 	ObjectType: "Model" {
-		Count: 3
+		Count: 1
 		PropertyTemplate: "FbxNode" {
 			Properties70:  {
 				P: "QuaternionInterpolate", "enum", "", "",0
@@ -237,119 +237,6 @@ Definitions:  {
 			}
 		}
 	}
-	ObjectType: "NodeAttribute" {
-		Count: 1
-		PropertyTemplate: "FbxCamera" {
-			Properties70:  {
-				P: "Color", "ColorRGB", "Color", "",0.8,0.8,0.8
-				P: "Position", "Vector", "", "A",0,0,0
-				P: "UpVector", "Vector", "", "A",0,1,0
-				P: "InterestPosition", "Vector", "", "A",0,0,0
-				P: "Roll", "Roll", "", "A",0
-				P: "OpticalCenterX", "OpticalCenterX", "", "A",0
-				P: "OpticalCenterY", "OpticalCenterY", "", "A",0
-				P: "BackgroundColor", "Color", "", "A",0.63,0.63,0.63
-				P: "TurnTable", "Number", "", "A",0
-				P: "DisplayTurnTableIcon", "bool", "", "",0
-				P: "UseMotionBlur", "bool", "", "",0
-				P: "UseRealTimeMotionBlur", "bool", "", "",1
-				P: "Motion Blur Intensity", "Number", "", "A",1
-				P: "AspectRatioMode", "enum", "", "",0
-				P: "AspectWidth", "double", "Number", "",320
-				P: "AspectHeight", "double", "Number", "",200
-				P: "PixelAspectRatio", "double", "Number", "",1
-				P: "FilmOffsetX", "Number", "", "A",0
-				P: "FilmOffsetY", "Number", "", "A",0
-				P: "FilmWidth", "double", "Number", "",0.816
-				P: "FilmHeight", "double", "Number", "",0.612
-				P: "FilmAspectRatio", "double", "Number", "",1.33333333333333
-				P: "FilmSqueezeRatio", "double", "Number", "",1
-				P: "FilmFormatIndex", "enum", "", "",0
-				P: "PreScale", "Number", "", "A",1
-				P: "FilmTranslateX", "Number", "", "A",0
-				P: "FilmTranslateY", "Number", "", "A",0
-				P: "FilmRollPivotX", "Number", "", "A",0
-				P: "FilmRollPivotY", "Number", "", "A",0
-				P: "FilmRollValue", "Number", "", "A",0
-				P: "FilmRollOrder", "enum", "", "",0
-				P: "ApertureMode", "enum", "", "",2
-				P: "GateFit", "enum", "", "",0
-				P: "FieldOfView", "FieldOfView", "", "A",25.1149997711182
-				P: "FieldOfViewX", "FieldOfViewX", "", "A",40
-				P: "FieldOfViewY", "FieldOfViewY", "", "A",40
-				P: "FocalLength", "Number", "", "A",34.8932762167263
-				P: "CameraFormat", "enum", "", "",0
-				P: "UseFrameColor", "bool", "", "",0
-				P: "FrameColor", "ColorRGB", "Color", "",0.3,0.3,0.3
-				P: "ShowName", "bool", "", "",1
-				P: "ShowInfoOnMoving", "bool", "", "",1
-				P: "ShowGrid", "bool", "", "",1
-				P: "ShowOpticalCenter", "bool", "", "",0
-				P: "ShowAzimut", "bool", "", "",1
-				P: "ShowTimeCode", "bool", "", "",0
-				P: "ShowAudio", "bool", "", "",0
-				P: "AudioColor", "Vector3D", "Vector", "",0,1,0
-				P: "NearPlane", "double", "Number", "",10
-				P: "FarPlane", "double", "Number", "",4000
-				P: "AutoComputeClipPanes", "bool", "", "",0
-				P: "ViewCameraToLookAt", "bool", "", "",1
-				P: "ViewFrustumNearFarPlane", "bool", "", "",0
-				P: "ViewFrustumBackPlaneMode", "enum", "", "",2
-				P: "BackPlaneDistance", "Number", "", "A",4000
-				P: "BackPlaneDistanceMode", "enum", "", "",1
-				P: "ViewFrustumFrontPlaneMode", "enum", "", "",2
-				P: "FrontPlaneDistance", "Number", "", "A",10
-				P: "FrontPlaneDistanceMode", "enum", "", "",1
-				P: "LockMode", "bool", "", "",0
-				P: "LockInterestNavigation", "bool", "", "",0
-				P: "BackPlateFitImage", "bool", "", "",0
-				P: "BackPlateCrop", "bool", "", "",0
-				P: "BackPlateCenter", "bool", "", "",1
-				P: "BackPlateKeepRatio", "bool", "", "",1
-				P: "BackgroundAlphaTreshold", "double", "Number", "",0.5
-				P: "ShowBackplate", "bool", "", "",1
-				P: "BackPlaneOffsetX", "Number", "", "A",0
-				P: "BackPlaneOffsetY", "Number", "", "A",0
-				P: "BackPlaneRotation", "Number", "", "A",0
-				P: "BackPlaneScaleX", "Number", "", "A",1
-				P: "BackPlaneScaleY", "Number", "", "A",1
-				P: "Background Texture", "object", "", ""
-				P: "FrontPlateFitImage", "bool", "", "",1
-				P: "FrontPlateCrop", "bool", "", "",0
-				P: "FrontPlateCenter", "bool", "", "",1
-				P: "FrontPlateKeepRatio", "bool", "", "",1
-				P: "Foreground Opacity", "double", "Number", "",1
-				P: "ShowFrontplate", "bool", "", "",1
-				P: "FrontPlaneOffsetX", "Number", "", "A",0
-				P: "FrontPlaneOffsetY", "Number", "", "A",0
-				P: "FrontPlaneRotation", "Number", "", "A",0
-				P: "FrontPlaneScaleX", "Number", "", "A",1
-				P: "FrontPlaneScaleY", "Number", "", "A",1
-				P: "Foreground Texture", "object", "", ""
-				P: "DisplaySafeArea", "bool", "", "",0
-				P: "DisplaySafeAreaOnRender", "bool", "", "",0
-				P: "SafeAreaDisplayStyle", "enum", "", "",1
-				P: "SafeAreaAspectRatio", "double", "Number", "",1.33333333333333
-				P: "Use2DMagnifierZoom", "bool", "", "",0
-				P: "2D Magnifier Zoom", "Number", "", "A",100
-				P: "2D Magnifier X", "Number", "", "A",50
-				P: "2D Magnifier Y", "Number", "", "A",50
-				P: "CameraProjectionType", "enum", "", "",0
-				P: "OrthoZoom", "double", "Number", "",1
-				P: "UseRealTimeDOFAndAA", "bool", "", "",0
-				P: "UseDepthOfField", "bool", "", "",0
-				P: "FocusSource", "enum", "", "",0
-				P: "FocusAngle", "double", "Number", "",3.5
-				P: "FocusDistance", "double", "Number", "",200
-				P: "UseAntialiasing", "bool", "", "",0
-				P: "AntialiasingIntensity", "double", "Number", "",0.77777
-				P: "AntialiasingMethod", "enum", "", "",0
-				P: "UseAccumulationBuffer", "bool", "", "",0
-				P: "FrameSamplingCount", "int", "Integer", "",7
-				P: "FrameSamplingType", "enum", "", "",1
-			}
-		}
-	}
 	ObjectType: "Video" {
 		Count: 3
 		PropertyTemplate: "FbxVideo" {
@@ -383,7 +270,7 @@ Definitions:  {
 ;------------------------------------------------------------------
 
 Objects:  {
-	Geometry: 1142949728, "Geometry::Scene", "Mesh" {
+	Geometry: 1406621088, "Geometry::Scene", "Mesh" {
 		Vertices: *1791 {
 			a: -33.9008539915085,-886.675262451172,15.6166151165962,-34.8464280366898,-477.901220321655,14.4441112875938,0.262922281399369,-477.901220321655,26.1472284793854,2.38099899142981,-886.675262451172,27.71055996418,35.3722721338272,-477.901220321655,14.4441112875938,38.6628538370132,-886.675262451172,15.6166151165962,47.0753848552704,-477.901220321655,-20.6652373075485,50.7567942142487,-886.675262451172,-20.6652373075485,35.3722721338272,-477.901220321655,-55.774587392807,38.6628538370132,-886.675262451172,-56.9470942020416,0.262922281399369,-477.901220321655,-67.4777030944824,2.38099899142981,-886.675262451172,-69.0410315990448,-45.9947943687439,-886.675262451172,-20.6652373075485,-46.5495437383652,-477.901220321655,-20.6652373075485,-33.9008539915085,-886.675262451172,-56.9470942020416,-34.8464280366898,-477.901220321655,-55.774587392807,38.744592666626,-343.132710456848,16.9391050934792,50.1264929771423,-343.132781982422,-17.2066003084183,42.7077412605286,-140.980124473572,-20.6652373075485,31.807667016983,-140.980124473572,12.0350301265717,46.1820900440216,-56.7499041557312,-20.6652373075485,35.4827731847763,-56.7499041557312,-52.7632296085358,31.807667016983,-140.980124473572,-53.3655107021332,3.3847764134407,-56.7499041557312,-63.4625554084778,-0.892600324004889,-140.980124473572,-64.2655730247498,35.4827731847763,-56.7499041557312,11.432757973671,-0.892600324004889,-140.980124473572,22.9350969195366,3.3847764134407,-56.7499041557312,22.1320763230324,-33.5928618907928,-140.980124473572,12.0350301265717,-28.7132173776627,-56.7499041557312,11.432757973671,-44.4929480552673,-140.980124473572,-20.6652373075485,-39.4125431776047,-56.7499041557312,-20.6652373075485,-33.5928618907928,-140.980124473572,-53.3655107021332,-28.7132173776627,-56.7499041557312,-52.7632296085358,6.96733742952347,125.171840190887,20.5288618803024,-23.9282533526421,125.171840190887,10.2303542196751,2.38099899142981,341.819286346436,18.9256697893143,-27.3121803998947,341.819286346436,9.02794227004051,32.0741802453995,341.819286346436,9.02794227004051,
 37.8629267215729,125.171840190887,10.2303542196751,-34.2267602682114,125.171840190887,-20.6652373075485,-37.2099071741104,341.819286346436,-20.6652373075485,-23.9282533526421,125.171840190887,-51.5608251094818,-27.3121803998947,341.819286346436,-50.3584206104279,6.96733742952347,125.171840190887,-61.8593335151672,2.38099899142981,341.819286346436,-60.2561414241791,41.9719070196152,341.819286346436,-20.6652373075485,48.161444067955,125.171840190887,-20.6652373075485,32.0741802453995,341.819286346436,-50.3584206104279,37.8629267215729,125.171840190887,-51.5608251094818,-29.5468360185623,-343.132710456848,16.9391050934792,4.5988779515028,-343.132781982422,28.3210188150406,-40.9287393093109,-343.132781982422,-17.2066003084183,-29.5468360185623,-343.132781982422,-51.3523042201996,4.5988779515028,-343.132781982422,-62.7342224121094,38.744592666626,-343.132781982422,-51.3523042201996,-43.7474310398102,389.020967483521,25.4631906747818,2.38099824637175,389.020967483521,40.7903879880905,48.5094279050827,389.020967483521,25.4631906747818,-59.0746283531189,389.020967483521,-20.6652373075485,-43.7474310398102,389.020967483521,-66.7936682701111,2.38099899142981,389.020967483521,-82.1208655834198,48.5094279050827,389.020967483521,-66.7936682701111,63.8366222381592,389.020967483521,-20.6652373075485,-39.6714597940445,418.246412277222,21.3872179389,-43.0266797542572,442.640113830566,24.7424423694611,2.38099899142981,442.640113830566,39.8301541805267,2.38099861890078,418.246412277222,35.3600889444351,47.788679599762,442.640113830566,24.7424423694611,44.433456659317,418.246412277222,21.3872179389,2.38099899142981,418.246412277222,-76.6905665397644,2.38099899142981,442.640113830566,-81.1606287956238,-43.0266797542572,442.640113830566,-66.0729229450226,-39.6714597940445,418.246412277222,-62.7176940441132,44.433456659317,418.246412277222,-62.7176940441132,47.788679599762,442.640113830566,-66.0729229450226,-53.6443293094635,418.246412277222,-20.6652373075485,-58.1143915653229,442.640113830566,-20.6652373075485,62.8763854503632,442.640113830566,-20.6652373075485,
@@ -695,63 +582,17 @@ Objects:  {
 			}
 		}
 	}
-	NodeAttribute: 1520379504, "NodeAttribute::persp1", "Camera" {
-		Properties70:  {
-			P: "FilmWidth", "double", "Number", "",1.417320728302
-			P: "FilmHeight", "double", "Number", "",0.944880545139313
-			P: "FilmAspectRatio", "double", "Number", "",1.49999990537749
-			P: "ApertureMode", "enum", "", "",3
-			P: "GateFit", "enum", "", "",2
-			P: "FocalLength", "Number", "", "A",35
-			P: "NearPlane", "double", "Number", "",1
-			P: "FarPlane", "double", "Number", "",600000
-		}
-		TypeFlags: "Camera"
-		GeometryVersion: 124
-		Position: 0,0,0
-		Up: 0,1,0
-		LookAt: 0,0,0
-		ShowInfoOnMoving: 1
-		ShowAudio: 0
-		AudioColor: 0,1,0
-		CameraOrthoZoom: 1
-	}
-	Model: 1520365440, "Model::PalmTree", "Null" {
-		Version: 232
-		Properties70:  {
-			P: "InheritType", "enum", "", "",1
-			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
-		}
-		Shading: Y
-		Culling: "CullingOff"
-	}
-	Model: 1520367440, "Model::pCube122", "Mesh" {
+	Model: 1549877520, "Model::PalmTree", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
 			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
 			P: "DefaultAttributeIndex", "int", "Integer", "",0
-			P: "Lcl Translation", "Lcl Translation", "", "A",-2.85424795001745,900,24.7726738452911
-			P: "Lcl Scaling", "Lcl Scaling", "", "A",1.23273193836212,1.23273193836212,1.23273193836212
 		}
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Model: 1520564384, "Model::persp1", "Camera" {
-		Version: 232
-		Properties70:  {
-			P: "PostRotation", "Vector3D", "Vector", "",0,90,0
-			P: "RotationActive", "bool", "", "",1
-			P: "InheritType", "enum", "", "",1
-			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
-			P: "DefaultAttributeIndex", "int", "Integer", "",0
-			P: "Lcl Translation", "Lcl Translation", "", "A",-115.030300617218,828.398036956787,800.781440734863
-			P: "Lcl Rotation", "Lcl Rotation", "", "A",-138.861647844642,3.00000196328011,179.999999556851
-		}
-		Shading: Y
-		Culling: "CullingOff"
-	}
-	Material: 1520346048, "Material::Lightweight_Default2", "" {
+	Material: 1413387440, "Material::Lightweight_Default2", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -764,7 +605,7 @@ Objects:  {
 			P: "Opacity", "double", "Number", "",1
 		}
 	}
-	Material: 882654768, "Material::lambert15", "" {
+	Material: 1549030928, "Material::lambert15", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -777,7 +618,7 @@ Objects:  {
 			P: "Opacity", "double", "Number", "",1
 		}
 	}
-	Material: 882655168, "Material::pw", "" {
+	Material: 1549024928, "Material::pw", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -790,7 +631,7 @@ Objects:  {
 			P: "Opacity", "double", "Number", "",1
 		}
 	}
-	Material: 882655568, "Material::lambert2", "" {
+	Material: 1549029728, "Material::lambert2", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -803,7 +644,7 @@ Objects:  {
 			P: "Opacity", "double", "Number", "",1
 		}
 	}
-	Video: 1576677424, "Video::DiffuseColor_Texture", "Clip" {
+	Video: 1593102704, "Video::DiffuseColor_Texture", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:\Users\s178001\Documents\GitHub\Trials\Assets\Textures\PalmTreeWood.png"
@@ -813,7 +654,7 @@ Objects:  {
 		Filename: "C:\Users\s178001\Documents\GitHub\Trials\Assets\Textures\PalmTreeWood.png"
 		RelativeFilename: "..\..\..\Documents\GitHub\Trials\Assets\Textures\PalmTreeWood.png"
 	}
-	Video: 1576679344, "Video::DiffuseColor_Texture", "Clip" {
+	Video: 1593061904, "Video::DiffuseColor_Texture", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:\Users\s178001\Documents\GitHub\Trials\Assets\Textures\PalmTreeExtra.png"
@@ -823,7 +664,7 @@ Objects:  {
 		Filename: "C:\Users\s178001\Documents\GitHub\Trials\Assets\Textures\PalmTreeExtra.png"
 		RelativeFilename: "..\..\..\Documents\GitHub\Trials\Assets\Textures\PalmTreeExtra.png"
 	}
-	Video: 1576694224, "Video::DiffuseColor_Texture", "Clip" {
+	Video: 1592962544, "Video::DiffuseColor_Texture", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:\Users\s178001\Documents\GitHub\Trials\Assets\Textures\PalmFrond.png"
@@ -833,7 +674,7 @@ Objects:  {
 		Filename: "C:\Users\s178001\Documents\GitHub\Trials\Assets\Textures\PalmFrond.png"
 		RelativeFilename: "..\..\..\Documents\GitHub\Trials\Assets\Textures\PalmFrond.png"
 	}
-	Texture: 1576707664, "Texture::DiffuseColor_Texture", "" {
+	Texture: 1593120944, "Texture::DiffuseColor_Texture", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::DiffuseColor_Texture"
@@ -845,7 +686,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 1576614064, "Texture::DiffuseColor_Texture", "" {
+	Texture: 1593150704, "Texture::DiffuseColor_Texture", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::DiffuseColor_Texture"
@@ -857,7 +698,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 1576693744, "Texture::DiffuseColor_Texture", "" {
+	Texture: 1593003344, "Texture::DiffuseColor_Texture", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::DiffuseColor_Texture"
@@ -877,58 +718,49 @@ Objects:  {
 Connections:  {
 	
 	;Model::PalmTree, Model::RootNode
-	C: "OO",1520365440,0
+	C: "OO",1549877520,0
 	
-	;Model::pCube122, Model::PalmTree
-	C: "OO",1520367440,1520365440
+	;Material::Lightweight_Default2, Model::PalmTree
+	C: "OO",1413387440,1549877520
 	
-	;Model::persp1, Model::PalmTree
-	C: "OO",1520564384,1520365440
+	;Material::lambert15, Model::PalmTree
+	C: "OO",1549030928,1549877520
 	
-	;Material::Lightweight_Default2, Model::pCube122
-	C: "OO",1520346048,1520367440
+	;Material::pw, Model::PalmTree
+	C: "OO",1549024928,1549877520
 	
-	;Material::lambert15, Model::pCube122
-	C: "OO",882654768,1520367440
+	;Material::lambert2, Model::PalmTree
+	C: "OO",1549029728,1549877520
 	
-	;Material::pw, Model::pCube122
-	C: "OO",882655168,1520367440
-	
-	;Material::lambert2, Model::pCube122
-	C: "OO",882655568,1520367440
-	
-	;Geometry::Scene, Model::pCube122
-	C: "OO",1142949728,1520367440
-	
-	;NodeAttribute::persp1, Model::persp1
-	C: "OO",1520379504,1520564384
+	;Geometry::Scene, Model::PalmTree
+	C: "OO",1406621088,1549877520
 	
 	;Texture::DiffuseColor_Texture, Material::Lightweight_Default2
-	C: "OO",1576707664,1520346048
+	C: "OO",1593120944,1413387440
 	
 	;Texture::DiffuseColor_Texture, Material::Lightweight_Default2
-	C: "OP",1576707664,1520346048, "DiffuseColor"
+	C: "OP",1593120944,1413387440, "DiffuseColor"
 	
 	;Video::DiffuseColor_Texture, Texture::DiffuseColor_Texture
-	C: "OO",1576677424,1576707664
+	C: "OO",1593102704,1593120944
 	
 	;Texture::DiffuseColor_Texture, Material::pw
-	C: "OO",1576614064,882655168
+	C: "OO",1593150704,1549024928
 	
 	;Texture::DiffuseColor_Texture, Material::pw
-	C: "OP",1576614064,882655168, "DiffuseColor"
+	C: "OP",1593150704,1549024928, "DiffuseColor"
 	
 	;Video::DiffuseColor_Texture, Texture::DiffuseColor_Texture
-	C: "OO",1576679344,1576614064
+	C: "OO",1593061904,1593150704
 	
 	;Texture::DiffuseColor_Texture, Material::lambert2
-	C: "OO",1576693744,882655568
+	C: "OO",1593003344,1549029728
 	
 	;Texture::DiffuseColor_Texture, Material::lambert2
-	C: "OP",1576693744,882655568, "DiffuseColor"
+	C: "OP",1593003344,1549029728, "DiffuseColor"
 	
 	;Video::DiffuseColor_Texture, Texture::DiffuseColor_Texture
-	C: "OO",1576694224,1576693744
+	C: "OO",1592962544,1593003344
 }
 ;Takes section
 ;----------------------------------------------------

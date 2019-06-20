@@ -20,6 +20,7 @@ namespace Zach
         private float baseSpeed;
         public float jumpPower = 4;
         public float gravity = 9.81f;
+        public float airTime = 0;
         public float mag;
         public float _magExponent;
         public Vector3 velocity;
