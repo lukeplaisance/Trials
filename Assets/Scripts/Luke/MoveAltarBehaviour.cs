@@ -10,6 +10,7 @@ namespace Luke
         void Start()
         {
             animator.SetBool("Interacted", false);
+            animator.SetBool("OnPlatform", false);
         }
 
         public void MoveAltar()
@@ -21,6 +22,7 @@ namespace Luke
 
         public void MoveAltarDown()
         {
+            animator.SetBool("OnPlatform", true);
             animator.Play("MoveAltarDown");
         }
     }
