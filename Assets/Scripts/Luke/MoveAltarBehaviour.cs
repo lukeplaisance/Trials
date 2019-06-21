@@ -18,5 +18,10 @@ namespace Luke
             animator.Play("MoveAltar");
             Debug.Log("altar rising sound should play");
         }
+
+        public void MoveAltarDown()
+        {
+            animator.Play("MoveAltarDown");
+        }
     }
 }
