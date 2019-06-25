@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 114323574418734960}
   - component: {fileID: 114034662300960714}
   - component: {fileID: 114788845957740002}
+  - component: {fileID: 114832126648939076}
   m_Layer: 5
   m_Name: NotebookCanvas
   m_TagString: Untagged
@@ -349,6 +350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JournalUI: {fileID: 1155014196847728}
   NoteUI: {fileID: 1516046679636464}
+  ButtonUI: {fileID: 0}
 --- !u!114 &114117130252698172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -512,7 +514,9 @@ MonoBehaviour:
   BaseOffsetY: 30
   OffsetDistanceY: 30
   YPosLimit: -250
+  eventSys: {fileID: 0}
   noteUI: {fileID: 1665984046298974, guid: cdd598d6db31d564aa20bdc2539980c1, type: 2}
+  buttonGOs: []
   OnEnableResponses:
     m_PersistentCalls:
       m_Calls:
@@ -840,6 +844,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114832126648939076
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1451903159553042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fbbf5ae133aa0347aeb1e5d0841929d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectReferencer: {fileID: 11400000, guid: 32fc5a4f5f963d84e833a475e2caa04f,
+    type: 2}
 --- !u!114 &114917459576298306
 MonoBehaviour:
   m_ObjectHideFlags: 1

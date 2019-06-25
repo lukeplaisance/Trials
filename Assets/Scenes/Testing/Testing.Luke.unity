@@ -91,7 +91,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 112000002, guid: 7f89428a30c150145b4f81292df3bc06,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2681,23 +2681,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2ea792b49ba4014dab1a55e89c90eb5, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &118705027 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1627630690116934, guid: 7cf81d6409a785f4c833035513eea14c,
-    type: 2}
-  m_PrefabInternal: {fileID: 990047966}
---- !u!65 &118705031
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 118705027}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.031717, y: 7.957427, z: 0.97724104}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &122037748
 Prefab:
   m_ObjectHideFlags: 0
@@ -9574,6 +9557,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a665d299b13e3474f977093c511a3d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DontDestroyObjects:
+  - {fileID: 1898580374}
+  - {fileID: 2126300833}
 --- !u!114 &277194932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9591,6 +9577,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 277194931}
+        m_MethodName: DontDestroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 277194931}
         m_MethodName: LoadNewScene
         m_Mode: 3
         m_Arguments:
@@ -9598,7 +9595,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: Terrain_Level
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -79110,23 +79107,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1592592507}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1597033024 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1627630690116934, guid: 7cf81d6409a785f4c833035513eea14c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1102284776}
---- !u!65 &1597033028
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1597033024}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.031717, y: 7.957427, z: 0.97724104}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1598147601
 GameObject:
   m_ObjectHideFlags: 0
@@ -100240,6 +100220,7 @@ GameObject:
   - component: {fileID: 2126300836}
   - component: {fileID: 2126300835}
   - component: {fileID: 2126300834}
+  - component: {fileID: 2126300841}
   m_Layer: 5
   m_Name: NotebookCanvas
   m_TagString: Untagged
@@ -100485,6 +100466,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2126300841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2126300833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fbbf5ae133aa0347aeb1e5d0841929d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectReferencer: {fileID: 11400000, guid: 32fc5a4f5f963d84e833a475e2caa04f,
+    type: 2}
 --- !u!1 &2128596270 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1958341871163968, guid: 1fecf709492db464aa0a11428d0bea3b,
