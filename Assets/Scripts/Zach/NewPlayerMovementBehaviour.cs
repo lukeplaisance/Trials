@@ -20,6 +20,7 @@ namespace Zach
         private float baseSpeed;
         public float jumpPower = 4;
         public float gravity = 9.81f;
+        public float airTime = 0;
         public float mag;
         public float _magExponent;
         public Vector3 velocity;
@@ -59,7 +60,14 @@ namespace Zach
             _animator.SetBool("IsGrounded", isGrounded);
             speed = baseSpeed;
             mag = PlayerInput.InputVector.magnitude;
-
+            if (!isGrounded)
+            {
+                airTime +=Time.deltaTime;
+            }
+            else
+            {
+                airTime = 0;
+            }
             //If player is frozen don't execute any of the movement code
             if (isFrozen)
                 return;
@@ -132,6 +140,7 @@ namespace Zach
                 _moveVector.z *= speed;
             }
             _controller.Move(_moveVector * Time.deltaTime);
+            _animator.SetFloat("AirTime",airTime);
         }
     }
 }

@@ -15,8 +15,9 @@
 
         public void UpdateState(IContext context)
         {
-            if (Zach.PlayerInput.CancelPressed)
+            if (Zach.PlayerInput.CancelPressed || Zach.PlayerInput.ForceCancel)
             {
+                Zach.PlayerInput.ForceCancel = false;
                 ((PlayerContext)context).Behaviour.CurrentInteraction.StopInteraction();
                 context.ChangeState(new PlayerIdleState());
                 return;
