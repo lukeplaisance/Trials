@@ -10,7 +10,7 @@ public class PushPullPatch : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("Grabbable") || other.CompareTag("Waypoint") || other.CompareTag("PressurePlate"))
+        if (other.CompareTag("Player") || other.CompareTag("Grabbable") || other.CompareTag("Waypoint") || other.CompareTag("PressurePlate") || other.CompareTag("Astrolabe"))
             return;
         if(isFrontCollider)
             block.isFrontColliding = true;
@@ -20,7 +20,7 @@ public class PushPullPatch : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("Grabbable") || other.CompareTag("Waypoint"))
+        if (other.CompareTag("Player") || other.CompareTag("Grabbable") || other.CompareTag("Waypoint") || other.CompareTag("PressurePlate") || other.CompareTag("Astrolabe"))
             return;
         if (isFrontCollider)
             block.isFrontColliding = false;
