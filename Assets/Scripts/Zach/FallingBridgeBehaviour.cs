@@ -7,11 +7,6 @@ public class FallingBridgeBehaviour : MonoBehaviour
     public float timer;
     public WaitAndRespondBehaviour wr;
 
-    public void Start()
-    {
-        wr = GetComponent<WaitAndRespondBehaviour>();
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
