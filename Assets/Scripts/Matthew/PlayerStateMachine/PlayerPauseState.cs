@@ -7,6 +7,7 @@
         {
             var playerbehaviour = (context as PlayerContext).Behaviour;
             playerbehaviour.SetMovement(false);
+            playerbehaviour.SetCamera(false);
             listener = new StateEventTransitionSubscription
             {
                 Subscribeable = UnityEngine.Resources.Load("Events/ClosePauseMenu") as Luke.GameEvent
@@ -18,13 +19,23 @@
         {
             var playerbehaviour = (context as PlayerContext).Behaviour;
             playerbehaviour.SetMovement(true);
+            playerbehaviour.SetCamera(true);
             
         }
 
         public void UpdateState(IContext context)
-        {
-            if (listener.EventRaised)
+        {            
+            if (Zach.PlayerInput.CancelPressed)
+            {
+                if((context as PlayerContext).Behaviour.CurrentInteraction != null)
+                {
+                    context.ChangeState(new PlayerInteractState());
+                    return;
+                }
+                    
                 context.ChangeState(new PlayerIdleState());
+                return;
+            }
 
         }
     }

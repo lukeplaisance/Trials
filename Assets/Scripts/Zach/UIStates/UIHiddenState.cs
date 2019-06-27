@@ -8,28 +8,29 @@ namespace Zach
 {
     public class UIHiddenState : IState
     {
-        StateEventTransitionSubscription subscription_openPauseMenu;
         StateEventTransitionSubscription subscription_openNote;
+
+
 
         public void OnEnter(IContext context)
         {
             var uiState = (context as UIContext).Behaviour;
             uiState.SetJournalActive(false);
             uiState.SetNoteActive(false);
+            uiState.SetButtonActove(false);
             subscription_openNote = new StateEventTransitionSubscription
             {
                 Subscribeable = Resources.Load("Events/OpenNote") as GameEvent
             };
-            subscription_openPauseMenu = new StateEventTransitionSubscription
-            {
-                Subscribeable = Resources.Load("Events/OpenPauseMenu") as GameEvent
-            };
+
         }
 
         public void OnExit(IContext context)
         {
             subscription_openNote.UnSubscribe();
-            subscription_openPauseMenu.UnSubscribe();
+            Debug.Log("close note?");
+            
+            
         }
 
         public void UpdateState(IContext context)
@@ -37,12 +38,15 @@ namespace Zach
             if (subscription_openNote.EventRaised)
             {
                 context.ChangeState(new UINoteState());
+                Debug.Log("open note?");
+                return;
             }
-
-            if (subscription_openPauseMenu.EventRaised)
+            if (Zach.PlayerInput.PausePressed)
             {
                 context.ChangeState(new UIJournalState());
+                return;
             }
+
         }
     }
 }

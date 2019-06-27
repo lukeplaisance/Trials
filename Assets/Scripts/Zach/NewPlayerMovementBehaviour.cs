@@ -14,18 +14,27 @@ namespace Zach
         public Vector3 MoveVector
         {
             get { return _moveVector; }
+            set { _moveVector = value; }
         }
         public float speed = 5;
         private float baseSpeed;
         public float jumpPower = 4;
         public float gravity = 9.81f;
+        public float airTime = 0;
         public float mag;
         public float _magExponent;
         public Vector3 velocity;
         public Vector3 camRight;
         public Vector3 camForward;
         public bool isFrozen = false;
-        public bool isGrounded;
+        public Vector3 forward;
+        public Vector3 targetDir;
+
+        public static bool IsGrounded
+        {
+            get { return isGrounded; }
+        }
+        private static bool isGrounded;
         private Vector3 _prevPosition;
         private CharacterController _controller;
         private Animator _animator;
@@ -51,7 +60,14 @@ namespace Zach
             _animator.SetBool("IsGrounded", isGrounded);
             speed = baseSpeed;
             mag = PlayerInput.InputVector.magnitude;
-
+            if (!isGrounded)
+            {
+                airTime +=Time.deltaTime;
+            }
+            else
+            {
+                airTime = 0;
+            }
             //If player is frozen don't execute any of the movement code
             if (isFrozen)
                 return;
@@ -75,10 +91,15 @@ namespace Zach
             }
             var h = PlayerInput.InputVector.normalized.x;
             var v = PlayerInput.InputVector.normalized.z;
-            var forward = Camera.main.transform.TransformDirection(Vector3.forward);
+            //set the camera's x rotation to 0 so we can ignore it when calculating the angle the player moves
+            var trans = Camera.main.transform;
+            var vec = trans.rotation.eulerAngles;
+            vec.x = 0;
+            Camera.main.transform.rotation = Quaternion.Euler(vec);
+            forward = Camera.main.transform.TransformDirection(Vector3.forward);
             forward.y = 0;
             var right = new Vector3(forward.z, 0, -forward.x);
-            var targetDir = h * right + v * forward;
+            targetDir = h * right + v * forward;
             if (targetDir.magnitude > 0)
             {
                 var rot = Quaternion.Euler(targetDir);
@@ -93,9 +114,14 @@ namespace Zach
             {
                 _moveVector.y = _moveVector.y - (gravity * Time.deltaTime);
             }
+
+            if (_controller.isGrounded)
+            {
+                _moveVector.y = -0.5f;
+            }
             
             //If the player pushes the jump button and is grounded then set the move vector to the jump value
-            //and trigger the jump animation
+            //and trigger the jump animator
             if (_controller.isGrounded && Input.GetButtonDown("Jump"))
             {
                 _moveVector.y = jumpPower;
@@ -114,6 +140,7 @@ namespace Zach
                 _moveVector.z *= speed;
             }
             _controller.Move(_moveVector * Time.deltaTime);
+            _animator.SetFloat("AirTime",airTime);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Zach
@@ -15,8 +16,9 @@ namespace Zach
         private float baseYCopy;
         public float OffsetDistanceY;
         public float YPosLimit;
-
+        public EventSystem eventSys;
         public GameObject noteUI;
+        public List<GameObject> buttonGOs = new List<GameObject>();
 
         public UnityEngine.Events.UnityEvent OnEnableResponses;
         public UnityEngine.Events.UnityEvent OnDisableResponses;
@@ -24,6 +26,7 @@ namespace Zach
         public void OnEnable()
         {
             OnEnableResponses.Invoke();
+
         }
 
         public void OnDisable()
@@ -63,6 +66,8 @@ namespace Zach
                 noteUIObject.transform.position += new Vector3(XOffset, -BaseOffsetY, 0);
                 BaseOffsetY += OffsetDistanceY;
                 Cursor.visible = true;
+                buttonGOs.Add(noteUIObject);
+                
             }
         }
 
@@ -73,6 +78,7 @@ namespace Zach
             foreach (var note in notes)
             {
                 Destroy(note);
+     
             }
             notes = new List<GameObject>();
             Cursor.visible = false;
@@ -82,6 +88,13 @@ namespace Zach
         {
             noteButtonParent.SetActive(false);
             CloseButton.SetActive(false);
+        }
+
+        public void SetSelected()
+        {
+            var button = buttonGOs[0].GetComponent<Button>();
+            eventSys.SetSelectedGameObject(button.gameObject);
+            button.OnSelect(null);
         }
     }
 }
