@@ -3835,11 +3835,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4234815267102272, guid: 152a71d2f444aa04188c2efced61b727,
     type: 2}
   m_PrefabInternal: {fileID: 638306351}
---- !u!1 &247248003 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1783883494952098, guid: 84edab1c4b36c1043888c6ac2f0bbe7a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1187141368}
 --- !u!1 &247571666
 GameObject:
   m_ObjectHideFlags: 0
@@ -5193,6 +5188,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9999996, y: 0.9903832, z: 1.6561031}
   m_Center: {x: 0.000005110374, y: -10.456164, z: 5.4719563}
+--- !u!1 &338287352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1695899693555712, guid: 84edab1c4b36c1043888c6ac2f0bbe7a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1187141368}
 --- !u!4 &339815533 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4926800714761576, guid: c87c1f2bf987da344b49655b430b60e4,
@@ -18855,7 +18855,7 @@ Prefab:
         type: 2}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[8].m_Target
       value: 
-      objectReference: {fileID: 247248003}
+      objectReference: {fileID: 338287352}
     - target: {fileID: 114244448058067840, guid: 7fb9b2de54d050e4297884bca84dfb98,
         type: 2}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[8].m_MethodName
@@ -18914,7 +18914,7 @@ Prefab:
     - target: {fileID: 114244448058067840, guid: 7fb9b2de54d050e4297884bca84dfb98,
         type: 2}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_StringArgument
-      value: MoveAltar-Outside
+      value: MoveAltar-BigPalace
       objectReference: {fileID: 0}
     - target: {fileID: 114244448058067840, guid: 7fb9b2de54d050e4297884bca84dfb98,
         type: 2}
@@ -19381,7 +19381,7 @@ Prefab:
       objectReference: {fileID: 63222093}
     - target: {fileID: 1783883494952098, guid: 84edab1c4b36c1043888c6ac2f0bbe7a, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1783883494952098, guid: 84edab1c4b36c1043888c6ac2f0bbe7a, type: 2}
       propertyPath: m_Name
@@ -31517,7 +31517,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-3094
+  m_Name: pb_Mesh79524
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
