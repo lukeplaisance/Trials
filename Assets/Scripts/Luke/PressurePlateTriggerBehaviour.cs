@@ -8,13 +8,15 @@ namespace Luke
     public class PressurePlateTriggerBehaviour : MonoBehaviour
     {
         public Animator animator;
+        public string pressure_plate_up;
+        public string pressure_plate_down;
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Grabbable"))
+            if (other.CompareTag("Grabbable") || other.CompareTag("Player"))
             {
                 animator.SetBool("IsDown", true);
-                animator.Play("MovePressurePlateDown");
+                animator.Play(pressure_plate_down);
                 Debug.Log("pressure plate sound should play");
                 FMODUnity.RuntimeManager.PlayOneShot("event:/pressure_plate");
             }
@@ -23,10 +25,10 @@ namespace Luke
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.CompareTag("Grabbable"))
+            if (other.CompareTag("Grabbable") || other.CompareTag("Player"))
             {
                 animator.SetBool("IsDown", false);
-                animator.Play("MovePressurePlateUp");
+                animator.Play(pressure_plate_up);
             }
         }
     }
