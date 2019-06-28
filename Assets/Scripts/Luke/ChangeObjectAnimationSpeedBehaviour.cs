@@ -20,7 +20,7 @@ namespace Luke
 
         void Update()
         {
-         //   Debug.Log(animator.speed);
+            //Debug.Log(animator.speed);
             play_animation.Invoke();
         }
     }

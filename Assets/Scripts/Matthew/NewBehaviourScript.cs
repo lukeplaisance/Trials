@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+#if UNITY_EDITOR
 using UnityEditor;
 
 public class NewBehaviourScript : MonoBehaviour
@@ -21,4 +21,20 @@ public class NewBehaviourScript : MonoBehaviour
             colliderHolders.Add(go);
         }
     }
+
+    [ContextMenu("Remove Colliders")]
+    public void RemoveAllColliders()
+    {
+        var selected = Selection.activeObject as GameObject;
+        
+        var colliders = selected.GetComponents<BoxCollider>();
+        foreach (var col in colliders)
+        {
+            DestroyImmediate(col);
+
+        }
+    }
+
+  
 }
+#endif
