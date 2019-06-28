@@ -7801,7 +7801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animators: []
-  set_animation_speed: 0.3
+  set_animation_speed: 0.1
 --- !u!114 &114234355326630034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8415,6 +8415,7 @@ MonoBehaviour:
   speed: 4
   jumpPower: 9
   gravity: 20
+  airTime: 0
   mag: 0
   _magExponent: 0
   velocity: {x: 0, y: 0, z: 0}
