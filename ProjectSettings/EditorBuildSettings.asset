@@ -5,16 +5,23 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+
+  - enabled: 0
+    path: Assets/Scenes/Testing/Testing.Trinity.unity
+    guid: bdd4c795363c51c489cfca8293f11fb2
+  - enabled: 0
     path: Assets/Scenes/Testing/Testing.Luke.unity
     guid: ab66cfb0729386242b809ee4495a3e23
-  - enabled: 1
-    path: Assets/Scenes/Testing/Testing.Bryan.unity
-    guid: 457f6f057d7cc9340bf58fafc30b03f4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Luke.Terrain.unity
     guid: 6a0b90b5387d54548821f21859b3c15e
+  - enabled: 0
+    path: Assets/Scenes/Testing/Testing.Keith.unity
+    guid: 2868df0b62dd6914eaf6fd675bc5a5d4
   - enabled: 1
-    path: Assets/Scenes/Luke.WaterTemple_Level.unity
-    guid: 09208e995ee05e84b9aee678f1dd0840
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 42141386e4a700b4aa9a64f4c061e62e
+  - enabled: 1
+    path: Assets/Scenes/0.main.unity
+    guid: 32f6c4229de485b4f9f3d805eff8d5ec
   m_configObjects: {}
