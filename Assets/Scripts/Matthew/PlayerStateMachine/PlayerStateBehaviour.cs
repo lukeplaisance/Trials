@@ -36,8 +36,8 @@ namespace Matthew
         {
             if (CurrentInteraction == null)
                 CurrentInteraction = interactable;
-            else
-                Debug.LogWarning("Interactor already in an interaction.");
+            //else
+            //    Debug.LogWarning("Interactor already in an interaction.");
         }
 
    

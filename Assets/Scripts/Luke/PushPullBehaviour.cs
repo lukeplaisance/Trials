@@ -25,11 +25,12 @@ namespace Luke
         {
             PlayerRef = Resources.Load("References/PlayerStaticReference") as GameObjectVariable;
             PlayerRef.OnValueChanged.AddListener(() => PlayerAnimator = PlayerRef.Value.GetComponent<Animator>());
-           
+            PlayerAnimator = PlayerRef.Value.GetComponent<Animator>();
         }
         
         void Update()
         {
+            PlayerAnimator = PlayerRef.Value.GetComponent<Animator>();
             //now checking for if the collider is grabbed rather than positional check
             var v = Input.GetAxis("Vertical");
             if (v > 0 && isFrontColliding)
