@@ -60,6 +60,7 @@ namespace Zach
             if (other.CompareTag("Player"))
             {
                 other.transform.SetParent(null);
+                other.transform.localScale = new Vector3(1,1,1);
             }
             if (!other.CompareTag("Terrain") && other.CompareTag("Grabbable"))
             {

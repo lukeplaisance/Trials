@@ -6,11 +6,13 @@ public class FallingBridgeBehaviour : MonoBehaviour
 {
     public float timer;
     public WaitAndRespondBehaviour wr;
+    public BoxCollider bc;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            bc.enabled = false;
             wr.WaitAndRespond(timer);
         }
     }
